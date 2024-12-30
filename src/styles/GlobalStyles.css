@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --font-roboto: "Roboto Slab", serif;
+    --font-raleway: "Raleway", sans-serif;
+    
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  
+  body {
+    font-family: var(--font-roboto);
+    background-color: #161616;
+  }
+
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 0.9px;
+    background: linear-gradient(
+      90deg,
+      rgba(249, 211, 180, 1) 0%,
+      rgba(249, 211, 180, 0) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+  }
+
+  .border-red {
+    border:1px solid red !important;
+  }
+
+  .bg-primary {
+    background:#1B42CE;
+  }
+
+  .text-primary{
+    color:#1B42CE;
+  }
+
+  .btn-primary {
+    min-width: 120px;
+    min-height:30px;
+    background:#1B42CE;
+  }
+
+  .h-40px {
+    height: 40px;
+  }
+  .border-primary {
+    border: 2px solid #1B42CE;
+  }
+  .border-pbottom {
+    border-bottom: 1px solid #1B42CE;
+  }
+  .border-ptop {
+    border-top: 1px solid #1B42CE;
+  }
+  .margin-top-60px {
+    margin-top: -90px !important;
+  }
+  .custom-quill-editor .ql-editor {
+    min-height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border:none;
+    /*background-color: #f1f6fa;*/
+  }
+  .custom-quill-editor .ql-toolbar {
+    background-color: white; /* Set toolbar background to white */
+    color: black; /* Optional: Set text color */
+}
+
+  .border-left-primary {
+    border-left: 5px solid #1B42CE
+  }
+
+
+  
