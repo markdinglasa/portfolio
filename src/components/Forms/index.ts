@@ -1,6 +1,0 @@
-export * from './CategoryForm'
-export * from './ChapterForm'
-export * from './TermForm'
-export * from './ProductForm'
-export * from './UserForm'
-export * from './SubTermForm'

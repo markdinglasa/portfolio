@@ -1,7 +1,0 @@
-export * from './login'
-export * from './term'
-export * from './category'
-export * from './product'
-export * from './sales'
-export * from './user'
-export * from './chapter'

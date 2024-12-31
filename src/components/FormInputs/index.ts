@@ -1,5 +1,0 @@
-export * from './Input'
-export * from './Button'
-export * from './SelectInput'
-export * from './CircleButton'
-export * from './TextEditor'

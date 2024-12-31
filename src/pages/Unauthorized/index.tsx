@@ -1,12 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Roles, SFC } from "../../types";
-import { useAuth } from "../../hooks";
-import { renderPath } from "../../utils";
+import { SFC } from "../../types";
 import * as S from '../../styles'
 
 export const UnauthorizedPage : SFC = () => {
     const navigate = useNavigate()
-    const { auth } = useAuth()
     return (
         <>
         <S.Container className="w-full h-full justify-center items-center flex">
@@ -20,7 +17,7 @@ export const UnauthorizedPage : SFC = () => {
                         Sorry, you don't have permission to access this page
                     </S.P>
                     <S.Content className="mt-10 flex items-center justify-center gap-x-6">
-                        <button  onClick={() => navigate(`/${renderPath(auth?.roles??Roles.default)}`)} className=''>Home</button>
+                        <button  onClick={() => navigate('/')} className=''>Home</button>
                     </S.Content>
                 </S.Content>
             </S.Main>

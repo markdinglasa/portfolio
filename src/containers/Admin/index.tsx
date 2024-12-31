@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { SFC } from "../../types";
-import { PageFooter, SideNav, Header } from "../../components";
+import { PageFooter, SideNav } from "../../components";
 import { useToggle } from "../../hooks";
 import * as S from '../../styles/Styles';
 import { twMerge } from "tailwind-merge";
@@ -15,7 +15,7 @@ export const AdminLayout: SFC = ({ ClassName }) => {
                     <SideNav Toggle={toggle} />
                 </S.Nav>
                 <S.Main className="content w-full md:w-10/12 p-3 bg-slate-100 ">
-                    <Header  ClassName="w-full h-12 mb-2 flex justify-end items-center" Toggle={toggle}/>
+                   
                     <S.Content className="w-full bg-slate-100">
                         <Outlet /> 
                         <PageFooter />

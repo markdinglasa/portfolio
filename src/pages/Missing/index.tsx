@@ -1,11 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Roles, SFC } from "../../types";
-import { useAuth } from "../../hooks";
-import { renderPath } from "../../utils";
+import { SFC } from "../../types";
 import * as S from '../../styles'
+
 export const MissingPage : SFC = () => {
     const navigate = useNavigate()
-    const { auth } = useAuth()
 
     return (
         <>
@@ -20,7 +18,7 @@ export const MissingPage : SFC = () => {
                         Sorry, we couldn’t find the page you’re looking for.
                     </S.P>
                     <S.Content className="mt-10 flex items-center justify-center gap-x-6">
-                        <button  onClick={() => navigate(`/${renderPath(auth?.roles??Roles.default)}`)} className=''>Home</button>
+                        <button  onClick={() => navigate('/')} className=''>Home</button>
                     </S.Content>
                 </S.Content>
             </S.Main>
