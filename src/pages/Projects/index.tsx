@@ -10,6 +10,9 @@ export const ProjectPage : SFC = ({ClassName}) => {
                     <S.Divider className="title text-2lg">
                         <h1>Projects</h1>
                     </S.Divider>
+                    <S.Divider className="">
+
+                    </S.Divider>
                 </S.Content>
             </S.Container>
         </>

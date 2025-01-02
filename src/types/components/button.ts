@@ -6,6 +6,12 @@ export enum ButtonType {
   submit = 'submit',
 }
 
+export enum ButtonVariant {
+  contained = 'contained',
+  outlined = 'outlined',
+  text = 'text'
+}
+
 export enum ButtonColor {
   default='default',
   primary = 'primary',

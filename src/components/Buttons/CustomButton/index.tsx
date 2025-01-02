@@ -1,4 +1,4 @@
-import { ButtonType, SFC } from "../../../types";
+import { ButtonType, ButtonVariant, SFC } from "../../../types";
 import * as S from '../../../styles'
 import { ReactNode } from "react";
 import { Button } from "@mui/material";
@@ -15,6 +15,7 @@ export interface ButtonProps {
     type?: ButtonType;
     morph?: boolean
     child?:ReactNode
+    variant?: ButtonVariant
 }
 
 export const CustomButton : SFC<ButtonProps> = ({ ClassName,
@@ -25,12 +26,13 @@ export const CustomButton : SFC<ButtonProps> = ({ ClassName,
     onClick,
     text,
     type = ButtonType.button,
+    variant = ButtonVariant.contained,
     morph = true,
     child
 }) => {
       
     const CustomColor = () => {
-        if (color === 'primary') return { bg: S.colors.primary, hover: S.colors.primaryHover, text: `text-[${S.colors.background}]` }
+        if (color === 'primary') return { bg: S.colors.primary, hover: S.colors.primaryHover, text: `text-[#161616]` }
         if (color === 'green') return { bg: S.colors.palette.green['300'], hover: S.colors.palette.green['400'], text: 'text-white'}
         if (color === 'red') return { bg: S.colors.palette.red['300'], hover: S.colors.palette.red['400'], text: 'text-white'}
         if (color === 'default')  return { bg: 'none', hover: S.colors.palette.neutral['100'],text: 'text-primary' }
@@ -45,24 +47,30 @@ export const CustomButton : SFC<ButtonProps> = ({ ClassName,
             startIcon={icon}
             type={type}
             onClick={onClick}
-            variant="contained"
+            variant={variant}
             disabled={disabled || dirty}
-            className={cn(" flex items-center justify-center h-10 rounded-md shadow-none " + ClassName)}
+            className={cn(" flex items-center justify-center h-10 rounded-md shadow-none border-red" + ClassName)}
             sx={{
                 minWidth:'120px',
-                border:'none',
+                border: variant===ButtonVariant.contained? 'none': `2px solid ${CustomColor().bg}`,
+               
                 fontFamily:'Roboto',
                 borderRadius:'10rem',
                 textTransform:'none',
-                background: CustomColor().bg,
-                '&:hover': { background: CustomColor().hover },
+                
+                background: variant!==ButtonVariant.contained? 'none': CustomColor().bg,
+                '&:hover': { 
+                    background: variant!==ButtonVariant.contained? 'rgba(69,69,69,0.2)':CustomColor().hover,
+                    border: variant===ButtonVariant.contained? 'none': `2px solid ${CustomColor().hover}`,
+                },
                 opacity: disabled || dirty ? 0.6 : 1, 
                 cursor: disabled || dirty ? 'not-allowed' : 'pointer',
-                transition:'ease-in-out 0.3s'
+                transition:'ease-in-out 0.3s',
+               
             }}
         >
             {child}
-            <span className={`font-roboto ${CustomColor().text}`}>{text}</span>
+            <span className={`font-roboto ${variant!==ButtonVariant.contained? 'text-[#E9C6A9]' : CustomColor().text}`}>{text}</span>
         </Button>
         </S.Container>
             { morph && <S.Container className="md:hidden block">
