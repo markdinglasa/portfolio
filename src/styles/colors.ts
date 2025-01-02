@@ -1,8 +1,10 @@
 export const colors = {
-    background: '#f1f6fa',
-    primary: '#1B42CE',
+    background: '#161616',
+    primary: '#E9C6A9',
+    primaryHover: '#C4A78E',
     red: '#AF2D24',
-    secondary: '#1030a4',
+    secondary: '#9C9C9C',
+    hover:'#696969',
     white: '#fff',
     pink: '#D99694',
     warning: '#fb6340',

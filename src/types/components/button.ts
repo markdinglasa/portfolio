@@ -16,11 +16,13 @@ export enum ButtonColor {
 }
 
 export interface CircleButtonProps {
-  OnClick : any | GenericFunction
+  Label?:string
+  OnClick?: any | GenericFunction
   IsNotification?: boolean
   Icon: ReactNode
   Type:ButtonType
   Color?:ButtonColor
   Title?:string
   Disabled?:boolean
+  Href?: string
 }
