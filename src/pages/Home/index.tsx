@@ -1,14 +1,10 @@
 import { ButtonVariant, SFC } from "../../types";
 import * as S from '../../styles'
 import { twMerge } from "tailwind-merge";
-import RTMLogo from '../../assets/svg/rtm-logo.svg'
-import ConnextLogo from '../../assets/svg/connex-logo.svg'
-import PhilscaLogo from '../../assets/images/philsca-logo.png'
-import InnosoftLogo from  '../../assets/images/innosoft-logo.png'
-import LinguaLogo from '../../assets/images/lingua-logo.png'
-import { CustomButton, Footer } from "../../components";
+
+import { CustomButton, Footer, SkillsDisplay } from "../../components";
 import { ServicePage } from "../Services";
-import Marquee from "react-fast-marquee";
+
 export const HomePage: SFC = ({ ClassName }) => {
 
     return (
@@ -30,45 +26,12 @@ export const HomePage: SFC = ({ ClassName }) => {
                                     <CustomButton text="Projects" color="primary" morph={false} variant={ButtonVariant.contained}/>
                                     <CustomButton text="CV" color="primary" morph={false} variant={ButtonVariant.outlined}/>
                                 </S.Divider>
-                                
                             </S.Divider>
                         </S.Divider>
                     </S.Content>
-               
                     <S.Content className="w-full bg-[#262626] flex flex-col md:flex-row justify-evenly items-center p-3">
-                        <Marquee className="overflow-hidden flex  items-center w-full">
-                            <S.Divider className="w-64 flex items-center justify-center">
-                                <S.Divider className="h-24 w-24 text-center p-2 flex-shrink-0">
-                                    <S.Image src={PhilscaLogo} className="p-2 -mt-4 " style={{ filter: 'grayscale(150%)' }} />
-                                </S.Divider>
-                            </S.Divider>
-                            <S.Divider className="w-64 flex items-center justify-center">
-                                <S.Divider className="h-24 w-24 text-center flex-shrink-0">
-                                    <S.Image src={LinguaLogo} className="p-2" />
-                                </S.Divider>
-                            </S.Divider>
-                            <S.Divider className="w-64 flex items-center justify-center">
-                                <S.Divider className="h-24 w-40 text-center flex items-center justify-center flex-shrink-0">
-                                    <S.Image src={InnosoftLogo} style={{ filter: 'grayscale(90%)' }} />
-                                </S.Divider>
-                            </S.Divider>
-                           
-                            <S.Divider className="w-64 flex items-center justify-center">
-                                <S.Divider className="h-24 w-24 text-center p-2 flex-shrink-0">
-                                    <S.Image src={RTMLogo} className="p-2" />
-                                </S.Divider>
-                            </S.Divider>
-
-                            <S.Divider className="w-64 flex items-center justify-center">
-                                <S.Divider className="h-24 w-24 text-center p-2 flex-shrink-0">
-                                    <S.Image src={ConnextLogo} className="p-2" />
-                                </S.Divider>
-                            </S.Divider>
-                            
-                        </Marquee>
+                        <SkillsDisplay/>
                     </S.Content>
-
-         
                     <ServicePage ClassName="w-screen"/>
                 </S.Container>
                 <S.Content className="w-full  p-3 justify-center flex items-center">
