@@ -8,4 +8,7 @@ export enum RouteChannel {
     SETTINGS = '/a/settings',
     NOTIFICATIONS = '/a/notifications',
     PROFIFLE = '/a/profile/:Id',
+    CONTACTS = '/a/contacts',
+    PROJECTS = '/a/projects',
+    ABOUT = '/a/about',
 }
