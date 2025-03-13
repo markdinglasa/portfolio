@@ -7,7 +7,7 @@ import { CustomButton } from '../../Buttons';
 import { memo, useMemo } from 'react';
 import * as yup from "yup";
 import axios from 'axios'
-import { BASE_URL } from '../../../shared';
+// import { BASE_URL } from '../../../shared';
 
 export const ContactUsForm: SFC<FormProps> = ({ ClassName }) => {
     const InitialValues: Contact = {
@@ -22,7 +22,7 @@ export const ContactUsForm: SFC<FormProps> = ({ ClassName }) => {
         //const response = await axios.
          const name = `${values.Firstname} ${values.Lastname}`
         // send an email here
-        const response = await axios.post(`${BASE_URL}/send-email/contact`, {To:values.Email, Subject:`New Inquiry: ${name}`, Message:values.Message})
+        const response = await axios.post(`https://portfolio-1-u5dn.onrender.com/api/v1/send-email/contact`, {To:values.Email, Subject:`New Inquiry: ${name}`, Message:values.Message})
         if (response.data.data)  displayToast(response.data?.message, ToastType.success);
       } catch (error: any) {
         displayToast(error.message, ToastType.error);

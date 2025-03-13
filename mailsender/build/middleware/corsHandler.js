@@ -4,8 +4,9 @@ exports.corsHandler = void 0;
 // Define a whitelist of allowed origins
 const allowedOrigins = [
     "http://127.0.0.1:5173",
+    "http://localhost:4173",
     "http://localhost:5173",
-    "https://www.markdinglasa.com/",
+    "https://www.markdinglasa.com",
 ];
 const corsHandler = (req, res, next) => {
     const origin = req.header("origin");

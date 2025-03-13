@@ -5,10 +5,9 @@ type RequestHandler = (req: Request, res: Response, next: NextFunction) => any;
 // Define a whitelist of allowed origins
 const allowedOrigins = [
   "http://127.0.0.1:5173",
+  "http://localhost:4173",
   "http://localhost:5173",
-  "https://www.markdinglasa.com/",
   "https://www.markdinglasa.com",
-  "https://www.markdinglasa.com/contacts",
 ];
 
 export const corsHandler: RequestHandler = (
