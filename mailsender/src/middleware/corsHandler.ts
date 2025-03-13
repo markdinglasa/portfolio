@@ -19,7 +19,7 @@ export const corsHandler: RequestHandler = (
 
   // Allow only whitelisted origins
   if (origin && allowedOrigins.includes(origin)) {
-    res.header("Access-Control-Allow-Origin", origin);
+    res.header("Access-Control-Allow-Origin", "https://www.markdinglasa.com");
     res.header("Vary", "Origin");
   }
 

@@ -12,7 +12,7 @@ const corsHandler = (req, res, next) => {
     const origin = req.header("origin");
     // Allow only whitelisted origins
     if (origin && allowedOrigins.includes(origin)) {
-        res.header("Access-Control-Allow-Origin", origin);
+        res.header("Access-Control-Allow-Origin", "https://www.markdinglasa.com");
         res.header("Vary", "Origin");
     }
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Auth-Provider");
