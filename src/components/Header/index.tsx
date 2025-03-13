@@ -23,7 +23,7 @@ export const Header: SFC = ({ClassName}) => {
                         <S.Divider className="md:w-1/2 w-full flex md:justify-start justify-center items-center">
                             <S.Span className={`text-[${colors.primary}] uppercase cursor-pointer`} onClick={()=>navigate(RouteChannel.INDEX)}>Mark Dinglasa.</S.Span>
                         </S.Divider>
-                        <S.Divider className=" w-full md:w-1/2 md:justify-end justify-center flex items-end ">
+                        <S.Divider className=" w-full md:w-1/2 md:justify-end justify-center flex md:items-end items-center">
                             <Navigation Links={links} Active={activePage} OnClick={(text) => setActivePage(text)} />
                         </S.Divider>
                     </S.Divider>

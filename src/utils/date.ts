@@ -24,7 +24,7 @@ export const formatDate = (isoDateString: string) => {
         const hr = String(date.getHours() + 1).padStart(2, '0');
         const min = String(date.getMinutes()).padStart(2, '0');
         const sec = String(date.getSeconds()).padStart(2, '0');
-        return `${year}-${month}-${day} ${hr}:${min}:${sec}`;
+        return `${year}${month}${day}${hr}${min}${sec}`;
     } catch (error: any) {
         displayToast(error.message, ToastType.error)
     }

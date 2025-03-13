@@ -5,8 +5,9 @@ import { CustomButton, Footer, SkillsDisplay } from "../../components";
 import { ServicePage } from "../Services";
 import Resume from '../../assets/pdf/Resume.pdf'
 import { useNavigate } from "react-router-dom";
+import { formatDate } from "../../utils";
 export const HomePage: SFC = ({ ClassName }) => {
-    const currentDate = new Date().getUTCDate();
+    const currentDate = formatDate(new Date().toString());
     const navigate = useNavigate();
 
     return (
@@ -51,10 +52,10 @@ export const HomePage: SFC = ({ ClassName }) => {
                    <SkillsDisplay/>
                 </S.Content>
             </S.Container>
-            <S.Container className="w-full h-full max-w-full">
+            <S.Container className="w-full h-full max-w-full border-red">
                 <ServicePage />
             </S.Container>
-            <S.Container className="w-full flex items-center justify-center pb-4 max-w-full">
+            <S.Container className="w-full flex items-center justify-center pb-[1rem] md:px-0 px-[1rem]  max-w-full">
                 <Footer/>
             </S.Container>
         

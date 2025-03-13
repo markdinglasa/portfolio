@@ -25,7 +25,7 @@ export const Navigation: SFC<PageBreadCrumbsProps> = ({ Links = [], Active, OnCl
 
     return (
         <div className={twMerge('w-full flex flex-row  items-end')}>
-            <Breadcrumbs aria-label="breadcrumb" className="w-full mb-2 md:mb-0 flex items-end justify-end" separator={<span style={{ color: '#9c9c9c' }}>/</span>}>
+            <Breadcrumbs aria-label="breadcrumb" className="w-full mb-2 md:mb-0 flex md:items-end items-center md:justify-end justify-center" separator={<span style={{ color: '#9c9c9c' }}>/</span>}>
                 {renderLinks()}
             </Breadcrumbs>
         </div>
