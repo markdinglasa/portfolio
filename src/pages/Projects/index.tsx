@@ -1,6 +1,7 @@
 import { SFC } from "../../types";
 import * as S from '../../styles'
 import { cn } from "../../utils";
+import { memo } from "react";
 
 export const ProjectPage : SFC = ({ClassName}) => {
     return (
@@ -18,3 +19,4 @@ export const ProjectPage : SFC = ({ClassName}) => {
         </>
     )
 }
+export default memo(ProjectPage)

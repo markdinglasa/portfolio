@@ -6,12 +6,14 @@ import { ServicePage } from "../Services";
 import Resume from '../../assets/pdf/Resume.pdf'
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../utils";
+import { memo } from "react";
+
 export const HomePage: SFC = ({ ClassName }) => {
     const currentDate = formatDate(new Date().toString());
     const navigate = useNavigate();
 
     return (
-        <S.Container className={twMerge(`bg-[#161616] text-[#9C9C9C] overflow-hidden w-full h-full overflow-x-hidden box-border`, ClassName)}>
+        <S.Container className={twMerge(`overflow-hidden w-full h-full overflow-x-hidden box-border`, ClassName)}>
             <S.Container className="w-full h-full max-w-full">
                 <S.Content className="flex flex-row py-40 flex-wrap">
                     <S.Divider className="w-full flex justify-center items-center max-w-full">
@@ -52,7 +54,7 @@ export const HomePage: SFC = ({ ClassName }) => {
                    <SkillsDisplay/>
                 </S.Content>
             </S.Container>
-            <S.Container className="w-full h-full max-w-full border-red">
+            <S.Container className="w-full h-full max-w-full">
                 <ServicePage />
             </S.Container>
             <S.Container className="w-full flex items-center justify-center pb-[1rem] md:px-0 px-[1rem]  max-w-full">
@@ -63,3 +65,5 @@ export const HomePage: SFC = ({ ClassName }) => {
     );
 };
 //<EmailIcon /><a href="mailto:ryanmark.dinglasa%40gmail.com" className="ml-3">ryanmark.dinglasa@gmail.com</a>
+
+export default memo(HomePage)

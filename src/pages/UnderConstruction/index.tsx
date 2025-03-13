@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { SFC } from "../../types";
 import * as S from '../../styles'
+import { memo } from "react";
 
 export const UnderConstruction: SFC = () => {
     const navigate = useNavigate();
@@ -25,3 +26,4 @@ export const UnderConstruction: SFC = () => {
         </>
       );
     }
+    export default memo(UnderConstruction)

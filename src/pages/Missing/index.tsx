@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { SFC } from "../../types";
 import * as S from '../../styles'
+import { memo } from "react";
 
 export const MissingPage : SFC = () => {
     const navigate = useNavigate()
@@ -28,3 +29,4 @@ export const MissingPage : SFC = () => {
         </>
     )
 }
+export default memo(MissingPage)

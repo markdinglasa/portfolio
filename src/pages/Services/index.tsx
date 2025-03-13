@@ -6,6 +6,8 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import ComputerIcon from '@mui/icons-material/Computer';
 import DevicesIcon from '@mui/icons-material/Devices';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import { memo } from "react";
+
 export const ServicePage : SFC = ({ClassName}) => {
     return (
         <>
@@ -28,3 +30,4 @@ export const ServicePage : SFC = ({ClassName}) => {
         </>
     )
 }
+export default memo(ServicePage)
