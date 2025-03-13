@@ -49,7 +49,7 @@ export const CustomInput: SFC<InputProps> = ({
         </InputLabel>
 
         <OutlinedInput
-          className={cn("text-slate-100", ClassName)}
+          className={cn("text-salte-100 ", ClassName)}
           name={name}
           placeholder={placeholder}
           disabled={disabled}

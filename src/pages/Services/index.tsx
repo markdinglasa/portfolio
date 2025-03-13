@@ -17,7 +17,7 @@ export const ServicePage : SFC = ({ClassName}) => {
                        <S.Span className="text-[30px]">Connect with me to turn ideas into impactful solutions.</S.Span>
                    </S.Divider>
                    <S.Divider className="title text-2lg text-center mb-20">
-                       <h1>Services</h1>
+                       <h1 className="font-bold uppercase text-zinc-400 text-[45px] flex md:flex-row flex-col text-center break-words">S e r v i c e s</h1>
                    </S.Divider>
                    <S.Divider className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-start items-start gap-[1rem]  ">
                        <ServiceCard Icon={<PhoneAndroidIcon/>} Title="Mobile Application" Description="Building mobile applications that combine seamless functionality with an exceptional user experience."/>

@@ -154,7 +154,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex items-center justify-center pb-[1rem] md:px-0 px-[1rem]  max-w-full">
+                <div className="w-full flex items-center justify-center pb-[1rem] max-w-full">
                     <Footer/>
                 </div>
             </div>
