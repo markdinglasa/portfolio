@@ -7,5 +7,7 @@ export interface Crumbs {
 export interface PageBreadCrumbsProps {
     Links: Array<Crumbs>;
     Active: string;
+    IsActive?:boolean
+    OnClick?: (text: string) => void
     
 }

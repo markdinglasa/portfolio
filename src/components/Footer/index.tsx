@@ -12,7 +12,7 @@ export const Footer : SFC = ({ClassName}) => {
     const [show, toggleShow] = useToggle(false)
     return (
         <>
-            <S.Container className={cn("p-3 rounded-lg border border-gray-100/30 flex justify-between items-center w-full md:w-10/12", ClassName)}>
+            <S.Container className={cn("p-3 rounded-lg border border-gray-100/30 flex md:flex-row flex-col justify-between items-center w-full md:w-10/12", ClassName)}>
                 <S.Span className="text-sm text-[#9C9C9C]">Mark Dinglasa &copy; 2025 All rights reserved </S.Span>
                 <S.Divider className=" w-full md:w-1/2 md:justify-end justify-center flex  ">
                     <CustomIconButton 

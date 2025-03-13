@@ -12,7 +12,7 @@ export interface ServiceCardProps {
 export const ServiceCard : SFC<ServiceCardProps> = ({ClassName, Icon, Title, Description}) => {
     return (
         <>
-            <S.Container className={cn("relative md:w-[300px] rounded-lg border border-gray-100/30 p-3 hover:border-[#E9C6A9] transition duration-300 ease-in-out", ClassName)}>
+            <S.Container className={cn("relative md:w-[298px] rounded-lg border border-gray-100/30 p-3 hover:border-[#E9C6A9] transition duration-300 ease-in-out", ClassName)}>
                 <S.Content className="mt-20 pointer-events-none">
                     <S.Divider className="w-full flex flex-row items-center">
                         {Icon}

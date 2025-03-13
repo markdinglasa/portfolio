@@ -8,12 +8,12 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  scrollbar-color: #888 #161616; /* For Firefox */
 }
 
 :root {
     --font-roboto: "Roboto Slab", serif;
-    --font-raleway: "Raleway", sans-serif;
-    
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
