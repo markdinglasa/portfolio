@@ -37,8 +37,11 @@ export const AboutPage: SFC = ({ ClassName }) => {
     return (
         <>
             <div className={cn("w-full flex flex-col items-center justify-center px-[1rem]",ClassName)}>
+                <div className="w-full md:w-10/12 flex flex-col items-center justify-center mt-[50px] h-full pt-10">
+                    <h1 className="text-primary text-[45px]  font-black uppercase h-18">A b o u t &nbsp; M a r k</h1>
+                </div>
                 <div className="w-full md:w-10/12 flex flex-col items-center justify-center mt-[50px]  h-full">
-                    <div className="w-full pt-10 pb-[1rem]">
+                    <div className="w-full pb-[1rem]">
                         <div className="w-full text-white h-fit rounded-lg border border-gray-100/30 p-5">
                             <div className="flex md:flex-row flex-col items-center justify-center gap-[1rem]">
                                 <div className="md:w-2/12 ">
