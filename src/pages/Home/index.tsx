@@ -30,7 +30,7 @@ export const HomePage: SFC = ({ ClassName }) => {
                                     Designing intuitive user experiences and engineering, scalable software solutions to bring ideas to life.
                                 </S.Span>
                             </S.Divider>
-                            <S.Divider className="flex justify-center items-center mt-10 flex-row p-2 w-full md:w-4/6 text-center gap-2 max-w-full">
+                            <S.Divider className="flex justify-center items-center mt-10 flex-row p-2 w-full md:w-4/6 text-center gap-[1rem] max-w-full">
                                 <CustomButton text="Projects" color="primary" morph={false} variant={ButtonVariant.contained} onClick={() => navigate(RouteChannel.PROJECTS)} />
                                 <CustomButton
                                     text="CV"
