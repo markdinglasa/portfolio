@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { SFC } from "../../types";
 import CheckIcon from '@mui/icons-material/Check';
+import React from 'react'
 
 export interface WorkExperience {
     CompanyLogo: string
@@ -25,15 +26,14 @@ export const WorkExperience : SFC<WorkExperience> = ({CompanyLogo, CompanyName, 
                                     <div className="w-full border-b border-gray-100/30 pb-[1rem]">
                                         <span className="text-sm text-[#9C9C9C]">{CompanyName}</span> 
                                     </div>
-                                    {Skills.map((record) => {
+                                    {Skills.map((record, index) => {
                                        return (
-                                       <>
-                                        <div className="w-full flex flex-row gap-[1rem] py-2">
-                                        <CheckIcon className="text-[#9C9C9C] " fontSize="small"/>
-                                        <span className="text-sm text-[#9C9C9C]">{record}
-                                        </span> 
-                                    </div>
-                                       </>
+                                       <React.Fragment key={index}>
+                                            <div className="w-full flex flex-row gap-[1rem] py-2">
+                                                <CheckIcon className="text-[#9C9C9C] " fontSize="small"/>
+                                                <span className="text-sm text-[#9C9C9C]">{record}</span> 
+                                            </div>
+                                       </React.Fragment>
                                        )
                                     })}
                                     
