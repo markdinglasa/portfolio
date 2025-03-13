@@ -144,7 +144,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                             <WorkExperience CompanyLogo={Rococo} CompanyName="Rococo Global Technologies Corporation  - Remote Internship" ExclusiveDates="January 2023 - May 2023" JobTitle="Software Developer" 
                                 Skills={[
                                 'Develop new application using ServiceNow Studio.',
-                                'mplement and optimize Workflows, Business Rules, Client Scripts, UI Policies, and UI Actions.',
+                                'Implement and optimize Workflows, Business Rules, Client Scripts, UI Policies, and UI Actions.',
                                 'Create and maintain Service Catalog items, Order Guides, and Record Producers.', 
                                 'Configure and support ITSM processes in ServiceNow.',
                                 'Implement ServiceNow ITOM solutions to monitor and automate system alerts.',

@@ -59,7 +59,7 @@ export const CustomInput: SFC<InputProps> = ({
           onClick={onClick}
           value={value}
           sx={{
-            color: colors.palette.neutral['050'],
+            color: colors.palette.neutral['100'],
             borderRadius: 2,
             width: "100%",
             border:'1px solid #585959'
