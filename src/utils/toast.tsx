@@ -11,7 +11,7 @@ export const displayToast = (message: ReactNode, type: ToastType, className?: st
     </Toast>,
     {
       style:{
-        background:(type === ToastType.error)?`${colors.palette.red['400']}`:`${colors.palette.green['400']}`,
+        background:`${colors.primary}`,
         padding:'0px'
       },
       closeButton: false

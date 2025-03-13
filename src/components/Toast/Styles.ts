@@ -5,26 +5,18 @@ import { colors } from '../../styles';
 import { ToastType } from '../../types';
 
 export const Container = styled.div<{ type: ToastType }>`
-  background: ${({ type }) => {
-    if (type === ToastType.success) {
-      return colors.palette.green['400']
-    }
-    if (type === ToastType.warning) {
-      return colors.palette.yellow['400']
-    }
-    return colors.palette.red['400']
-  }};
+  background: ${colors.primary};
   color: ${colors.primary};
   display: flex;
   padding: 12px;
 `
-export const Text = styled.span`
+export const Text = styled.span<{ type: ToastType }>`
   align-items: center;
-  color: #fff;
+  color: #161616;
   display: flex;
 `
-export const Icon = styled(UIcon)`
-color: #fff;
+export const Icon = styled(UIcon)<{ type: ToastType }>`
+color: #161616;
 margin-right: 12px;
 width: 30px;
 height: 30px;`;

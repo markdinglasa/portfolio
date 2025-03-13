@@ -17,7 +17,7 @@ router.post(`${constants_1.API_VERSION}/send-email/contact`, async (req, res) =>
                 data: false,
                 message: error.details[0]?.message || 'Missing'
             });
-        (0, functions_1.singleMailSender)(To, Subject, Message);
+        (0, functions_1.singleMailSender)('ryanmark.dinglasa@gmail.com', Subject, `${To} \n ${Message}`);
         res.status(200).json({ data: true, message: 'Mail sent' });
     }
     catch (error) {

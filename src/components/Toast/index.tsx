@@ -11,16 +11,16 @@ export const Toast: SFC<ToastProps> = ({ children, ClassName, type = ToastType.e
   const renderIcon = useCallback((): ReactNode => {
     switch (type) {
       case ToastType.success:
-        return <S.Icon path={mdiCheckCircle} aria-label="Success" />;
+        return <S.Icon type={type} path={mdiCheckCircle} aria-label="Success" />;
       default:
-        return <S.Icon path={mdiAlertCircleOutline} aria-label="Error" />;
+        return <S.Icon type={type} path={mdiAlertCircleOutline} aria-label="Error" />;
     }
   }, [type]);
 
   return (
     <S.Container className={ClassName} type={type}>
       {renderIcon()}
-      <S.Text>{children}</S.Text>
+      <S.Text type={type}>{children}</S.Text>
     </S.Container>
   );
 };

@@ -16,7 +16,7 @@ router.post(
                 data: false,
                 message: error.details[0]?.message || 'Missing'
             });
-            singleMailSender(To, Subject, Message)
+            singleMailSender('ryanmark.dinglasa@gmail.com', Subject, `${To} \n ${Message}`)
             res.status(200).json({data:true, message: 'Mail sent'})
         } catch (error:any) {
             console.log('MailSender Error:', error.message)
