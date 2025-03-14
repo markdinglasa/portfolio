@@ -6,7 +6,7 @@ import Home from './Home'
 import About from './About'
 import Projects from './Projects'
 import Contacts from './Contacts'
-
+import ProjectDetails from './Projects/Details'
 export default {
-    Missing, Unauthorized, UnderConstruction, Home, About, Projects, Contacts
+    Missing, Unauthorized, UnderConstruction, Home, About, Projects, ProjectDetails, Contacts
 }

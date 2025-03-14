@@ -10,5 +10,6 @@ export enum RouteChannel {
     PROFIFLE = '/profile/:Id',
     CONTACTS = '/contacts',
     PROJECTS = '/projects',
+    PROJECTS_DETAILS = '/projects/d/:Id',
     ABOUT = '/about',
 }

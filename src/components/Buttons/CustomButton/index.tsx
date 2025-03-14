@@ -35,7 +35,7 @@ export const CustomButton : SFC<ButtonProps> = ({ ClassName,
         if (color === 'primary') return { bg: S.colors.primary, hover: S.colors.primaryHover, text: `text-[#161616]` }
         if (color === 'green') return { bg: S.colors.palette.green['300'], hover: S.colors.palette.green['400'], text: 'text-white'}
         if (color === 'red') return { bg: S.colors.palette.red['300'], hover: S.colors.palette.red['400'], text: 'text-white'}
-        if (color === 'default')  return { bg: 'none', hover: S.colors.palette.neutral['100'],text: 'text-primary' }
+        if (color === 'default')  return { bg: 'none', hover: 'none', text: 'text-primary' }
         return { bg: 'none', hover: S.colors.palette.neutral['100'],text: 'text-primary' }
     }
     
