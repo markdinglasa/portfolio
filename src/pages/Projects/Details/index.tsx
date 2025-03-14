@@ -1,12 +1,10 @@
 import { memo } from "react";
-import {RouteChannel, SFC } from "../../../types";
+import { SFC } from "../../../types";
 import { cn } from "../../../utils";
 import { Footer } from "../../../components";
-import DefaultImage from '../../assets/images/default-image.jpg'
-
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 export const ProjectDetailsPage: SFC = ({ ClassName }) => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const {Id} = useParams<{Id:string}>()
     return (
         <>
