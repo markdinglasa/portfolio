@@ -11,6 +11,7 @@ import Himsog from '../../assets/images/himsog-banner.jpg'
 import Lingua from '../../assets/images/lingua-banner.jpg'
 import Iskalar from '../../assets/images/iskalar-banner.png'
 import Philsca from '../../assets/images/philsca-banner.jpg'
+
 export const ProjectPage: SFC = ({ ClassName }) => {
     const navigate = useNavigate()
     return (

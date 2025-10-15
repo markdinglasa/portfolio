@@ -1,23 +1,53 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import { resolve, dirname } from 'path'
+import { visualizer } from 'rollup-plugin-visualizer';
 import react from '@vitejs/plugin-react-swc'
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 export default defineConfig({
   assetsInclude: ['src/assets/**'],
   resolve: {
     alias: {
-      '@components': resolve(__dirname, 'src/components'),
-      '@constants': resolve(__dirname, 'src/constants'),
-      '@containers': resolve(__dirname, 'src/containers'),
-      '@hooks': resolve(__dirname, 'src/hooks'),
-      '@modals': resolve(__dirname, 'src/modals'),
-      '@pages': resolve(__dirname, 'src/pages'),
-      '@selectors': resolve(__dirname, 'src/selectors'),
-      '@store': resolve(__dirname, 'src/store'),
-      '@styles': resolve(__dirname, 'src/styles'),
-      '@types': resolve(__dirname, 'src/types'),
-      '@utils': resolve(__dirname, 'src/utils'),
-      '@validators': resolve(__dirname, 'src/validators'),
-    }
+      '@': resolve(__dirname, './src'),
+    },
   },
-  plugins: [react()],
+  server: {
+    port: 3000,
+  },
+  preview: {
+    port: 3000,
+  },
+  plugins: [react(), visualizer(),],
+  build: {
+    rollupOptions: {
+      external: ['bcrypt', ],
+      output: {
+        experimentalMinChunkSize: 80000,
+        manualChunks: {
+          lodash: ['lodash'],
+          react: ['react-router-dom', 'react-to-print', ],
+          
+          mui: [
+            '@mui/material',
+            '@mui/icons-material',
+            '@emotion/react',
+            '@emotion/styled',
+            '@emotion/is-prop-valid',
+          ],
+          uuid: ['uuid'],
+          cache: ['localforage'],
+          validator: ['yup'],
+          reactQuery: ['@tanstack/react-query'],
+          mdi: ['@mdi/js', '@mdi/react'],
+          echarts: ['echarts'],
+          htmlPdf: ['html2pdf'],
+          forms: ['formik'],
+          styles: ['postcss', 'tailwind-merge', 'styled-components'],
+          
+        },
+      },
+    },
+  },
 })

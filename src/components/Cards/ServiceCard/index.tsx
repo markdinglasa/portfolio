@@ -1,28 +1,79 @@
 import { SFC } from "../../../types";
-import * as S from '../../../styles'
-import { cn } from "../../../utils";
-import { ReactNode } from "react";
+import * as S from "../../../styles";
+import { memo, ReactNode } from "react";
+
+import { Card, Content, Back, BackContent } from "./Styles";
+import { Skeleton } from "@mui/material";
 
 export interface ServiceCardProps {
-    Icon: ReactNode
-    Title: string
-    Description:string
+  Icon: ReactNode;
+  Title: string;
+  Description: string;
 }
 
-export const ServiceCard : SFC<ServiceCardProps> = ({ClassName, Icon, Title, Description}) => {
+export const ServiceCardSkeleton = () => {
+  return (
+    <>
+      <Card>
+        <Content>
+          <Back>
+            <BackContent>
+              <S.Divider className="w-full flex flex-row items-center">
+                <Skeleton
+                  animation="wave"
+                  variant="circular"
+                  width={"2.5rem"}
+                  height={"2.5rem"}
+                />
+                <S.Span className="ml-2 text-gray-100/70">
+                  <Skeleton
+                    animation="wave"
+                    variant="circular"
+                    width={"1.5rem"}
+                  />
+                </S.Span>
+              </S.Divider>
+              <S.Divider className="w-full mt-5 flex flex-col">
+                <Skeleton
+                  animation="wave"
+                  variant="circular"
+                  width={"1.5rem"}
+                />
+                <Skeleton
+                  animation="wave"
+                  variant="circular"
+                  width={"1.5rem"}
+                />
+              </S.Divider>
+            </BackContent>
+          </Back>
+        </Content>
+      </Card>
+    </>
+  );
+};
+export const ServiceCard: SFC<ServiceCardProps> = memo(
+  ({ ClassName, Icon, Title, Description }) => {
     return (
-        <>
-            <S.Container className={cn("relative w-full h-fit rounded-lg border border-gray-100/30 p-3  hover:border-[#E9C6A9] transition duration-300 ease-in-out", ClassName)}>
-                <S.Content className="mt-20 pointer-events-none">
-                    <S.Divider className="w-full flex flex-row items-center">
-                        {Icon}
-                        <S.Span className="ml-2 text-gray-100/70">{Title}</S.Span>
-                    </S.Divider>
-                    <S.Divider className="w-full mt-5 ">
-                        <p className="text-secondary text-sm ">{Description}</p>
-                    </S.Divider>
-                </S.Content>
-            </S.Container>
-        </>
-    )
-}
+      <>
+        <Card className={ClassName}>
+          <Content className="w-full">
+            <Back className="w-full">
+              <BackContent className="w-full">
+                <S.Divider className="w-full flex flex-row items-center">
+                  {Icon}
+                  <S.Span className="ml-2 text-gray-100/70 ">{Title}</S.Span>
+                </S.Divider>
+                <S.Divider className="w-full mt-5 ">
+                  <p className="text-secondary text-base ">{Description}</p>
+                </S.Divider>
+              </BackContent>
+            </Back>
+          </Content>
+        </Card>
+      </>
+    );
+  }
+);
+
+export default ServiceCard;

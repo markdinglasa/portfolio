@@ -1,13 +1,15 @@
+import { ReactNode } from "react";
+
 export interface Crumbs {
-    Text: string;
-    OnClick?(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void; // Change to anchor element
-    Href?:string
+  Text: string;
+  OnClick?(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void; // Change to anchor element
+  Href?: string;
+  Icon: ReactNode;
 }
 
 export interface PageBreadCrumbsProps {
-    Links: Array<Crumbs>;
-    Active: string;
-    IsActive?:boolean
-    OnClick?: (text: string) => void
-    
+  Links: Array<Crumbs>;
+  Active: string;
+  IsActive?: boolean;
+  OnClick?: (text: string) => void;
 }
