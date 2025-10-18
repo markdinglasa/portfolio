@@ -28,11 +28,11 @@ export const Skill: SFC<Skill> = ({ ClassName, Logo, Name }) => {
   return (
     <div
       className={cn(
-        " rounded-lg w-fit p-3 flex items-center gap-[1rem] hover:bg-[#9C9C9C]/10 duration-300 ease-in-out",
+        " rounded-lg w-fit p-3 flex items-center gap-[1rem]  hover:bg-slate-100/10 duration-300 ease-linear",
         ClassName
       )}
     >
-      {Logo && <img src={Logo} className="w-[2rem] h-[2rem] text-slate-100" />}
+      {Logo && <img src={Logo} className="w-[2rem] h-[2rem] " />}
       <span className="text-sm">{Name}</span>
     </div>
   );

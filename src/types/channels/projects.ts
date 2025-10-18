@@ -1,0 +1,15 @@
+export enum PROJECT {
+  ATTENDANCE_MONITORING_SYSTEM = "attendance-monitoring-system",
+  STUDENT_INFORMATION_MANAGEMENT_SYSTEM = "student-information-management-system",
+  LIBRARY_MANAGEMENT_SYSTEM = "library-management-system",
+  ISKALAR = "iskalar",
+  LINGUA = "lingua",
+  GRADE_MANAGEMENT_SYSTEM = "grade-management-system",
+  INNOSOFT_POINT_OF_SALES_SYSTEM = "innosoft-point-of-sales",
+  INNOSOFT_TICKET_MANAGEMENT_SYSTEM = "innosoft-ticket-management-system",
+  INNOSOFT_SALES_INSIGHT_AND_ANALYTICS = "innosoft-sales-insight-and-analytics",
+  ROOTS_AND_MORPHOLOGY = "roots-and-morphology-app",
+  CONNEX = "connex",
+  HIMSOG = "himsog",
+  SECRET_PARFUM = "secret-parfum",
+}

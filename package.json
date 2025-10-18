@@ -43,6 +43,7 @@
     "react-to-print": "^3.0.1",
     "react-toastify": "^10.0.5",
     "react-youtube": "^10.1.0",
+    "roman-numerals-converter-lib": "^1.0.11",
     "styled-components": "^6.1.12",
     "ts-node": "^10.9.2",
     "uuid": "^13.0.0",

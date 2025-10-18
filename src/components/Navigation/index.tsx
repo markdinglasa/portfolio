@@ -11,7 +11,6 @@ export const Navigation: SFC<PageBreadCrumbsProps> = ({
     return Links.map((link, index) => (
       <Link
         key={index}
-        underline="hover"
         color="inherit"
         onClick={(e) => {
           if (link.OnClick) link.OnClick(e);

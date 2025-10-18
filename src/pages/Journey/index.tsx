@@ -55,7 +55,7 @@ export const HeroParallax = memo(
     return (
       <div
         ref={ref}
-        className="w-full  h-[340vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+        className="w-full h-[340vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
       >
         <div>
           <Header />
@@ -69,7 +69,7 @@ export const HeroParallax = memo(
           }}
           className=""
         >
-          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20 overflow-visible">
             {firstRow.map((product) => (
               <ProductCard
                 product={product}
@@ -78,7 +78,7 @@ export const HeroParallax = memo(
               />
             ))}
           </motion.div>
-          <motion.div className="flex flex-row  mb-20 space-x-20 ">
+          <motion.div className="flex flex-row  mb-20 space-x-20 overflow-visible ">
             {secondRow.map((product) => (
               <ProductCard
                 product={product}
@@ -87,7 +87,7 @@ export const HeroParallax = memo(
               />
             ))}
           </motion.div>
-          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+          <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 overflow-visible">
             {thirdRow.map((product) => (
               <ProductCard
                 product={product}
@@ -104,16 +104,20 @@ export const HeroParallax = memo(
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full scrollbar-none  h-fit  left-0 top-0">
-      <span className="text-slate-100/70 text-5xl md:text-7xl font-bold  overflow-hidden">
-        Building the Future,
-        <br /> One Project at a Time
-      </span>
-      <p className="max-w-2xl text-lg md:text-xl mt-8 ">
-        A curated collection of software I’ve engineered throughout my career.
-        Merging design and development to craft exceptional digital experiences
-        using the latest technologies.
-      </p>
+    <div className="w-full items-center justify-center flex">
+      <div className="w-full md:w-10/12">
+        <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full scrollbar-none  h-fit  left-0 top-0">
+          <span className="text-slate-100/70 text-5xl md:text-7xl font-bold  overflow-hidden">
+            Building the Future,
+            <br /> One Project at a Time
+          </span>
+          <p className="max-w-2xl text-lg md:text-xl mt-8 ">
+            A curated collection of software I’ve engineered throughout my
+            career. Merging design and development to craft exceptional digital
+            experiences using the latest technologies.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

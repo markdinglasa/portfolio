@@ -1,7 +1,0 @@
-#BACKEND
-node_modules/
-.env
-/certs
-/coverage/
-package-lock.json
-requests.rest

@@ -50,7 +50,7 @@ export const SkillData = [
   },
   {
     logo: JS,
-    name: "HTML",
+    name: "JavaScript",
   },
   {
     logo: TS,

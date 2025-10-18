@@ -7,6 +7,7 @@ import { useSidebar } from "@/hooks";
 import HomeIcon from "@mui/icons-material/Home";
 import BadgeIcon from "@mui/icons-material/Badge";
 import TopicIcon from "@mui/icons-material/Topic";
+
 export const Header: SFC = ({ ClassName }) => {
   const navigate = useNavigate();
   const { activeMenu, setActiveMenu } = useSidebar();
@@ -33,10 +34,15 @@ export const Header: SFC = ({ ClassName }) => {
   //const [activePage, setActivePage] = useState<string>('Home')
   return (
     <>
-      <S.Container className={cn(" absolute z-100 border", ClassName)}>
-        <S.Content className="bottom-0 sm:bottom-0 md:top-0 lg:top-0 shadow-lg w-full py-2 justify-center items-center fixed z-10 px-4">
-          <S.Divider className="w-full justify-center flex flex-row">
-            <S.Divider className="border border-slate-100/10 bg-zinc-900/90 justify-center flex items-center md:p-2 md:px-[2rem] rounded-full md:w-fit w-full">
+      <S.Container
+        className={cn(
+          "absolute border -bottom-[44rem]  md:top-0 z-100 ",
+          ClassName
+        )}
+      >
+        <S.Content className=" w-full py-2 justify-center items-center fixed z-10 px-4">
+          <S.Divider className=" justify-center flex flex-row">
+            <S.Divider className="shadow-lg border border-slate-100/10 bg-zinc-900/90 justify-center flex items-center md:p-2 md:px-[2rem] rounded-full md:w-fit w-full">
               <Navigation
                 Links={links}
                 Active={activeMenu}

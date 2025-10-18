@@ -10,8 +10,8 @@ import WorkExperience from "../../components/WorkExperience";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import Skill, { SkillSkeleton } from "../../components/Skill";
 
-import { Footer } from "../../components";
 import { SkillData } from "@/constants";
+import { GlareCard } from "../../components/Cards/GlareCard";
 export const AboutPage: SFC = ({ ClassName }) => {
   return (
     <>
@@ -25,53 +25,81 @@ export const AboutPage: SFC = ({ ClassName }) => {
           <h1 className="text-primary text-[45px]  font-black uppercase h-18 text-center">
             A b o u t
           </h1>
+          <div className="flex justify-center items-center flex-col p-2 w-full md:w-4/6 text-center">
+            <span className="text-[20px] break-words">
+              Build with intention, design with empathy, and code with
+              precision.
+            </span>
+          </div>
         </div>
-        <div className="w-full md:w-10/12 flex flex-col items-center justify-center mt-[50px]  h-full">
+        <div className="w-full md:w-10/12 flex flex-col items-center justify-center mt-[50px]  rounded-md h-full">
           <div className="w-full pb-[1rem]">
-            <div className="w-full text-white h-fit rounded-lg border border-gray-100/30 p-5 bg-slate7-100/10">
-              <div className="flex md:flex-row flex-col items-center justify-center gap-[1rem]">
-                <div className="md:w-2/12 ">
-                  <img
-                    src={ProfileImage}
-                    className="rounded-full w-[10rem] border-2 border-[#161616] duration-300 ease-in-out hover:border-[#E9C6A9] "
-                  />
+            <div className="w-full text-white h-fit rounded-lg bg-[# ] p-[1rem]">
+              <div className="flex md:flex-row flex-col items-center justify-center gap-[1rem] ">
+                <div className="relative overflow-visible">
+                  <GlareCard className="shadow-md">
+                    <div className="w-full h-full z-10 relative">
+                      <img
+                        src={ProfileImage}
+                        className="w-full h-full duration-300 ease-in-out hover:border-[#E9C6A9] "
+                      />
+                    </div>
+                  </GlareCard>
                 </div>
-                <div className="flex flex-col w-10/12 gap-[1rem] items-start justify-center">
+                <div className="flex flex-col w-full  gap-[1rem] items-start justify-center p-5 text-sm text-[#9C9C9C] text-justify">
                   <span className="text-lg text-slate-100">
                     Hi, I'm Mark—a passionate developer ready to bring your
                     ideas to life.
                   </span>
-                  <span className="text-sm text-slate-100/80 text-justify">
-                    A Full Stack Developer with 3+ years of experience
+                  <span>
+                    A <b> Full Stack Developer</b> with 3+ years of experience
                     specializing in frontend and backend development. Passionate
                     about building web application, mobile application and
                     desktop application, contributing to open source, and
                     continuously learning to new trends and technologies.
                   </span>
+                  <span>
+                    My journey began with a simple curiosity about how
+                    technology shapes human experiences — and that curiosity
+                    evolved into a career dedicated to building products that
+                    matter.
+                  </span>
+                  <span>
+                    Over the years, I’ve worked on diverse projects — from
+                    small-scale tools to full-scale platforms — each one
+                    teaching me how to design for performance, usability, and
+                    scalability.
+                  </span>
+                  <span>
+                    If you’re looking for someone who can transform ideas into
+                    meaningful digital experiences, let’s build something
+                    amazing together.
+                  </span>
+                </div>
+              </div>
+              <div className="w-full pb-[1rem]">
+                <div className="w-full text-white h-fit rounded-lg ">
+                  {/*<div className="flex p-3 mb-[1rem] flex-row gap-4 items-center justify-start">
+                    <AutoFixHighIcon
+                      className="text-slate-100 "
+                      fontSize="medium"
+                    />
+                    <span className="text-lg">Skills</span>
+                  </div>*/}
+                  <div className="flex w-full flex-wrap  h-full">
+                    {SkillData.map((data, index) => (
+                      <Fragment key={index}>
+                        <Suspense fallback={<SkillSkeleton />}>
+                          <Skill Name={data.name} Logo={data?.logo} />
+                        </Suspense>
+                      </Fragment>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="w-full pb-[1rem]">
-            <div className="w-full text-white h-fit rounded-lg ">
-              <div className="flex p-3 mb-[1rem] flex-row gap-4 items-center justify-start">
-                <AutoFixHighIcon
-                  className="text-slate-100 "
-                  fontSize="medium"
-                />
-                <span className="text-lg">Skills</span>
-              </div>
-              <div className="flex w-full flex-wrap  h-full">
-                {SkillData.map((data, index) => (
-                  <Fragment key={index}>
-                    <Suspense fallback={<SkillSkeleton />}>
-                      <Skill Name={data.name} Logo={data?.logo} />
-                    </Suspense>
-                  </Fragment>
-                ))}
-              </div>
-            </div>
-          </div>
+
           <div className="w-full pb-[1rem]">
             <div className="w-full text-white h-fit rounded-lg ">
               <div className="flex p-3 mb-[1rem] flex-row gap-4 items-center justify-start">
@@ -132,9 +160,6 @@ export const AboutPage: SFC = ({ ClassName }) => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="w-full flex items-center justify-center pb-[1rem] max-w-full">
-          <Footer />
         </div>
       </div>
     </>

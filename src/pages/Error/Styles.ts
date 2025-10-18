@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
@@ -41,7 +41,7 @@ export const Text = styled.span`
   margin-top: 1.5rem;
   font-size: 1rem;
   line-height: 1.75rem;
-  color: #4b5563;
+  color: #9c9c9c;
 `;
 export const Actions = styled.div`
   margin-top: 2.5rem;
@@ -49,4 +49,5 @@ export const Actions = styled.div`
   align-items: center;
   justify-content: center;
   gap-x: 1.5rem;
+  color: #9c9c9c;
 `;

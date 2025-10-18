@@ -15,7 +15,7 @@ export const TestimonyCardSkeleton = () => {
     <>
       <div
         className={
-          "rounded-md w-11/12 md:w-[20rem] h-fit flex flex-col gap-4 bg-[#262626] p-[1rem] overflow-x-hidden justify-center items-center"
+          "rounded-md w-11/12 md:w-[20rem] h-fit flex flex-col gap-4 bg-[#212227] p-[1rem] overflow-x-hidden justify-center items-center"
         }
       >
         <div className="w-full flex flex-row gap-4 items-center">
@@ -47,7 +47,7 @@ export const Testimony: SFC<TestimonyProps> = memo(
       <>
         <div
           className={cn(
-            "rounded-md w-[20rem] h-fit flex flex-col gap-4 bg-[#262626] p-[1rem] overflow-x-hidden justify-center items-center",
+            "rounded-md w-[20rem] h-fit flex flex-col gap-4 bg-[#212227] p-[1rem] overflow-x-hidden justify-center items-center",
             ClassName
           )}
         >

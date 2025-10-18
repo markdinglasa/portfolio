@@ -2,7 +2,7 @@ import { SFC } from "../../../types";
 import * as S from "../../../styles";
 import { memo, ReactNode } from "react";
 
-import { Card, Content, Back, BackContent } from "./Styles";
+import { Card, Content, Back, BackContent, ProjectType } from "./Styles";
 import { Skeleton } from "@mui/material";
 
 export interface ServiceCardProps {
@@ -60,12 +60,12 @@ export const ServiceCard: SFC<ServiceCardProps> = memo(
           <Content className="w-full">
             <Back className="w-full">
               <BackContent className="w-full">
-                <S.Divider className="w-full flex flex-row items-center">
+                <S.Divider className="mt-[4rem] w-full flex flex-row items-center gap-2 justify-start h-[4rem]">
                   {Icon}
-                  <S.Span className="ml-2 text-gray-100/70 ">{Title}</S.Span>
+                  <ProjectType>{Title}</ProjectType>
                 </S.Divider>
-                <S.Divider className="w-full mt-5 ">
-                  <p className="text-secondary text-base ">{Description}</p>
+                <S.Divider className="w-full">
+                  <p className="text-white text-base ">{Description}</p>
                 </S.Divider>
               </BackContent>
             </Back>

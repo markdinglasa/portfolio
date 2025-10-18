@@ -2,6 +2,7 @@ export enum RouteChannel {
   INDEX = "/",
   R403 = "unauthorized",
   R404 = "*",
+  NOT_FOUND = "/not-found",
   FORGOT_PASSWORD = "/forgot-password",
   SIGN_UP = "/sign-up",
   DASHBOARD = "/a",

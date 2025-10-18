@@ -1,20 +1,18 @@
 import { ButtonVariant, RouteChannel, SFC } from "../../types";
 import * as S from "../../styles";
 import { twMerge } from "tailwind-merge";
-import { CustomButton, Footer, Skeleton } from "../../components";
+import { CustomButton, Skeleton } from "../../components";
 import MailIcon from "@mui/icons-material/Mail";
-
 import Resume from "../../assets/pdf/Resume.pdf";
 import { useNavigate } from "react-router-dom";
 import { formatDate } from "../../utils";
-import { Fragment, lazy, memo, Suspense } from "react";
-import { TestimonyCardSkeleton } from "@/components/Cards/TestimonyCard";
-import { JourneyData, TestimoniesData } from "@/constants";
-import Marquee from "react-fast-marquee";
+import { lazy, memo, Suspense } from "react";
+import { JourneyData } from "@/constants";
+import { DevelopmentProcedurePanel } from "./procedure-panel";
 
-const Testimony = lazy(() => import("@/components/Cards/TestimonyCard"));
 const ServicePage = lazy(() => import("../Services"));
 const HeroParallax = lazy(() => import("../Journey"));
+const Testimonial = lazy(() => import("../Testimonial"));
 
 export const HomePage: SFC = ({ ClassName }) => {
   const currentDate = formatDate(new Date().toString());
@@ -28,8 +26,8 @@ export const HomePage: SFC = ({ ClassName }) => {
       )}
     >
       <S.Container className="w-full h-full max-w-full">
-        <S.Content className="flex flex-row py-40 flex-wrap mt-[3rem]">
-          <S.Divider className="w-full flex justify-center items-center max-w-full">
+        <S.Content className="flex flex-row py-40 flex-wrap mt-[3rem] ">
+          <S.Divider className="w-full flex justify-center items-center max-w-full ">
             <S.Divider className="w-full flex flex-col justify-center items-center max-w-full">
               <S.Divider className="w-full items-center flex justify-center max-w-full">
                 <h1 className="font-bold uppercase text-zinc-400 text-[2.5rem] md:text-[3rem] flex md:flex-row flex-col text-center break-words">
@@ -82,37 +80,20 @@ export const HomePage: SFC = ({ ClassName }) => {
           <ServicePage />
         </Suspense>
       </S.Container>
-      <S.Container className="w-full flex items-center justify-center mb-[13rem] py-5 ">
+      <S.Container>
+        <Suspense fallback={<Skeleton />}>
+          <DevelopmentProcedurePanel />
+        </Suspense>
+      </S.Container>
+      <S.Container className="w-full flex items-center justify-center py-5">
         <Suspense fallback={<Skeleton />}>
           <HeroParallax products={JourneyData} />
         </Suspense>
       </S.Container>
-      <S.Container className="py-5 flex flex-col justify-center items-center">
-        <S.Divider className="flex justify-center items-center flex-col p-2 w-full md:w-4/6 text-center">
-          <S.Span className="text-[30px]">
-            Stories of Success, Trust, and Satisfaction
-          </S.Span>
-        </S.Divider>
-        <S.Divider className="title text-2lg text-center mb-20">
-          <h1 className="font-bold uppercase text-zinc-400  text-[2.5rem] md:text-[3rem] flex md:flex-row flex-col text-center break-words">
-            T e s t i m o n i a l s
-          </h1>
-        </S.Divider>
-        <Marquee className="overflow-hidden flex items-center w-full justify-between">
-          {TestimoniesData.map((data, index) => (
-            <Fragment key={index}>
-              <Suspense fallback={<TestimonyCardSkeleton />}>
-                <Testimony
-                  ClassName={"w-11/12 md:w-[20rem] mr-4"}
-                  image={data.image}
-                  name={data.name}
-                  message={data.message}
-                  project={data.project}
-                />
-              </Suspense>
-            </Fragment>
-          ))}
-        </Marquee>
+      <S.Container className="w-full flex items-center justify-center py-5">
+        <Suspense fallback={<Skeleton />}>
+          <Testimonial />
+        </Suspense>
       </S.Container>
       <S.Container className="flex items-center justify-center mt-[13rem] p-4 md:p-0">
         <div className="w-full md:w-10/12  h-fit ">
@@ -132,9 +113,6 @@ export const HomePage: SFC = ({ ClassName }) => {
             </div>
           </div>
         </div>
-      </S.Container>
-      <S.Container className="mt-[10rem] w-full flex items-center justify-center pb-[1rem] md:px-0 px-[1rem]  max-w-full">
-        <Footer />
       </S.Container>
     </S.Container>
   );

@@ -29,6 +29,7 @@ export const AppRouter = createBrowserRouter(
       <Route
         path={RouteChannel.PROJECTS_DETAILS}
         element={<Page.ProjectDetails />}
+        ErrorBoundary={ErrorPage}
       />
       {/*<Route
         path={RouteChannel.CONTACTS}

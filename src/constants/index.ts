@@ -6,3 +6,4 @@ export * from "./testimonies";
 export * from "./journey";
 export * from "./services";
 export * from "./skill";
+export * from "./development-procedure";
