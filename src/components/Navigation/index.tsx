@@ -20,15 +20,16 @@ export const Navigation: SFC<PageBreadCrumbsProps> = ({
           cursor: link.OnClick ? "pointer" : "default",
           color: Active === link.Text ? "#E9C6A9" : "#9c9c9c",
           textDecorationLine: "none",
+          textTransform: "capitalize",
         }}
       >
         <div className="hidden md:block">
           <Typography>{link.Text}</Typography>
         </div>
-        <div className="block md:hidden no-underline">
-          <div className="no-underline flex flex-col justify-center items-center  rounded-full  w-[3rem] h-[3rem]">
+        <div className="block md:hidden ">
+          <div className=" flex flex-col justify-center items-center  rounded-full  w-[3rem] h-[3rem]">
             {link.Icon}
-            <span className="text-[9px] no-underline ">{link.Text}</span>
+            <span className="text-[9px]  capitalize">{link.Text}</span>
           </div>
         </div>
       </Link>
@@ -36,10 +37,10 @@ export const Navigation: SFC<PageBreadCrumbsProps> = ({
   };
 
   return (
-    <div className={twMerge("w-full flex flex-row  items-end no-underline")}>
+    <div className={twMerge("w-full flex flex-row  items-end ")}>
       <Breadcrumbs
         aria-label="breadcrumb"
-        className="w-full mb-2 md:mb-0 flex md:items-end items-center md:justify-end justify-center no-underline"
+        className="w-full mb-2 md:mb-0 flex md:items-end items-center md:justify-end justify-center "
         separator={
           <span className="hidden md:block" style={{ color: "#9c9c9c" }}>
             |

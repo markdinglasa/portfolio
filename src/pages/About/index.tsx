@@ -3,15 +3,15 @@ import { SFC } from "../../types";
 import { cn } from "../../utils";
 
 import ProfileImage from "/image/mark-dinglasa.png";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import Innosoft from "../../assets/images/innosoft-logo2.png";
 import Rococo from "../../assets/images/rococo.png";
 import WorkExperience from "../../components/WorkExperience";
-import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import Skill, { SkillSkeleton } from "../../components/Skill";
 
 import { SkillData } from "@/constants";
 import { GlareCard } from "../../components/Cards/GlareCard";
+import ClientCounter from "./counter";
+
 export const AboutPage: SFC = ({ ClassName }) => {
   return (
     <>
@@ -34,8 +34,24 @@ export const AboutPage: SFC = ({ ClassName }) => {
         </div>
         <div className="w-full md:w-10/12 flex flex-col items-center justify-center mt-[50px]  rounded-md h-full">
           <div className="w-full pb-[1rem]">
-            <div className="w-full text-white h-fit rounded-lg bg-[# ] p-[1rem]">
-              <div className="flex md:flex-row flex-col items-center justify-center gap-[1rem] ">
+            <div className="w-full text-white h-fit rounded-lg ">
+              <div className="flex md:flex-row flex-col items-center justify-center gap-[5rem] md:py-[5rem]">
+                <div className="flex flex-col w-full  gap-[1rem] items-start justify-center p-5 text-md text-[#9C9C9C] text-">
+                  <span className="text-3xl text-slate-100 overflow-visible">
+                    Hi, I'm Mark—a passionate developer ready to bring your
+                    ideas to life.
+                  </span>
+                  <span>
+                    A <b> Full Stack Developer</b> with 3+ years of experience
+                    specializing in frontend and backend development.
+                  </span>
+                  <span>
+                    Passionate about building <b>Web Application</b>,
+                    <b> Mobile Application</b> and <b>Desktop Application</b>,
+                    contributing to open source, and continuously learning to
+                    new trends and technologies.
+                  </span>
+                </div>
                 <div className="relative overflow-visible">
                   <GlareCard className="shadow-md">
                     <div className="w-full h-full z-10 relative">
@@ -46,29 +62,18 @@ export const AboutPage: SFC = ({ ClassName }) => {
                     </div>
                   </GlareCard>
                 </div>
-                <div className="flex flex-col w-full  gap-[1rem] items-start justify-center p-5 text-sm text-[#9C9C9C] text-justify">
-                  <span className="text-lg text-slate-100">
-                    Hi, I'm Mark—a passionate developer ready to bring your
-                    ideas to life.
+                <div className="flex flex-col w-full  gap-[1rem] items-start justify-center p-5 text-md text-[#9C9C9C] text-">
+                  <span>
+                    My career started with a basic interest in how technology
+                    affects people's lives, which developed into a profession
+                    focused on creating meaningful things.
                   </span>
                   <span>
-                    A <b> Full Stack Developer</b> with 3+ years of experience
-                    specializing in frontend and backend development. Passionate
-                    about building web application, mobile application and
-                    desktop application, contributing to open source, and
-                    continuously learning to new trends and technologies.
-                  </span>
-                  <span>
-                    My journey began with a simple curiosity about how
-                    technology shapes human experiences — and that curiosity
-                    evolved into a career dedicated to building products that
-                    matter.
-                  </span>
-                  <span>
-                    Over the years, I’ve worked on diverse projects — from
-                    small-scale tools to full-scale platforms — each one
-                    teaching me how to design for performance, usability, and
-                    scalability.
+                    I have worked on a variety of projects over the years,
+                    ranging from small-scale tools to large-scale platforms, all
+                    of which have taught me how to design for{" "}
+                    <b> scalability</b>,<b> performance</b>, and{" "}
+                    <b> usability</b>.
                   </span>
                   <span>
                     If you’re looking for someone who can transform ideas into
@@ -77,15 +82,29 @@ export const AboutPage: SFC = ({ ClassName }) => {
                   </span>
                 </div>
               </div>
-              <div className="w-full pb-[1rem]">
+              <div className="flex flex-wrap items-center justify-evenly py-[5rem]">
+                <ClientCounter
+                  label="Years of Software Development"
+                  initialTarget={3}
+                />
+                <ClientCounter initialTarget={60} />
+                <ClientCounter initialTarget={12} label="Systems Built" />
+              </div>
+              <div className="w-full pb-[1rem] my-[10rem]">
                 <div className="w-full text-white h-fit rounded-lg ">
-                  {/*<div className="flex p-3 mb-[1rem] flex-row gap-4 items-center justify-start">
-                    <AutoFixHighIcon
-                      className="text-slate-100 "
-                      fontSize="medium"
-                    />
-                    <span className="text-lg">Skills</span>
-                  </div>*/}
+                  <div className="flex p-3 mb-[1rem] flex-col gap-4 items-center justify-center">
+                    <span className="text-3xl overflow-visible">
+                      My Development Arsenal: Tools Forged in Practice
+                    </span>
+                    <span className="text-md text-[#9C9C9C] text-center">
+                      I've gained proficiency in these technologies through
+                      practical application rather than merely studying them.
+                      <br />
+                      Each one is a reliable tool that I use to transform
+                      difficult challenges into elegant, efficient solutions.
+                    </span>
+                  </div>
+
                   <div className="flex w-full flex-wrap  h-full">
                     {SkillData.map((data, index) => (
                       <Fragment key={index}>
@@ -102,12 +121,18 @@ export const AboutPage: SFC = ({ ClassName }) => {
 
           <div className="w-full pb-[1rem]">
             <div className="w-full text-white h-fit rounded-lg ">
-              <div className="flex p-3 mb-[1rem] flex-row gap-4 items-center justify-start">
-                <BusinessCenterIcon
-                  className="text-slate-100 "
-                  fontSize="medium"
-                />
-                <span className="text-lg">Work History</span>
+              <div className="flex p-3 flex-col gap-4 items-center justify-center mb-[5rem]">
+                <span className="text-3xl overflow-visible">
+                  My Professional Journey: Building Solutions & Growing
+                  Expertise
+                </span>
+                <span className="text-md text-[#9C9C9C] text-center">
+                  My career path is a story of continuous evolution—from writing
+                  my first lines of code to architecting full-stack solutions.
+                  Each role has been a chapter in developing not just my
+                  technical skills, but my ability to solve real business
+                  problems.
+                </span>
               </div>
               <div className="flex w-full flex-col h-full">
                 <WorkExperience

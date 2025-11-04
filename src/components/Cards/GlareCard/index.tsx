@@ -1,5 +1,5 @@
 import { cn } from "@/utils";
-import { useRef } from "react";
+import { HTMLAttributes, useRef } from "react";
 
 export const GlareCard = ({
   children,
@@ -37,20 +37,7 @@ export const GlareCard = ({
     "--radius": "1.5rem",
     "--easing": "ease",
     "--transition": "var(--duration) var(--easing)",
-  } as any;
-
-  const backgroundStyle = {
-    "--step": "5%",
-    "--foil-svg": `url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.99994 3.419C2.99994 3.419 21.6142 7.43646 22.7921 12.153C23.97 16.8695 3.41838 23.0306 3.41838 23.0306' stroke='white' stroke-width='5' stroke-miterlimit='3.86874' stroke-linecap='round' style='mix-blend-mode:darken'/%3E%3C/svg%3E")`,
-    "--pattern": " center/100% no-repeat",
-    "--rainbow":
-      "repeating-linear-gradient( 0deg,red calc(var(--step) * 1),red calc(var(--step) * 2),rgba(168,255,95,1) calc(var(--step) * 3),rgba(131,255,247,1) calc(var(--step) * 4),rgba(120,148,255,1) calc(var(--step) * 5),rgb(216,117,255) calc(var(--step) * 6),rgb(255,119,115) calc(var(--step) * 7) ) 0% var(--bg-y)/200% 700% no-repeat",
-    "--diagonal":
-      "repeating-linear-gradient( 128deg,#0e152e 0%,hsl(180,10%,60%) 3.8%,hsl(180,10%,60%) 4.5%,hsl(180,10%,60%) 5.2%,#0e152e 10%,#0e152e 12% ) var(--bg-x) var(--bg-y)/300% no-repeat",
-    "--shade":
-      "radial-gradient( farthest-corner circle at var(--m-x) var(--m-y),rgba(255,255,255,0.1) 12%,rgba(255,255,255,0.15) 20%,rgba(255,255,255,0.25) 120% ) var(--bg-x) var(--bg-y)/300% no-repeat",
-    backgroundBlendMode: "hue, hue, hue, overlay",
-  };
+  } as unknown;
 
   const updateStyles = () => {
     if (refElement.current) {
@@ -65,8 +52,8 @@ export const GlareCard = ({
   };
   return (
     <div
-      style={containerStyle}
-      className="relative isolate overflow-visible [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[220px] [aspect-ratio:17/21]"
+      style={containerStyle as HTMLAttributes<HTMLDivElement>}
+      className="relative isolate overflow-visible [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]"
       ref={refElement}
       onPointerMove={(event) => {
         const rotateFactor = 0.4;

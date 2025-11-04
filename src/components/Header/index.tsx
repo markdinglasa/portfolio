@@ -14,20 +14,20 @@ export const Header: SFC = ({ ClassName }) => {
   const links = [
     {
       Icon: <HomeIcon />,
-      Text: "Home",
+      Text: "home",
       OnClick: () => {
         navigate(RouteChannel.INDEX);
       },
     },
     {
       Icon: <TopicIcon />,
-      Text: "Projects",
+      Text: "projects",
       OnClick: () => navigate(RouteChannel.PROJECTS),
     },
     // { Text: "Contacts", OnClick: () => navigate(RouteChannel.CONTACTS) },
     {
       Icon: <BadgeIcon />,
-      Text: "About",
+      Text: "about",
       OnClick: () => navigate(RouteChannel.ABOUT),
     },
   ];

@@ -6,7 +6,7 @@ export const TestimoniesData: TestimonyProps[] = [
     name: "Jea Marielle",
     message: "Thank you so much, mark, for your dedication and patience. ☺️",
     project: "Student Information Management System",
-  },
+  }, // 30
   {
     image: "/image/joseph.jpg",
     name: "Joseph Kerwin",
@@ -24,7 +24,7 @@ export const TestimoniesData: TestimonyProps[] = [
     name: "Grant",
     message: "Thank you kaayu boss",
     project: "Lingua - Sign Language App",
-  },
+  }, //3
   {
     image: "/image/jaylord.jpg",
     name: "Jaylord",
