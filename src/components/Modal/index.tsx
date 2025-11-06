@@ -1,8 +1,8 @@
-import { mdiClose } from '@mdi/js';
-import { createPortal } from 'react-dom';
-import { ModalProps, SFC } from '../../types';
-import { Icon } from '../Icon';
-import * as S from './Styles';
+import { mdiClose } from "@mdi/js";
+import { createPortal } from "react-dom";
+import { ModalProps, SFC } from "../../types";
+import { Icon } from "../icon";
+import * as S from "./Styles";
 
 export const Modal: SFC<ModalProps> = ({
   children,
@@ -11,19 +11,32 @@ export const Modal: SFC<ModalProps> = ({
   disableOverlayClick = false,
   footer,
   header,
-  isPopUp = true
+  isPopUp = true,
 }) => {
   const renderCloseBtn = () => {
-    return isPopUp? <Icon icon={mdiClose} onClick={close} size={16} role="button"  aria-label="Close modal" /> : null
-  }
+    return isPopUp ? (
+      <Icon
+        icon={mdiClose}
+        onClick={close}
+        size={16}
+        role="button"
+        aria-label="Close modal"
+      />
+    ) : null;
+  };
   return createPortal(
     <>
       <S.Overlay
-        className=' z-0 '
+        className=" z-0 "
         onClick={disableOverlayClick ? undefined : close}
         aria-hidden="true"
       />
-      <S.Modal className={ClassName} role="dialog" aria-modal="true" aria-labelledby="modal-header">
+      <S.Modal
+        className={ClassName}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-header"
+      >
         <S.Header id="modal-header">
           <span>{header}</span>
           {renderCloseBtn()}
@@ -32,6 +45,6 @@ export const Modal: SFC<ModalProps> = ({
         {footer && <>{footer}</>}
       </S.Modal>
     </>,
-    document.getElementById('modal-root')!
+    document.getElementById("modal-root")!
   );
 };

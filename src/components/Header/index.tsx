@@ -1,7 +1,6 @@
 import { RouteChannel, SFC } from "../../types";
-import * as S from "../../styles/Styles";
 import { cn } from "../../utils";
-import { Navigation } from "../Navigation";
+import { Navigation } from "../naivgation";
 import { useNavigate } from "react-router-dom";
 import { useSidebar } from "@/hooks";
 import HomeIcon from "@mui/icons-material/Home";

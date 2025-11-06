@@ -1,5 +1,4 @@
-import { ProjectType } from "@/components/Cards/ProjectCard";
-import { PROJECT } from "@/types";
+import { PROJECT, ProjectType } from "@/types";
 
 type ProjectStatus = "Done" | "Underconstruction";
 interface Project {
@@ -27,6 +26,7 @@ interface Project {
     className: string;
   }[];
 }
+
 export const JourneyData: Project[] = [
   {
     id: 2,
@@ -487,7 +487,7 @@ export const JourneyData: Project[] = [
     link: `/projects/d/${PROJECT.ATTENDANCE_MONITORING_SYSTEM}`,
     thumbnail: "/image/default-image.jpg",
     description: "Attendance Monitoring System with Face detection",
-    timeframe: "December 2022 - January 2023",
+    timeframe: "November 2022 - January 2023",
     techStack: [
       "PHP",
       "Javascript",
@@ -501,11 +501,44 @@ export const JourneyData: Project[] = [
     stages: [
       {
         stage: 1,
-        title: "",
-        objective: "",
+        title: "The Discovery:",
+        image: "/image/pexels-cottonbro-6803551.jpg",
+        objective:
+          "To move beyond the initial idea and understand the real human problem we needed to solve.",
+        details: [],
+      },
+      {
+        stage: 2,
+        title: "The Strategy: Architecting the Blueprint Against the Clock",
+        objective:
+          "To craft a robust, scalable plan that balanced their ambitious vision with a demanding deadline.",
+        image: "/image/pexels-cottonbro-3201781.jpg",
+        details: [],
+      },
+      {
+        stage: 3,
+        title: "The Build: Precision Under Pressure",
+        objective:
+          "To transform our carefully crafted blueprint into a robust, functional platform while navigating unexpected challenges.",
+        image: "/image/pexels-pluyar-924676.jpg",
+        details: [],
+      },
+      {
+        stage: 4,
+        title: "The Final Mile:",
+        objective:
+          "To ensure a reliable system, successful adoption, and empower the client for long-term success.",
+        image: "/image/pexels-thisisengineering-3862149.jpg",
+        details: [],
+      },
+      {
+        stage: 5,
+        title: "Epilogue: ",
+        image: "/image/pexels-j-mt_photography-628996-3680094.jpg",
         details: [],
       },
     ],
+
     demo: [
       {
         title: "Brief demo",

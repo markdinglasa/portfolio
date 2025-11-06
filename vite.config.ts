@@ -22,13 +22,10 @@ export default defineConfig({
   plugins: [react(), visualizer()],
   build: {
     rollupOptions: {
-      external: ["bcrypt"],
       output: {
         experimentalMinChunkSize: 80000,
         manualChunks: {
-          lodash: ["lodash"],
-          react: ["react-router-dom", "react-to-print"],
-
+          react: ["react-router-dom"],
           mui: [
             "@mui/material",
             "@mui/icons-material",
@@ -36,14 +33,9 @@ export default defineConfig({
             "@emotion/styled",
             "@emotion/is-prop-valid",
           ],
-          uuid: ["uuid"],
-          cache: ["localforage"],
-          validator: ["yup"],
+          //cache: ["localforage"],
           reactQuery: ["@tanstack/react-query"],
           mdi: ["@mdi/js", "@mdi/react"],
-          echarts: ["echarts"],
-          htmlPdf: ["html2pdf"],
-          forms: ["formik"],
           styles: ["postcss", "tailwind-merge", "styled-components"],
           uitls: ["roman-numerals-converter-lib"],
         },

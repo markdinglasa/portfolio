@@ -1,11 +1,9 @@
-import Missing from "./Missing";
-import Unauthorized from "./Unauthorized";
-import UnderConstruction from "./UnderConstruction";
-import Home from "./Home";
-import About from "./About";
-import Projects from "./Projects";
-import Contacts from "./Contacts";
-import ProjectDetails from "./Projects/Details";
+import Missing from "./missing-page";
+import Unauthorized from "./unauthorized-page";
+import UnderConstruction from "./under-construction-page";
+import Home from "./home-page";
+import About from "./about-page";
+import Projects from "./project-page";
 
 export default {
   Missing,
@@ -14,6 +12,4 @@ export default {
   Home,
   About,
   Projects,
-  ProjectDetails,
-  Contacts,
 };
