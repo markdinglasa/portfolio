@@ -1,4 +1,3 @@
-export * from "./menu";
 export * from "./modal";
 export * from "./toast";
 export * from "./page-breadcrumbs";
@@ -9,3 +8,4 @@ export * from "./root-layout";
 export * from "./footer";
 export * from "./naivgation";
 export * from "./inputs";
+export * from "./menu";

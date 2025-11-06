@@ -1,4 +1,4 @@
-import { MenuProps, SFC } from "../../types";
+import { MenuProps, SFC } from "@/types";
 import * as S from "./Styles";
 
 export const Menu: SFC<MenuProps> = ({ icon, label, onClick }) => {
