@@ -8,4 +8,3 @@ export * from "./root-layout";
 export * from "./footer";
 export * from "./naivgation";
 export * from "./inputs";
-export * from "./menu";
