@@ -21,7 +21,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
           ClassName
         )}
       >
-        <div className="w-full md:w-10/12 flex flex-col items-center justify-center mt-[50px] h-full pt-10">
+        <div className="w-full md:w-10/12  md:py-0 flex flex-col items-center justify-center mt-[50px] h-full pt-10">
           <h1 className="text-primary text-[45px]  font-black uppercase h-18 text-center">
             A b o u t
           </h1>
@@ -37,7 +37,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
             <div className="w-full text-white h-fit rounded-lg ">
               <div className="flex md:flex-row flex-col items-center justify-center gap-[5rem] md:py-[5rem]">
                 <div className="flex flex-col w-full  gap-[1rem] items-start justify-center p-5 text-md text-[#9C9C9C] text-">
-                  <span className="text-3xl text-slate-100 overflow-visible">
+                  <span className="text-3xl  overflow-visible font-[550]">
                     Hi, I'm Mark—a passionate developer ready to bring your
                     ideas to life.
                   </span>
@@ -82,7 +82,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                   </span>
                 </div>
               </div>
-              <div className="flex flex-wrap items-center justify-evenly py-[5rem]">
+              <div className="flex flex-col md:flex-row gap-[1rem] items-center justify-evenly py-[5rem]">
                 <ClientCounter
                   label="Years of Software Development"
                   initialTarget={3}
@@ -93,7 +93,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
               <div className="w-full pb-[1rem] my-[10rem]">
                 <div className="w-full text-white h-fit rounded-lg ">
                   <div className="flex p-3 mb-[1rem] flex-col gap-4 items-center justify-center">
-                    <span className="text-3xl overflow-visible">
+                    <span className="text-3xl overflow-visible text-center">
                       My Development Arsenal: Tools Forged in Practice
                     </span>
                     <span className="text-md text-[#9C9C9C] text-center">
@@ -105,7 +105,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                     </span>
                   </div>
 
-                  <div className="flex w-full flex-wrap  h-full">
+                  <div className="flex w-full flex-wrap h-full items-center justify-center">
                     {SkillData.map((data, index) => (
                       <Fragment key={index}>
                         <Suspense fallback={<SkillSkeleton />}>
@@ -122,7 +122,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
           <div className="w-full pb-[1rem]">
             <div className="w-full text-white h-fit rounded-lg ">
               <div className="flex p-3 flex-col gap-4 items-center justify-center mb-[5rem]">
-                <span className="text-3xl overflow-visible">
+                <span className="text-3xl overflow-visible text-center">
                   My Professional Journey: Building Solutions & Growing
                   Expertise
                 </span>

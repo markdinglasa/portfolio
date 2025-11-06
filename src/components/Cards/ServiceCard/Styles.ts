@@ -4,7 +4,7 @@ export const Card = styled.div`
   overflow: visible;
   width: 100%;
   height: 20rem;
-  border-radius: 0.375rem;
+  border-radius: 20px;
   transition: ease-in-out 0.3s;
 `;
 export const Content = styled.div`
@@ -12,7 +12,7 @@ export const Content = styled.div`
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 300ms;
-  border-radius: 0.375rem;
+  border-radius: 20px;
 `;
 
 export const Back = styled.div`
@@ -21,7 +21,7 @@ export const Back = styled.div`
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border-radius: 5px;
+  border-radius: 20px;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -64,8 +64,8 @@ export const BackContent = styled.div`
   position: absolute;
   width: 99%;
   height: 99%;
-  background-color: #212227;
-  border-radius: 5px;
+  background-color: #161616;
+  border-radius: 20px;
   color: #9c9c9c;
   display: flex;
   flex-direction: column;
@@ -75,7 +75,7 @@ export const BackContent = styled.div`
   padding: 1rem;
   transition: ease-in-out 0.3s;
   &:hover {
-    color: #e9c6a9;
+    color: #e9c6a9 !important;
   }
 `;
 export const ProjectType = styled.span``;

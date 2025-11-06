@@ -36,12 +36,12 @@ export const RootLayout: SFC = ({ ClassName }) => {
         />{" "}
         {/* Radial gradient for the container to give a faded look */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-        <div className="z-10 relative h-full">
+        <div className="z-10 relative">
           <SidebarProvider>
-            <div className="relative">
-              <Header />
-            </div>
-            <MainContent className="overflow-hidden z-50">
+            <MainContent className="relative">
+              <div className="fixed z-50 bottom-20 md:top-0">
+                <Header />
+              </div>
               <Outlet />
             </MainContent>
             {isDisplay && (

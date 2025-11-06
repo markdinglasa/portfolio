@@ -47,25 +47,25 @@ export const Testimony: SFC<TestimonyProps> = memo(
       <>
         <div
           className={cn(
-            "rounded-md w-[20rem] h-fit flex flex-col gap-4 bg-[#212227] p-[1rem] overflow-x-hidden justify-center items-center",
+            "rounded-[20px] w-[20rem] h-[15rem] flex flex-col gap-4 bg-[#161616] p-[1rem] overflow-x-hidden justify-start items-center hover:text-[#e9c6a9] hover:border-[#e9c6a9] border border-slate-100/10 duration-300 ease-linear",
             ClassName
           )}
         >
-          <div className="w-full flex flex-row gap-4 items-center">
+          <div className="w-full flex flex-row gap-4 items-center overflow-visible">
             <Avatar
               src={image}
-              className="border-primary"
+              className="border-primary grayscale"
               sx={{ width: "3.5rem", height: "3.5rem" }}
             />
             <div className="flex flex-col">
               <span className="text-[1.25] font-semibold text-nowrap">
                 {name}
               </span>
-              <span className="text-[14px]">{project}</span>
+              <span className="text-[14px] text-[#9C9C9C]">{project}</span>
             </div>
           </div>
-          <div className="flex flex-wrap w-full">
-            <p className="text-balance">"{message}"</p>
+          <div className="flex text-center w-full items-center justify-center h-full">
+            <p className=" w-full text-[#9C9C9C]">"{message}"</p>
           </div>
         </div>
       </>

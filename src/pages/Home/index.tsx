@@ -70,9 +70,6 @@ export const HomePage: SFC = ({ ClassName }) => {
             </S.Divider>
           </S.Divider>
         </S.Content>
-        {/*<S.Content className="w-full bg-[#262626] flex flex-col md:flex-row justify-evenly items-center max-w-full py-5">
-                   <SkillsDisplay/>
-                </S.Content>*/}
       </S.Container>
       <S.Container></S.Container>
       <S.Container className="w-full h-full max-w-full">
@@ -80,21 +77,23 @@ export const HomePage: SFC = ({ ClassName }) => {
           <ServicePage />
         </Suspense>
       </S.Container>
-      <S.Container>
-        <Suspense fallback={<Skeleton />}>
-          <DevelopmentProcedurePanel />
-        </Suspense>
-      </S.Container>
+
       <S.Container className="w-full flex items-center justify-center py-5">
         <Suspense fallback={<Skeleton />}>
           <HeroParallax products={JourneyData} />
         </Suspense>
       </S.Container>
-      <S.Container className="w-full flex items-center justify-center py-5">
+      <S.Container className="pb-[10rem]">
+        <Suspense fallback={<Skeleton />}>
+          <DevelopmentProcedurePanel />
+        </Suspense>
+      </S.Container>
+      <S.Container className="w-full flex items-center justify-center py-[10rem]">
         <Suspense fallback={<Skeleton />}>
           <Testimonial />
         </Suspense>
       </S.Container>
+
       <S.Container className="flex items-center justify-center mt-[13rem] p-4 md:p-0">
         <div className="w-full md:w-10/12  h-fit ">
           <div className="flex w-full flex-col mb-[1rem]">

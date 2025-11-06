@@ -75,7 +75,7 @@ const ClientCounter: SFC<ClientCounterProps> = ({
   }, [animateCounter, initialTarget]);
 
   return (
-    <div className="card">
+    <div className="card border border-slate-100/10 ">
       <div className="counter-container">
         <div className="counter-wrapper">
           <div

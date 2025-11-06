@@ -107,11 +107,11 @@ export const Header = () => {
     <div className="w-full items-center justify-center flex">
       <div className="w-full md:w-10/12">
         <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full scrollbar-none  h-fit  left-0 top-0">
-          <span className="text-slate-100/70 text-5xl md:text-7xl font-bold  overflow-hidden">
+          <span className="text-[#9C9C9C] text-5xl md:text-7xl font-bold  overflow-hidden">
             Building the Future,
             <br /> One Project at a Time
           </span>
-          <p className="max-w-2xl text-lg md:text-xl mt-8 ">
+          <p className="max-w-2xl text-lg md:text-xl mt-8 text-[#9C9C9C] ">
             A curated collection of software I’ve engineered throughout my
             career. Merging design and development to craft exceptional digital
             experiences using the latest technologies.
@@ -142,14 +142,14 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0 rounded-xl"
+      className="group/product h-96 w-[30rem] relative shrink-0 rounded-[20px]"
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <img
           src={product.thumbnail}
           height="10rem"
           width="10rem"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+          className="object-cover object-left-top absolute h-full w-full inset-0 grayscale"
           alt={product.title}
         />
       </a>

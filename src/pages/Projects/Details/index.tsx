@@ -1,26 +1,15 @@
 import { memo, useEffect } from "react";
 import { PROJECT, RouteChannel, SFC } from "@/types";
 import { cn } from "@/utils";
-import toRomanNumerals from "roman-numerals-converter-lib";
 
+import toRomanNumerals from "roman-numerals-converter-lib";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { RenderIcon } from "@/components/Cards/ProjectCard";
 import { useNavigate, useParams } from "react-router-dom";
 import { JourneyData } from "@/constants";
+import { BentoGrid } from "@/components/BentoGrid";
+import { BentoGridItem } from "@/components/Cards/BentroGridItem";
 
-/*interface Tech {
-  name: string;
-  logo: string;
-}
-
-interface ProjectDetails {
-  timeframe: string;
-  projectType: ProjectType;
-  techStack: Tech[];
-  abstract: string;
-}
-// const SampleData: ProjectDetails = {};
-*/
 export const ProjectDetailsPage: SFC = ({ ClassName }) => {
   const navigate = useNavigate();
   const { Id } = useParams<{ Id: string }>();
@@ -35,6 +24,13 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
         );
 
         if (!projectExists) navigate(RouteChannel.NOT_FOUND);
+
+        const projectDone = () => {
+          const project = JourneyData.filter((data) => data.alias === Id)[0];
+          if (project.status === "Underconstruction")
+            navigate(RouteChannel.UNDERCONSTRUCTION);
+        };
+        projectDone();
       } catch (error: unknown) {
         console.log(error);
       }
@@ -44,11 +40,13 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
   }, [Id, navigate]);
 
   const project = JourneyData.filter((data) => data.alias === Id)[0];
+  if (project.status === "Underconstruction")
+    navigate(RouteChannel.UNDERCONSTRUCTION);
   return (
     <>
       <div
         className={cn(
-          "w-full h-full flex flex-col items-center justify-center px-[1rem] relative",
+          "w-full h-full flex flex-col items-center justify-start px-[1rem] relative",
           ClassName
         )}
       >
@@ -61,13 +59,13 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
             <span className="text-xl text-center">{project.description}</span>
           </div>
         </div>
-        <div className="w-full md:w-10/12 flex flex-col h-fit gap-4 mt-[1rem]  mb-[1rem] items-start bg-[#212227] rounded-md p-4">
+        <div className="w-full md:w-10/12 flex flex-col h-fit gap-4 mt-[1rem]  mb-[1rem] items-start  rounded-md p-4">
           <div className="w-full flex flex-col gap-2 items-center justify-center">
-            <div className="mb-2 text-slate-100/70 text-2xl flex capitalize gap-2">
+            <div className="mb-2 text-slate-100/70 text-2xl flex capitalize gap-2 text-center">
               <span className="">
                 Chapter {toRomanNumerals(project.id, "Vinculum")} :{" "}
+                {project.alias}
               </span>
-              <span className=""> {project.alias}</span>
             </div>
             <div className="flex flex-row gap-2 items-center text-sm ">
               <CalendarMonthIcon className="w-[10px] h-[10px] p-[2px]" />
@@ -77,23 +75,68 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
               {RenderIcon(project.projectType)}
               {project.projectType}
             </span>
-            <span className="text-sm  gap-2 flex items-center overflow-visible">
-              PHP, Javascript, HTML, CSS, Bootstrap, MySQL, JQuery
+            <span className="text-sm  gap-2 flex flex-wrap items-center overflow-visible justify-center">
+              {project.techStack.map((tech, index) => {
+                return <span key={index}>{tech}</span>;
+              })}
             </span>
           </div>
-          <div className="w-full flex flex-col gap-4">
-            {project.stages.map((stage) => (
-              <div>
-                <span className="text-md font-medium capitalize text-slate-100/70">
-                  {stage.title}
-                </span>
-                <div className="w-full text-sm flex flex-wrap gap-2">
-                  {stage.details.map((detail) => (
-                    <p className="text-prealign">{detail}</p>
-                  ))}
+          <div className="w-full flex flex-col gap-[10rem] mt-[10rem] mb-[10rem]">
+            {project.stages.map((stage, index) => (
+              <div
+                key={index}
+                className="flex md:flex-row flex-col justify-center items-center gap-[10rem]"
+              >
+                {stage.image && index % 2 == 0 ? (
+                  <div className="w-[20rem] h-[25rem] rounded-xl filter-">
+                    <img
+                      src={stage.image}
+                      className="w-full h-full grayscale"
+                    />
+                  </div>
+                ) : null}
+                <div className="w-full md:w-[35rem]">
+                  <span className="text-3xl font-medium capitalize text-slate-100/70">
+                    {stage.title}
+                  </span>
+                  <div className="w-full text-md flex flex-wrap gap-2">
+                    {stage.details.map((detail, index) => (
+                      <p key={index} className="text-prealign">
+                        {detail}
+                      </p>
+                    ))}
+                  </div>
                 </div>
+                {stage.image && index % 2 == 1 ? (
+                  <div className="w-[20rem] h-[25rem] rounded-xl filter-">
+                    <img
+                      src={stage.image}
+                      className="w-full h-full grayscale"
+                    />
+                  </div>
+                ) : null}
               </div>
             ))}
+            <div className="flex flex-col items-center  justify-center w-full">
+              <span className="text-3xl font-medium capitalize text-slate-100/70 h-[3rem]"></span>
+              <div className="flex w-full">
+                <BentoGrid className="max-w-5xl mx-auto md:auto-rows-[20rem] ">
+                  {Array.isArray(project?.demo) ? (
+                    project.demo.map((item, index) => (
+                      <BentoGridItem
+                        key={index}
+                        title={item.title}
+                        description={item.description}
+                        header={<img src={item.image} className="grayscale" />}
+                        className={item.className}
+                      />
+                    ))
+                  ) : (
+                    <span>test</span>
+                  )}
+                </BentoGrid>
+              </div>
+            </div>
           </div>
         </div>
       </div>

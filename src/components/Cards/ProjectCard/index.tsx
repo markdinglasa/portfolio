@@ -52,14 +52,17 @@ export const ProjectCard: SFC<ProjectCard> = ({
   // TimeFrame,
 }) => {
   return (
-    <div className="w-full p-4 rounded-lg h-[30rem] overflow-hidden hover:-mt-2  hover:shadow-xl relative bg-[#212227] duration-300 ease-linear hover:text-[#e9c6a9] text-slate-100 ">
+    <div className="w-full p-4 rounded-lg h-[30rem] overflow-hidden hover:-mt-2 hover:border-[#e9c6a9] hover:shadow-2xl relative bg-[#161616] border border-white/10 duration-300 ease-linear hover:text-[#e9c6a9] text-slate-100 ">
       <div className="mb-2">
         <span className="text-slate-100/70 ">
           Chapter {toRomanNumerals(Id, "Vinculum")}
         </span>
       </div>
       <div className="h-[60%] w-full overflow-hidden rounded-md">
-        <img src={Image} className="w-full h-full relative overflow-hidden" />
+        <img
+          src={Image}
+          className="w-full h-full relative overflow-hidden grayscale"
+        />
       </div>
       <div className="h-[40%] w-full overflow-hidden pt-3">
         <div className="w-full title flex flex-col h-full">
@@ -68,10 +71,6 @@ export const ProjectCard: SFC<ProjectCard> = ({
             {ProjectType}
           </span>
           <span className="text-lg font-medium overflow-visible">{Title}</span>
-          {/*<span className="text-[12px] font-medium items-center flex justify-start  overflow-visible pb-2 text-[#9C9C9C]">
-            <CalendarMonthIcon className="p-[3px] -ml-1" />
-            <span className="">{TimeFrame}</span>
-          </span>*/}
           <div className="overflow-hidden h-[3rem] text-[#9C9C9C]">
             {Description && (
               <span className="text-sm  ">{truncate(Description, 90)}</span>

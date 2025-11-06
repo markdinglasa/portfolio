@@ -34,24 +34,19 @@ export const Header: SFC = ({ ClassName }) => {
   //const [activePage, setActivePage] = useState<string>('Home')
   return (
     <>
-      <S.Container
-        className={cn(
-          "absolute border -bottom-[44rem]  md:top-0 z-100 ",
-          ClassName
-        )}
-      >
-        <S.Content className=" w-full py-2 justify-center items-center fixed z-10 px-4">
-          <S.Divider className=" justify-center flex flex-row">
-            <S.Divider className="shadow-lg border border-slate-100/10 bg-zinc-900/90 justify-center flex items-center md:p-2 md:px-[2rem] rounded-full md:w-fit w-full">
+      <div className={cn("", ClassName)}>
+        <div className=" w-full py-2 justify-center items-center fixed z-10 px-4">
+          <div className=" justify-center flex flex-row">
+            <div className="shadow-lg border border-slate-100/10 bg-[#161616] justify-center flex items-center md:p-2 md:px-[2rem] rounded-full md:w-fit w-full">
               <Navigation
                 Links={links}
                 Active={activeMenu}
                 OnClick={(text) => setActiveMenu(text)}
               />
-            </S.Divider>
-          </S.Divider>
-        </S.Content>
-      </S.Container>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

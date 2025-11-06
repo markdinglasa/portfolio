@@ -46,6 +46,11 @@ export const AppRouter = createBrowserRouter(
         element={<Page.Missing />}
         ErrorBoundary={ErrorPage}
       />
+      <Route
+        path={RouteChannel.UNDERCONSTRUCTION}
+        element={<Page.UnderConstruction />}
+        ErrorBoundary={ErrorPage}
+      />
     </Route>
   )
 );

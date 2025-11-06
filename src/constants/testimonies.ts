@@ -48,8 +48,7 @@ export const TestimoniesData: TestimonyProps[] = [
     name: "Dr. Lee",
     message: `Gentlemen, As a parting word,
                 I wish you well and godspeed, you picked a demanding industry for your career.
-                I saw my brother did all nighters for IBM's big computers.
-                IBM is distinguished for delivering and service. I hope you keep the good work and thank you.`,
+                I hope you keep the good work and thank you.`,
     project: "Roots and Morphology",
   },
   {

@@ -13,8 +13,8 @@ export const SidebarContext = createContext<SidebarContextType | undefined>(
 
 export const SidebarProvider: React.FC<{ children: React.ReactNode }> = memo(
   ({ children }) => {
-    const location = useLocation().pathname.replace("/", "");
-    const [activeMenu, setActiveMenu] = useState(location);
+    const location = useLocation().pathname.split("/")[1];
+    const [activeMenu, setActiveMenu] = useState(location || "home");
 
     return (
       <SidebarContext.Provider value={{ activeMenu, setActiveMenu }}>

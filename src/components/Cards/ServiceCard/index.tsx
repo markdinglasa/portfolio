@@ -65,7 +65,7 @@ export const ServiceCard: SFC<ServiceCardProps> = memo(
                   <ProjectType>{Title}</ProjectType>
                 </S.Divider>
                 <S.Divider className="w-full">
-                  <p className="text-white text-base ">{Description}</p>
+                  <p className="text-base text-[#9C9C9C]">{Description}</p>
                 </S.Divider>
               </BackContent>
             </Back>

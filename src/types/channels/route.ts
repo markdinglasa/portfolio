@@ -1,5 +1,6 @@
 export enum RouteChannel {
   INDEX = "/",
+  UNDERCONSTRUCTION = "under-construction",
   R403 = "unauthorized",
   R404 = "*",
   NOT_FOUND = "/not-found",
