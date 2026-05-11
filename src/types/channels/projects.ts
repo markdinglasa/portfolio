@@ -12,4 +12,5 @@ export enum PROJECT {
   CONNEX = "connex",
   HIMSOG = "himsog",
   SECRET_PARFUM = "secret-parfum",
+  LANDTRAX = "landtrax",
 }

@@ -10,10 +10,11 @@ const addOverlay = keyframes`
 `
 export const Content = styled.div`
   padding: 0 24px 32px;
+
 `
 export const Header = styled.div`
   align-items: center;
-  color: ${colors.palette.gray['500']};
+  color: ${colors.palette.neutral['200']};
   display: flex;
   font-size: 12px;
   font-weight: 400;
@@ -23,7 +24,7 @@ export const Header = styled.div`
   position: relative;
 `
 export const Modal = styled.div`
-  background: #fff;
+  background: #161616;
   border-radius: 8px;
   left: 50%;
   position: fixed;

@@ -1,7 +1,7 @@
 import { mdiClose } from "@mdi/js";
 import { createPortal } from "react-dom";
 import { ModalProps, SFC } from "../../types";
-import { Icon } from "../icon";
+import { Icon } from "../Icon";
 import * as S from "./Styles";
 
 export const Modal: SFC<ModalProps> = ({
@@ -38,7 +38,7 @@ export const Modal: SFC<ModalProps> = ({
         aria-labelledby="modal-header"
       >
         <S.Header id="modal-header">
-          <span>{header}</span>
+          <span className="text-lg font-medium">{header}</span>
           {renderCloseBtn()}
         </S.Header>
         <S.Content>{children}</S.Content>

@@ -1,7 +1,7 @@
 import { PROJECT, ProjectType } from "@/types";
 
-type ProjectStatus = "Done" | "Underconstruction";
-interface Project {
+export type ProjectStatus = "Done" | "Underconstruction";
+export interface Project {
   id: number;
   status: ProjectStatus;
   projectType: ProjectType;
@@ -12,6 +12,7 @@ interface Project {
   timeframe: string;
   description: string;
   techStack: string[];
+  images?:string[]
   stages: {
     stage: number;
     title: string;
@@ -202,13 +203,27 @@ export const JourneyData: Project[] = [
     id: 13,
     status: "Underconstruction",
     projectType: "Responsive Web Application",
-    title: "Secret Parfum",
-    alias: PROJECT.SECRET_PARFUM,
-    link: `/projects/d/${PROJECT.SECRET_PARFUM}`,
-    thumbnail: "/image/laravel_4.png",
-    description: "A secret scent you wont forget",
-    timeframe: "October 2025 - January 2025",
-    techStack: [],
+    title: "LandTrax",
+    alias: PROJECT.LANDTRAX,
+    link: `/projects/d/${PROJECT.LANDTRAX}`,
+    thumbnail: "/image/default-image.jpg",
+    description: "LandTrax is a premier one-stop shop service provider for property documentation and registration in the Philippines, designed to simplify the complexities of real estate transactions for clients across the country.",
+    timeframe: "November 2025 - May 2026",
+    techStack: [
+      "Next JS",
+      "Nest JS",
+      "Tanstack Query",
+      "Zod",
+      "MSSQL",
+      "TypeScript",
+      "Docker",
+      "Figma",
+      "Bedrock",
+      "AWS",
+      "S3",
+      "TypeORM",
+      "TailwindCSS"
+    ],
     stages: [
       {
         stage: 1,
@@ -497,6 +512,12 @@ export const JourneyData: Project[] = [
       "MySQL",
       "JQuery",
       "FaceIO API",
+    ],
+    images:[
+     "/image/sims-demo.gif",
+     "/image/330944402_566575652157772_1248992777909342005_n.jpg",
+     "/image/329845709_1305378640035266_6087332649173389488_n.jpg",
+     "/image/329627148_5982429585157404_8139163752903028699_n-ezgif.com-video-to-gif-converter.gif",
     ],
     stages: [
       {
