@@ -5,7 +5,7 @@ export * from "./skeletons/spinner";
 export * from "./Buttons";
 export * from "./Header";
 export * from "./root-layout";
-export * from "./footer";
+export * from "./Footer";
 export * from "./naivgation";
 export * from "./Inputs";
 export * from "./ImageCarousel";

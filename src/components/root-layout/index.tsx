@@ -1,10 +1,10 @@
 import { Bounce, ToastContainer } from "react-toastify";
 import { SFC } from "../../types";
 import { Outlet, useLocation } from "react-router-dom";
-import { Header } from "../header";
+import { Header } from "../Header";
 import { cn } from "../../utils";
 import { SidebarProvider } from "@/context/sidebar-context";
-import { Footer } from "../footer";
+import { Footer } from "../Footer";
 import "react-toastify/dist/ReactToastify.css";
 
 export const RootLayout: SFC = ({ ClassName }) => {

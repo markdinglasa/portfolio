@@ -10,7 +10,7 @@ import MailIcon from "@mui/icons-material/Mail";
 
 export const Footer: SFC = ({ ClassName }) => {
   return (
-    <>
+  
       <div
         className={cn(
           "flex items-center justify-center mt-[13rem] p-4 md:p-0 w-full",
@@ -76,6 +76,6 @@ export const Footer: SFC = ({ ClassName }) => {
           </div>
         </div>
       </div>
-    </>
+ 
   );
 };
