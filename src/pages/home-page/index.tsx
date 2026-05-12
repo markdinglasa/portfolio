@@ -19,7 +19,7 @@ export const HomePage: SFC = memo(({ ClassName }) => {
 
   const data = {
     title: "Mark Dinglasa",
-    subtitle: "Your Partner in Building your Dream",
+    subtitle: "Your partner in building your dream",
     qoute:
       "Designing intuitive user experiences and engineering, scalable software solutions to bring ideas to life.",
     actions: (

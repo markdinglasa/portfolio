@@ -10,7 +10,6 @@ interface Skill {
 
 export const SkillSkeleton = () => {
   return (
-    <>
       <div
         className={cn(
           " rounded-lg w-fit p-3 flex items-center gap-[1rem] hover:bg-[#9C9C9C]/10 duration-300 ease-in-out"
@@ -21,7 +20,6 @@ export const SkillSkeleton = () => {
           <Skeleton height={"1rem"} width={"100%"} />
         </span>
       </div>
-    </>
   );
 };
 
@@ -33,7 +31,7 @@ export const Skill: SFC<Skill> = memo(({ ClassName, Logo, Name }) => {
         ClassName
       )}
     >
-      {Logo && <img src={Logo} className="w-[2rem] h-[2rem] " />}
+      {Logo && <img alt="skills" src={Logo} className="w-[2rem] h-[2rem] " />}
       <span className="text-sm">{Name}</span>
     </div>
   );

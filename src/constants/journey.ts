@@ -208,7 +208,7 @@ export const JourneyData: Project[] = [
     link: `/projects/d/${PROJECT.LANDTRAX}`,
     thumbnail: "/image/default-image.jpg",
     description: "LandTrax is a premier one-stop shop service provider for property documentation and registration in the Philippines, designed to simplify the complexities of real estate transactions for clients across the country.",
-    timeframe: "November 2025 - May 2026",
+    timeframe: "February 2026 - June 2026",
     techStack: [
       "Next JS",
       "Nest JS",

@@ -2,10 +2,6 @@ import { memo } from "react";
 import { SFC } from "../../types";
 import { cn } from "@/utils";
 
-import CheckIcon from "@mui/icons-material/Check";
-import React from "react";
-import AdjustIcon from "@mui/icons-material/Adjust";
-
 export interface WorkExperienceProps {
   CompanyLogo: string;
   CompanyName: string;
@@ -26,44 +22,50 @@ const WorkExperience: SFC<WorkExperienceProps> = memo(
     return (
       <div
         className={cn(
-          ClassName,
-          "flex h-fit md:flex-row flex-col gap-4 relative items-start justify-start p-2 rounded-lg  duration-300 ease-in-out"
+          "rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm p-5 md:p-6 w-full",
+          "hover:border-[#e9c6a9]/20 transition-all duration-300",
+          ClassName
         )}
       >
-        <div className="w-full md:w-3/12 h-[100%] ">
-          <div className="px-3 flex flex-col md:items-end items-center justify-center">
+        {/* Header: Logo + Role */}
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-10 h-10 rounded-xl bg-white/[0.04] flex items-center justify-center flex-shrink-0 overflow-hidden">
             <img
               src={CompanyLogo}
-              className="h-[4rem] mb-[1rem] object-contain grayscale"
-              alt="innosoft"
+              className="h-7 w-7 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              alt={CompanyName}
             />
-            <div className="text-[#9C9C9C] text-sm">{ExclusiveDates}</div>
+          </div>
+          <div className="flex flex-col gap-0.5 min-w-0">
+            <span className="text-[15px] font-semibold text-white/90 leading-tight overflow-visible">
+              {JobTitle}
+            </span>
+            <span className="text-xs text-[#9C9C9C]/60 font-mono tracking-wide">
+              {CompanyName}
+            </span>
+            <span className="text-[11px] font-mono text-[#e9c6a9]/50 tracking-wider mt-1">
+              {ExclusiveDates}
+            </span>
           </div>
         </div>
-        <div className="w-full md:w-9/12 h-full flex items-start justify-start flex-col overflow-visible">
-          <div className="ml-[1.75rem] w-full">
-            <div className="w-full">
-              <span className="text-lg text-slate-100">{JobTitle}</span>
+
+        {/* Responsibilities — simple bullet list */}
+        <div className="flex flex-col gap-2 pl-1">
+          {Skills.map((record, index) => (
+            <div
+              key={index}
+              className="flex gap-3 items-start group/item"
+            >
+              <span className="text-[#e9c6a9]/30 mt-[7px] flex-shrink-0 group-hover/item:text-[#e9c6a9]/70 transition-colors duration-200">
+                <svg width="6" height="6" viewBox="0 0 6 6">
+                  <circle cx="3" cy="3" r="3" fill="currentColor" />
+                </svg>
+              </span>
+              <span className="text-[13px] text-[#9C9C9C]/60 leading-relaxed group-hover/item:text-[#9C9C9C] transition-colors duration-200">
+                {record}
+              </span>
             </div>
-            <div className="w-full border-b border-gray-100/30 pb-[1rem] ">
-              <span className="text-sm text-[#9C9C9C]">{CompanyName}</span>
-            </div>
-          </div>
-          <div className="border-l-2 pl-5 mt-5 relative  overflow-visible">
-            <div className="absolute -top-[1rem] -left-[0.8rem]  z-index-50">
-              <AdjustIcon />
-            </div>
-            {Skills.map((record, index) => {
-              return (
-                <React.Fragment key={index}>
-                  <div className="w-full flex flex-row gap-[1rem] py-2">
-                    <CheckIcon className="text-[#9C9C9C] " fontSize="small" />
-                    <span className="text-sm text-[#9C9C9C]">{record}</span>
-                  </div>
-                </React.Fragment>
-              );
-            })}
-          </div>
+          ))}
         </div>
       </div>
     );
