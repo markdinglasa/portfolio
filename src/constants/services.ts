@@ -6,26 +6,26 @@ import DesignServicesIcon from "@mui/icons-material/DesignServices";
 export const ServiceData = [
   {
     icon: PhoneAndroidIcon,
-    title: "Mobile Application",
+    title: "Mobile Solutions",
     description:
-      "Building mobile applications that combine seamless functionality with an exceptional user experience.",
+      "Engineered to deliver high-performance mobile experiences that prioritize user engagement and intuitive interaction.",
   },
   {
     icon: DevicesIcon,
-    title: "Responsive Web Application",
+    title: "Scalable Web Systems",
     description:
-      "Crafting responsive web designs that adapt beautifully to every screen and enhance user engagement.",
+      "Architecting responsive, high-availability web applications that grow with your business and ensure cross-platform consistency.",
   },
   {
     icon: ComputerIcon,
-    title: "Desktop Application",
+    title: "Enterprise Software",
     description:
-      "Delivering powerful and user-friendly desktop solutions tailored for efficiency and innovation.",
+      "Developing robust desktop applications designed for maximum efficiency, security, and seamless integration into professional workflows.",
   },
   {
     icon: DesignServicesIcon,
-    title: "UI/UX",
+    title: "Strategic UI/UX Design",
     description:
-      "Creating user-centric designs that are seamless, impactful, and delightful to experience.",
+      "Crafting data-driven, user-centric interfaces that bridge the gap between complex functionality and effortless user journeys.",
   },
 ];

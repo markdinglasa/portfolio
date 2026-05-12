@@ -42,7 +42,7 @@ export const HomePage: SFC = memo(({ ClassName }) => {
             link.download = `${currentDate}-mark-dinglasa-resume.pdf`;
             document.body.appendChild(link);
             link.click();
-            document.body.removeChild(link);
+            link.remove();
           }}
         />
       </>
