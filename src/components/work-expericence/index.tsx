@@ -6,7 +6,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import React from "react";
 import AdjustIcon from "@mui/icons-material/Adjust";
 
-interface WorkExperience {
+export interface WorkExperienceProps {
   CompanyLogo: string;
   CompanyName: string;
   ExclusiveDates: string;
@@ -14,7 +14,7 @@ interface WorkExperience {
   Skills: string[];
 }
 
-const WorkExperience: SFC<WorkExperience> = memo(
+const WorkExperience: SFC<WorkExperienceProps> = memo(
   ({
     ClassName,
     CompanyLogo,
@@ -34,7 +34,7 @@ const WorkExperience: SFC<WorkExperience> = memo(
           <div className="px-3 flex flex-col md:items-end items-center justify-center">
             <img
               src={CompanyLogo}
-              className="h-[4rem] mb-[1rem]"
+              className="h-[4rem] mb-[1rem] object-contain grayscale"
               alt="innosoft"
             />
             <div className="text-[#9C9C9C] text-sm">{ExclusiveDates}</div>

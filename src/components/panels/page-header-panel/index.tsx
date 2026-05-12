@@ -16,7 +16,7 @@ export const PageHeaderPanel: SFC<PageHeaderPanelProps> = memo(
       .map((word) => word.split("").join(" "))
       .join(" | ");
     return (
-      <>
+      
         <div className={cn("w-full h-full max-w-full", ClassName)}>
           <div className="flex flex-row py-40 flex-wrap mt-[3rem] ">
             <div className="w-full flex justify-center items-center max-w-full ">
@@ -39,7 +39,6 @@ export const PageHeaderPanel: SFC<PageHeaderPanelProps> = memo(
             </div>
           </div>
         </div>
-      </>
     );
   }
 );

@@ -5,7 +5,8 @@ import { cn } from "../../utils";
 import ProfileImage from "/image/mark-dinglasa.png";
 import Innosoft from "../../assets/images/innosoft-logo2.png";
 import Rococo from "../../assets/images/rococo.png";
-import WorkExperience from "../../components/work-expericence";
+import Questnova from "../../assets/images/questnova.png";
+import WorkExperience, { WorkExperienceProps } from "../../components/work-expericence";
 import Skill, { SkillSkeleton } from "../../components/skill-chip";
 
 import { SkillData } from "@/constants";
@@ -13,6 +14,66 @@ import { GlareCard } from "@/components/Cards/glare-card";
 import Counter from "@/components/counter";
 import { PageHeaderPanel } from "@/components/panels/page-header-panel";
 
+const WORK_EXPERIENCE_DATA:WorkExperienceProps[] = [
+    {
+    CompanyLogo: Questnova,
+    CompanyName: "Questnova Systems Corporation",
+    ExclusiveDates: "February 2026 - Present",
+    JobTitle: "Senior Full Stack Developer (Team Lead) - Project Based",
+    Skills: [
+    "Leading a team of developers in a fast-paced agile environment. Responsible for driving end-to-end application development, architecting scalable solutions, and ensuring timely delivery of high-quality software products.",
+    "Collaborates closely with cross-functional teams to translate business requirements into technical implementations while maintaining code quality, performance, and security standards. ",
+    "Demonstrated leadership in mentoring team members, streamlining development workflows, and accelerating feature delivery in rapidly evolving project demands."
+    ],
+  },
+  {
+    CompanyLogo: Innosoft,
+    CompanyName: "Innosoft Solutions Inc.",
+    ExclusiveDates: "July 2023 - February 2026",
+    JobTitle: "Full Stack Developer (Team Lead) - Full Time",
+    Skills: [
+      "Provide technical leadership and mentor interns.",
+      "Set coding standards and best practices for the development team.",
+      "Optimize front-end code for speed and accessibility.",
+      "Design and develop scalable, high-performance web applications.",
+      "Ensure responsive and cross-platform compatibility.",
+      "Build and maintain RESTful APIs",
+      "Implement authentication, authorization, and security best practices.",
+      "Develop interactive user interfaces using modern JavaScript frameworks (React, Angular)",
+      "Ensure UX/UI consistency across devices.",
+      "Create efficient, normalized database schemas that support business requirements.",
+      "Design entity-relationship models (ERD) for structured and scalable databases.",
+      "Set up automated database backups and disaster recovery plans.",
+      "Handle data migrations, transformations, and integrations between systems.",
+    ],
+  },
+  {
+      CompanyLogo: Innosoft,
+      CompanyName:"Innosoft Solutions Inc.",
+      ExclusiveDates: "February 2023 - May 2023",
+      JobTitle: "Software Developer - Internship",
+      Skills:[
+        "ERP module implementation",
+        "Support and Maintain legacy applications",
+        "Set up automated database backups for clients",
+        "Handle data migrations, transformations, and integrations from one system to another.",
+      ]
+  },
+  {
+    CompanyLogo: Rococo,
+    CompanyName:"Rococo Global Technologies Corporation",
+    ExclusiveDates: "February 2022 - June 2023",
+    JobTitle: "Software Developer - Internship",
+    Skills: [
+      "Develop new application using ServiceNow Studio.",
+      "Implement and optimize Workflows, Business Rules, Client Scripts, UI Policies, and UI Actions.",
+      "Create and maintain Service Catalog items, Order Guides, and Record Producers.",
+      "Configure and support ITSM processes in ServiceNow.",
+      "Implement ServiceNow ITOM solutions to monitor and automate system alerts.",
+      "Configure security settings, user roles, and group permissions in Access Control Lists (ACLs).",
+],
+  }
+]
 export const AboutPage: SFC = ({ ClassName }) => {
   const data = {
     title: "About",
@@ -21,7 +82,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
       "Build with intention, design with empathy, and code with precision.",
   };
   return (
-    <>
+
       <div
         className={cn(
           "w-full flex flex-col items-center justify-center px-[1rem]",
@@ -43,11 +104,11 @@ export const AboutPage: SFC = ({ ClassName }) => {
                     ideas to life.
                   </span>
                   <span>
-                    A <b> Full Stack Developer</b> with 3+ years of experience
+                    A <b> Full Stack Developer</b> with {new Date().getFullYear() - 2022}+ years of experience
                     specializing in frontend and backend development.
                   </span>
                   <span>
-                    Passionate about building <b>Web Application</b>,
+                    Passionate about building <b> Web Application</b>,
                     <b> Mobile Application</b> and <b>Desktop Application</b>,
                     contributing to open source, and continuously learning to
                     new trends and technologies.
@@ -57,6 +118,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                   <GlareCard className="shadow-md">
                     <div className="w-full h-full z-10 relative">
                       <img
+                      alt="Mark Dinglasa - Portfolio"
                         src={ProfileImage}
                         className="w-full h-full duration-300 ease-in-out hover:border-[#E9C6A9] "
                       />
@@ -77,8 +139,8 @@ export const AboutPage: SFC = ({ ClassName }) => {
                     <b> usability</b>.
                   </span>
                   <span>
-                    If you’re looking for someone who can transform ideas into
-                    meaningful digital experiences, let’s build something
+                    If you're looking for someone who can transform ideas into
+                    meaningful digital experiences, let's build something
                     amazing together.
                   </span>
                 </div>
@@ -108,7 +170,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
 
                   <div className="flex w-full flex-wrap h-full items-center justify-center">
                     {SkillData.map((data, index) => (
-                      <Fragment key={index}>
+                      <Fragment key={"skills" + index}>
                         <Suspense fallback={<SkillSkeleton />}>
                           <Skill Name={data.name} Logo={data?.logo} />
                         </Suspense>
@@ -136,59 +198,25 @@ export const AboutPage: SFC = ({ ClassName }) => {
                 </span>
               </div>
               <div className="flex w-full flex-col h-full">
-                <WorkExperience
-                  CompanyLogo={Innosoft}
-                  CompanyName="Innosoft Solutions Inc. - Full Time"
-                  ExclusiveDates="July 2023 - Present"
-                  JobTitle="Full Stack Developer - Lead Developer"
-                  Skills={[
-                    "Provide technical leadership and mentor interns.",
-                    "Set coding standards and best practices for the development team.",
-                    "Optimize front-end code for speed and accessibility.",
-                    "Design and develop scalable, high-performance web applications.",
-                    "Ensure responsive and cross-platform compatibility.",
-                    "Build and maintain RESTful APIs",
-                    "Implement authentication, authorization, and security best practices.",
-                    "Develop interactive user interfaces using modern JavaScript frameworks (React, Angular)",
-                    "Ensure UX/UI consistency across devices.",
-                    "Create efficient, normalized database schemas that support business requirements.",
-                    "Design entity-relationship models (ERD) for structured and scalable databases.",
-                    "Set up automated database backups and disaster recovery plans.",
-                    "Handle data migrations, transformations, and integrations between systems.",
-                  ]}
-                />
-                <WorkExperience
-                  CompanyLogo={Innosoft}
-                  CompanyName="Innosoft Solutions Inc. - Internship"
-                  ExclusiveDates="February 2023 - May 2023"
-                  JobTitle="Software Developer"
-                  Skills={[
-                    "ERP module implementation",
-                    "Support and Maintain legacy applications",
-                    "Set up automated database backups for clients",
-                    "Handle data migrations, transformations, and integrations from one system to another.",
-                  ]}
-                />
-                <WorkExperience
-                  CompanyLogo={Rococo}
-                  CompanyName="Rococo Global Technologies Corporation  - Remote Internship"
-                  ExclusiveDates="January 2023 - May 2023"
-                  JobTitle="Software Developer"
-                  Skills={[
-                    "Develop new application using ServiceNow Studio.",
-                    "Implement and optimize Workflows, Business Rules, Client Scripts, UI Policies, and UI Actions.",
-                    "Create and maintain Service Catalog items, Order Guides, and Record Producers.",
-                    "Configure and support ITSM processes in ServiceNow.",
-                    "Implement ServiceNow ITOM solutions to monitor and automate system alerts.",
-                    "Configure security settings, user roles, and group permissions in Access Control Lists (ACLs).",
-                  ]}
-                />
+                {
+                  WORK_EXPERIENCE_DATA.map((data, index) => (
+                    <Fragment key={"work-experience" + index}>
+                        <WorkExperience
+                          CompanyLogo={data.CompanyLogo}
+                          CompanyName={data.CompanyName}
+                          ExclusiveDates={data.ExclusiveDates}
+                          JobTitle={data.JobTitle}
+                          Skills={data.Skills}
+                        />
+                    </Fragment>
+                  ))
+                }
+        
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
   );
 };
 export default memo(AboutPage);
