@@ -6,6 +6,7 @@ import { cn } from "../../utils";
 import { SidebarProvider } from "@/context/sidebar-context";
 import { Footer } from "../Footer";
 import "react-toastify/dist/ReactToastify.css";
+import ContactPanel from "../panels/contact-panel";
 
 export const RootLayout: SFC = ({ ClassName }) => {
   const location = useLocation();
@@ -43,9 +44,7 @@ export const RootLayout: SFC = ({ ClassName }) => {
               <Outlet />
             </div>
             {isDisplay && (
-              <div className="mt-[10rem] w-full flex items-center justify-center pb-[1rem] md:px-0 px-[1rem]  max-w-full">
-                <Footer />
-              </div>
+              <ContactPanel />
             )}
           </SidebarProvider>
         </div>

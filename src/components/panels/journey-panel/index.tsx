@@ -106,13 +106,19 @@ export const Header = () => {
   return (
     <div className="w-full items-center justify-center flex">
       <div className="w-full md:w-10/12">
-        <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full scrollbar-none  h-fit  left-0 top-0">
-          <span className="text-[#9C9C9C] text-5xl md:text-7xl font-bold  overflow-hidden">
+        <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full scrollbar-none h-fit left-0 top-0">
+          {/* Section label — matching Services/Procedure pattern */}
+          <span className="text-primary font-mono tracking-[0.3em] uppercase text-sm mb-6 block">
+            03 // My Journey
+          </span>
+
+          <h1 className="font-bold uppercase text-[2.5rem] md:text-[4rem] leading-tight mb-8">
             Building the Future,
             <br /> One Project at a Time
-          </span>
-          <p className="max-w-2xl text-lg md:text-xl mt-8 text-[#9C9C9C] ">
-            A curated collection of software I’ve engineered throughout my
+          </h1>
+
+          <p className="max-w-2xl text-lg md:text-xl text-[#9C9C9C] leading-relaxed">
+            A curated collection of software I've engineered throughout my
             career. Merging design and development to craft exceptional digital
             experiences using the latest technologies.
           </p>
@@ -142,7 +148,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative shrink-0 rounded-[20px]"
+      className="group/product h-96 w-[30rem] relative shrink-0 rounded-2xl overflow-hidden"
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl ">
         <img
@@ -153,8 +159,8 @@ export const ProductCard = ({
           alt={product.title}
         />
       </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-slate-900/60 pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-slate-900/60 pointer-events-none transition-opacity duration-300"></div>
+      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white transition-opacity duration-300">
         {product.title}
       </h2>
     </motion.div>

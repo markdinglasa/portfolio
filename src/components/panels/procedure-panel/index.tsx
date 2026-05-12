@@ -35,10 +35,10 @@ export const ProcedurePanel: SFC = memo(({ ClassName }) => {
           className="flex flex-col items-center text-center mb-16"
         >
           <span className="text-primary font-mono tracking-[0.3em] uppercase text-sm mb-4">
-            03 // How I Work
+            04 // How I Work
           </span>
-          <h1 className="font-bold uppercase text-[2.5rem] md:text-[4rem] leading-tight mb-6">
-            Procedure
+          <h1 className="font-bold uppercase overflow-visible text-[2.5rem] md:text-[4rem] leading-tight mb-6">
+            Process
           </h1>
           <p className="text-lg md:text-xl text-[#9C9C9C] max-w-2xl leading-relaxed">
             Every project follows a battle-tested 5-phase process — from
@@ -60,7 +60,7 @@ export const ProcedurePanel: SFC = memo(({ ClassName }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.12 }}
-                  className="flex items-center md:flex-row flex-col"
+                  className="flex items-center md:flex-row flex-col md:w-fit w-full"
                 >
                   <button
                     onClick={() => {

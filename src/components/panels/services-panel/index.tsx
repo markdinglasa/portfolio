@@ -35,7 +35,7 @@ export const ServicePage: SFC = ({ ClassName }) => {
           <span className="text-primary font-mono tracking-[0.3em] uppercase text-sm mb-4">
             02 // My Expertise
           </span>
-          <h1 className="font-bold uppercase text-[2.5rem] md:text-[4rem] leading-tight mb-6">
+          <h1 className="font-bold overflow-visible uppercase text-[2.5rem] md:text-[4rem] leading-tight mb-6">
             Services
           </h1>
           <p className="text-lg md:text-xl text-[#9C9C9C] max-w-2xl leading-relaxed">

@@ -60,6 +60,7 @@ export const HomePage: SFC = memo(({ ClassName }) => {
         subtitle={data.subtitle}
         qoute={data.qoute}
         actions={data.actions}
+        chapter="01 // The dreamer"
       />
       <div className="w-full h-full max-w-full">
         <Suspense fallback={<Spinner />}>
