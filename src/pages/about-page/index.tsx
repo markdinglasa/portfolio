@@ -22,7 +22,7 @@ const WORK_EXPERIENCE_DATA: WorkExperienceProps[] = [
     CompanyLogo: Questnova,
     CompanyName: "Questnova Systems Corporation",
     ExclusiveDates: "February 2026 - Present",
-    JobTitle: "Senior Full Stack Developer (Team Lead) - Project Based",
+    JobTitle: "Full Stack Developer (Team Lead) - Project Based",
     Skills: [
      "Led a team of 5 developers in a fast-paced Agile environment, driving end-to-end development of scalable web responsive applications that improved delivery efficiency and ensured on-time release of high-quality features.",
       "Collaborated with cross-functional teams to transform business requirements into responsive, user-focused frontend solutions, enhancing application performance, maintainability, and overall user experience across multiple platforms.",
