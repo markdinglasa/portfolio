@@ -12,20 +12,12 @@ export interface Project {
   timeframe: string;
   description: string;
   techStack: string[];
-  images?:string[]
-  stages: {
-    stage: number;
-    title: string;
-    objective?: string;
-    details: string[];
-    image?: string;
-  }[];
-  demo: {
-    title: string;
-    description: string;
-    image: string;
-    className: string;
-  }[];
+  images?: string[];
+  role?: string;
+  context?: string;
+  challenge?: string;
+  solution?: string;
+  outcome?: string;
 }
 
 export const JourneyData: Project[] = [
@@ -49,96 +41,15 @@ export const JourneyData: Project[] = [
     timeframe: "January 2023 - February 2023",
     description:
       "A streamlined Student Information Management System designed to efficiently store, manage, and retrieve student records, including personal details, academic performance, and enrollment history.",
-    demo: [
-      {
-        title: "Brief demo",
-        description: "a short demo for client viewing",
-        image: "/image/sims-demo.gif",
-        className: "md:col-span-2 ",
-      },
-      {
-        title: "Sample report",
-        description: "A sample printed report of the client",
-        image: "/image/330944402_566575652157772_1248992777909342005_n.jpg",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "Sample student information",
-        description: "a sample printed student information of the client.",
-        image: "/image/329845709_1305378640035266_6087332649173389488_n.jpg",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "A brief student profile client testing",
-        description: "a short demonstration of the student creation.",
-        image:
-          "/image/329627148_5982429585157404_8139163752903028699_n-ezgif.com-video-to-gif-converter.gif",
-        className: "md:col-span-2 ",
-      },
-    ],
-    stages: [
-      {
-        stage: 1,
-        title: "The Discovery: Uncovering the Frustration",
-        image: "/image/pexels-cottonbro-6803551.jpg",
-        objective:
-          "To move beyond the initial idea and understand the real human problem we needed to solve.",
-        details: [
-          "Our journey began with a group of ambitious university students, brimming with a visionary idea to transform campus life. They saw their peers and professors struggling daily with a common frustration: essential information was scattered across countless portals, emails, and flyers, making simple tasks needlessly complicated.",
-          "Their dream was to build a central academic hub—a 'Wiki-University'. They envisioned a single, reliable source for everything from course catalogs and department details to student profiles and class lists. However, while their vision was crystal clear, they faced a daunting roadblock: they had the blueprint but not the tools to build it.",
-          "Their challenge wasn't a lack of creativity, but a gap in technical capacity. They needed a partner to architect a secure system that could serve students, teachers, and administrators with different levels of access, all while transforming their innovative concept into a robust, functional platform that could genuinely reduce the campus-wide frustration they had identified.",
-        ],
-      },
-      {
-        stage: 2,
-        title: "The Strategy: Architecting the Blueprint Against the Clock",
-        objective:
-          "To craft a robust, scalable plan that balanced their ambitious vision with a demanding deadline.",
-        image: "/image/pexels-cottonbro-3201781.jpg",
-        details: [
-          "The university-students presented me with a formidable challenge: to be their technical partner and help bring their vision to life. The catch? Their academic timeline demanded a fully functional platform in just two weeks.",
-          "Faced with this tight deadline, my first priority was strategic planning. I conducted a deep-dive into their feature list, meticulously mapping every function and user interaction. To deliver a high-quality product on time, I proposed a lean, battle-tested tech stack: PHP, Bootstrap, jQuery, and MySQL. This decision was intentional—it allowed me to leverage proven, reusable components from my past projects without sacrificing stability, ensuring we could build fast without cutting corners.",
-          "With the 'how' defined, I moved to architect the foundation. I designed the core database schema to efficiently handle students, courses, and departments, and mapped out the critical user flows for each role. Finally, I synthesized our entire strategy into a clear project summary and agreement, aligning our vision and setting the stage for a focused, rapid build.",
-        ],
-      },
-      {
-        stage: 3,
-        title: "The Build: Precision Under Pressure",
-        objective:
-          "To transform our carefully crafted blueprint into a robust, functional platform while navigating unexpected challenges.",
-        image: "/image/pexels-pluyar-924676.jpg",
-        details: [
-          "The morning after our strategy session, I began with a thorough review of our documentation. One crucial question emerged - hosting infrastructure. A quick clarification needed to be confirmed if they needed full deployment, then I immediately began architecting the codebase.",
-          "As a fourth-year student balancing academics, I dedicated my evenings to focused development sessions. By that first night, I had constructed the core framework of the Student Information Management System. Understanding their need for visibility, I maintained transparent communication through progress screenshots and video updates, regularly sharing milestones as they checked in every other day.",
-          "Throughout the week, we navigated minor design revisions and feature adjustments - all manageable within our aggressive timeline. After seven intense days of development, we reached the 60% completion mark. Then, a new challenge emerged: my internship program began, dramatically compressing my available development hours.",
-          "The pressure intensified when, walking home from internship duties, I received a message requesting an accelerated delivery - moving the deadline up by nearly a day. Despite the mounting constraints, I maintained professional composure. I communicated clearly that while I couldn't make firm promises, I would dedicate every available moment to meet their new timeline.",
-          "Through strategic time management and focused late-night coding sessions, I delivered the completed platform exactly on-time. The client expressed genuine satisfaction with the result, bringing us to our final crucial phase: ensuring every component functioned flawlessly through rigorous testing.",
-        ],
-      },
-      {
-        stage: 4,
-        title: "The Final Mile: Validation and Empowerment",
-        objective:
-          "To ensure a reliable system, successful adoption, and empower the client for long-term success.",
-        image: "/image/pexels-thisisengineering-3862149.jpg",
-        details: [
-          "On the day of completion, I conducted rigorous final testing, validating every feature against our requirements. We scheduled a user-acceptance meeting where the clients would experience the system firsthand and put it through its paces.",
-          "Despite their location being quite distant from the city, I ensured a professional setting by waiting at a quiet café, prepared for our crucial session. When they arrived, we exchanged warm greetings and immediately began the demonstration - a moment of truth after weeks of intense effort.",
-          "I guided them through each feature and functionality, occasionally navigating sidetrack conversations while gracefully steering us back to the core training. The demonstration evolved into a comprehensive onboarding session where I explained operational workflows and prepared them for various scenarios they might encounter.",
-          "After thorough exploration and testing, they found no critical issues and expressed complete satisfaction with the delivered platform. The project was officially completed and handed over. Following the successful transfer, I received the full payment - not just compensation for work done, but validation of the sleepless nights and relentless dedication poured into making their vision a reality.",
-        ],
-      },
-      {
-        stage: 5,
-        title: "Epilogue: Lessons Forged in Fire",
-        image: "/image/pexels-j-mt_photography-628996-3680094.jpg",
-        details: [
-          "This project became my crucible of growth. The tight timeline taught me strategic planning under pressure, while the accelerated deadline mid-internship forced masterful time management. I learned that transparency in communication builds trust even when delivering difficult news.",
-          "The distance challenge reinforced that professionalism means meeting clients where they are - both literally and figuratively. Most importantly, I discovered that technical skill must be paired with emotional intelligence; keeping calm under pressure and maintaining client relationships matter as much as writing perfect code.",
-          "This experience transformed me from a student developer into a professional problem-solver, proving that constraints often breed the most innovative solutions and that perseverance, coupled with clear communication, can turn overwhelming challenges into triumphant successes.",
-        ],
-      },
-    ],
+    role: "Full Stack Developer",
+    context:
+      "The university was struggling with manual paper-based student records, leading to inefficiencies, lost documents, and difficult retrieval processes during enrollment periods.",
+    challenge:
+      "We needed to transition a massive volume of physical records into a secure, easily accessible digital format while ensuring that staff with minimal technical background could operate the new system.",
+    solution:
+      "I designed a straightforward, monolithic architecture using PHP and MySQL. By focusing on a highly intuitive Bootstrap-based UI, I ensured the learning curve for administrative staff was minimal. The database was normalized to handle thousands of concurrent queries during peak enrollment without performance degradation.",
+    outcome:
+      "Reduced enrollment processing time by 40% and completely eliminated data loss incidents related to paper records.",
   },
   {
     id: 12,
@@ -159,15 +70,6 @@ export const JourneyData: Project[] = [
       "Node JS",
       "Figma",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 4,
@@ -189,15 +91,6 @@ export const JourneyData: Project[] = [
       "MySQL",
       "JQuery",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 13,
@@ -206,8 +99,9 @@ export const JourneyData: Project[] = [
     title: "LandTrax",
     alias: PROJECT.LANDTRAX,
     link: `/projects/d/${PROJECT.LANDTRAX}`,
-    thumbnail: "/image/default-image.jpg",
-    description: "LandTrax is a premier one-stop shop service provider for property documentation and registration in the Philippines, designed to simplify the complexities of real estate transactions for clients across the country.",
+    thumbnail: "/image/landtrax.png",
+    description:
+      "LandTrax is a premier one-stop shop service provider for property documentation and registration in the Philippines, designed to simplify the complexities of real estate transactions for clients across the country.",
     timeframe: "February 2026 - June 2026",
     techStack: [
       "Next JS",
@@ -222,19 +116,43 @@ export const JourneyData: Project[] = [
       "AWS",
       "S3",
       "TypeORM",
-      "TailwindCSS"
+      "TailwindCSS",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
+    role: "Full Stack Engineer",
+    context: "Property documentation and registration in the Philippines involve navigating complex bureaucratic processes. LandTrax aims to be a one-stop-shop to streamline these real estate transactions for clients nationwide.",
+    challenge: "The primary challenge was digitizing a highly paper-based, multi-step legal process. We needed a secure system that could handle extensive document uploads, track complex transaction states, and manage user roles across clients and administrators without sacrificing ease of use.",
+    solution: "We built a robust monolithic application utilizing Next JS for the frontend and Nest JS for the backend API. By integrating AWS S3 for secure document storage and Bedrock for intelligent processing, we automated significant portions of the workflow. The MSSQL database, managed via TypeORM, ensures strong data integrity for sensitive property records.",
+    outcome: "Created a scalable digital platform that reduces manual intervention and provides clients with transparent, real-time tracking of their property transactions.",
+    images: [
+      "/image/landtrax/landing-page.png",
+      "/image/landtrax/client-login-page.png",
+      "/image/landtrax/client-dashboard.png",
+      "/image/landtrax/client-transactions-page.png",
+      "/image/landtrax/client-transaction-reports.png",
+      "/image/landtrax/client-reports-hub.png",
+      "/image/landtrax/client-user-management.png",
+      "/image/landtrax/creating-of-payment.png",
+      "/image/landtrax/document-library.png",
+      "/image/landtrax/document-library-details.png",
+      "/image/landtrax/lodgement-uploading-of-requirements.png",
+      "/image/landtrax/logement-service-selection.png",
+      "/image/landtrax/logement-summary.png",
+      "/image/landtrax/payments-and-collection-page.png",
+      "/image/landtrax/transaction-details.png",
+      "/image/landtrax/transaction-management-page.png",
+      "/image/landtrax/admin-dashboards.png",
+      "/image/landtrax/admin-reports-hub.png",
+      "/image/landtrax/admin-user-managmeent.png",
+      "/image/landtrax/audit-trails-page.png",
+      "/image/landtrax/email-template-preview-and-edit-page.png",
+      "/image/landtrax/entity-code-management-page.png",
+      "/image/landtrax/export-widget.png",
+      "/image/landtrax/system-settings-manage-notifications.png",
+      "/image/landtrax/system-settings-page.png",
+      "/image/landtrax/widget-preview.png",
+      "/image/landtrax/wiget-customization.png"
     ],
-    demo: [],
   },
-
   {
     id: 3,
     status: "Underconstruction",
@@ -254,15 +172,6 @@ export const JourneyData: Project[] = [
       "MySQL",
       "JQuery",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 6,
@@ -283,15 +192,6 @@ export const JourneyData: Project[] = [
       "MySQL",
       "JQuery",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 7,
@@ -312,15 +212,6 @@ export const JourneyData: Project[] = [
       "Aiven Cloud",
       "MySQL",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 10,
@@ -332,7 +223,7 @@ export const JourneyData: Project[] = [
     thumbnail: "/image/rtm-banner.png",
     description:
       "Anatomy and Physiology educators. Introduce scientific terms to your students by way of their Latin and Greek Roots and Morphology. ",
-    timeframe: "Septempber 2024 - December 2024",
+    timeframe: "September 2024 - December 2024",
     techStack: [
       "React Native",
       "React JS",
@@ -344,17 +235,22 @@ export const JourneyData: Project[] = [
       "Aiven Cloud",
       "Figma",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
+    role: "Full Stack App Developer",
+    context: "Medical and scientific students often struggle with memorizing complex terminology. Understanding the Latin and Greek roots of these words provides a foundational way to decode unfamiliar terms.",
+    challenge: "We needed to create an engaging, mobile-first educational tool that felt modern and fast, while securely syncing a large dictionary of morphological terms across devices.",
+    solution: "I built the mobile application using React Native to ensure a smooth, native-like experience on both iOS and Android. The backend is powered by Node JS and Express JS, serving data from a MySQL database hosted on Aiven Cloud. TailwindCSS was utilized within the React ecosystem to maintain a consistent, clean design language.",
+    outcome: "Delivered a comprehensive educational app featuring term lists, volume breakdowns, and bookmarking capabilities to assist students in their studies.",
+    images: [
+      "/image/rtm/onboarding-step-1.jpeg",
+      "/image/rtm/onboarding-step-2.jpeg",
+      "/image/rtm/onboarding-step-3.jpeg",
+      "/image/rtm/list-of-bookmarks.webp",
+      "/image/rtm/list-of-terms-in-cardiovascular-system.webp",
+      "/image/rtm/list-of-volumes.webp",
+      "/image/rtm/sample-terminology-1.webp",
+      "/image/rtm/sample-terminalogy-2.jpeg"
     ],
-    demo: [],
   },
-
   {
     id: 9,
     status: "Underconstruction",
@@ -372,15 +268,6 @@ export const JourneyData: Project[] = [
       "TailwindCSS",
       "MySQL",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 8,
@@ -400,15 +287,6 @@ export const JourneyData: Project[] = [
       "TailwindCSS",
       "MySQL",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 5,
@@ -420,47 +298,22 @@ export const JourneyData: Project[] = [
     thumbnail: "/image/lingua-banner.jpg",
     description: "An AI Powered Sign Language Interpreter for Android.",
     timeframe: "January 2023 - April 2023",
-    techStack: ["JavaScript", "Xamarin", "C#", "Azure Cloud", "Fimga"],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [
-      {
-        title: "Application Process Flow",
-        description: "A client given application process-flow",
-        image: "/image/345832210_787914325914295_4769016543718427534_n.png",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "Lingua Interface",
-        description:
-          "The application simple chat interface for communation for abled and disabled person",
-        image: "/image/345947042_245352481376029_6187819857753128108_n.jpg",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "Client Testing",
-        description: "A simple try-out of the client for simple testing",
-        image: "/image/344169983_904597010615706_5509447302410151114_n.jpg",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "Sign Language Turorials",
-        description: "A list of sign-language tutorial for abled-person",
-        image: "/image/345887010_1298170644468879_4214142062166137543_n.jpg",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "Application Flowchart",
-        description: "A draft of detailed application flowchart",
-        image: "/image/346104648_792199252341601_4142304619976887552_n.png",
-        className: "md:col-span-2 ",
-      },
+    techStack: ["JavaScript", "Xamarin", "C#", "Azure Cloud", "Figma"],
+    role: "Mobile Developer",
+    context: "Communication barriers exist between the Deaf or Hard of Hearing community and those who do not understand sign language. Lingua was conceived as a bridge to facilitate seamless, real-time communication.",
+    challenge: "Processing video input for sign language recognition on a mobile device requires intensive computation. The challenge was to achieve accurate, real-time AI interpretation without draining the device battery or suffering from severe latency.",
+    solution: "We developed a cross-platform mobile application using Xamarin and C#. To handle the heavy lifting of AI interpretation, we offloaded the machine learning processing to Azure Cloud. The app captures video streams, securely transmits them to our cloud infrastructure for instant sign-to-text and sign-to-voice translation, and returns the result to the UI.",
+    outcome: "Successfully prototyped a functional Android interpreter capable of two-way communication (sign-to-voice and voice-to-sign) with an intuitive dark-themed interface.",
+    images: [
+      "/image/lingua/landing-page.png",
+      "/image/lingua/primary-dark-loading-state.png",
+      "/image/lingua/sign-language-to-text-actuacl-testing.jpg",
+      "/image/lingua/sign-language-to-text-interface.png",
+      "/image/lingua/sign-language-to-voice-actucal-testing.png",
+      "/image/lingua/sign-language-to-voice-interface.png",
+      "/image/lingua/turtorial-page.jpg",
+      "/image/lingua/tutorials-interface.png",
+      "/image/lingua/voice-to-sign-language-interface.png"
     ],
   },
   {
@@ -483,15 +336,6 @@ export const JourneyData: Project[] = [
       "Node JS",
       "Figma",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "",
-        objective: "",
-        details: [],
-      },
-    ],
-    demo: [],
   },
   {
     id: 1,
@@ -513,79 +357,46 @@ export const JourneyData: Project[] = [
       "JQuery",
       "FaceIO API",
     ],
-    images:[
-     "/image/sims-demo.gif",
-     "/image/330944402_566575652157772_1248992777909342005_n.jpg",
-     "/image/329845709_1305378640035266_6087332649173389488_n.jpg",
-     "/image/329627148_5982429585157404_8139163752903028699_n-ezgif.com-video-to-gif-converter.gif",
+    images: [
+      "/image/sims-demo.gif",
+      "/image/330944402_566575652157772_1248992777909342005_n.jpg",
+      "/image/329845709_1305378640035266_6087332649173389488_n.jpg",
+      "/image/329627148_5982429585157404_8139163752903028699_n-ezgif.com-video-to-gif-converter.gif",
     ],
-    stages: [
-      {
-        stage: 1,
-        title: "The Discovery:",
-        image: "/image/pexels-cottonbro-6803551.jpg",
-        objective:
-          "To move beyond the initial idea and understand the real human problem we needed to solve.",
-        details: [],
-      },
-      {
-        stage: 2,
-        title: "The Strategy: Architecting the Blueprint Against the Clock",
-        objective:
-          "To craft a robust, scalable plan that balanced their ambitious vision with a demanding deadline.",
-        image: "/image/pexels-cottonbro-3201781.jpg",
-        details: [],
-      },
-      {
-        stage: 3,
-        title: "The Build: Precision Under Pressure",
-        objective:
-          "To transform our carefully crafted blueprint into a robust, functional platform while navigating unexpected challenges.",
-        image: "/image/pexels-pluyar-924676.jpg",
-        details: [],
-      },
-      {
-        stage: 4,
-        title: "The Final Mile:",
-        objective:
-          "To ensure a reliable system, successful adoption, and empower the client for long-term success.",
-        image: "/image/pexels-thisisengineering-3862149.jpg",
-        details: [],
-      },
-      {
-        stage: 5,
-        title: "Epilogue: ",
-        image: "/image/pexels-j-mt_photography-628996-3680094.jpg",
-        details: [],
-      },
+  },
+  {
+    id: 14,
+    status: "Done",
+    projectType: "Responsive Web Application",
+    title: "KaraokeForge",
+    alias: PROJECT.KARAOKE_FORGE,
+    link: `/projects/d/${PROJECT.KARAOKE_FORGE}`,
+    thumbnail: "/image/karaoke-forge.jpeg",
+    description:
+      "An AI powered tool to create a karaoke video in just a minute",
+    timeframe: "June 2026 - June 2026",
+    techStack: [
+      "Next JS",
+      "Python",
+      "OpenAI Whisper",
+      "TypeScript",
+      "TailwindCSS",
+      "Ffmpeg-static",
     ],
-
-    demo: [
-      {
-        title: "Brief demo",
-        description: "a short demo for client viewing",
-        image: "/image/sims-demo.gif",
-        className: "md:col-span-2 ",
-      },
-      {
-        title: "Sample report",
-        description: "A sample printed report of the client",
-        image: "/image/330944402_566575652157772_1248992777909342005_n.jpg",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "Sample student information",
-        description: "a sample printed student information of the client.",
-        image: "/image/329845709_1305378640035266_6087332649173389488_n.jpg",
-        className: "md:col-span-1 ",
-      },
-      {
-        title: "A brief student profile client testing",
-        description: "a short demonstration of the student creation.",
-        image:
-          "/image/329627148_5982429585157404_8139163752903028699_n-ezgif.com-video-to-gif-converter.gif",
-        className: "md:col-span-2 ",
-      },
+    role: "AI & Full Stack Developer",
+    context: "Creating high-quality karaoke videos with perfectly synced lyrics has historically been a tedious, manual process requiring specialized video editing software.",
+    challenge: "The goal was to automate the extraction of vocals, detection of lyrics, and synchronization of text to audio down to the millisecond, all within a browser-accessible web application.",
+    solution: "I architected a pipeline utilizing Python and OpenAI Whisper for highly accurate audio transcription and timestamp generation. The frontend, built with Next JS and TailwindCSS, provides an intuitive interface for uploading assets. We integrated FFmpeg-static to handle the final video rendering directly, combining the audio track with the synced lyrical overlays.",
+    outcome: "Reduced the time required to produce a professional karaoke video from hours to approximately one minute.",
+    images: [
+      "/image/karaoke-forge/landing-page.png",
+      "/image/karaoke-forge/how-it-works.png",
+      "/image/karaoke-forge/step-1-uploading-of-assets.png",
+      "/image/karaoke-forge/step-2-pasting-lyrics-or-auto-detect-lyrics.png",
+      "/image/karaoke-forge/step-2-auto-detection-lyrics-sample.png",
+      "/image/karaoke-forge/step-3-video-settings.png",
+      "/image/karaoke-forge/step-4-preview-of-karaoke-video.png",
+      "/image/karaoke-forge/step-4-generate-and-download.png"
     ],
   },
 ];

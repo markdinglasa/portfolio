@@ -13,4 +13,5 @@ export enum PROJECT {
   HIMSOG = "himsog",
   SECRET_PARFUM = "secret-parfum",
   LANDTRAX = "landtrax",
+  KARAOKE_FORGE = "karaooke-forge",
 }

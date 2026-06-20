@@ -1,20 +1,18 @@
-import { Fragment, lazy, memo, Suspense, useState } from "react";
+import { ImageCarousel, Modal } from "@/components";
+import { PageHeaderPanel } from "@/components/panels/page-header-panel";
+import { ProjectCardSkeleton } from "@/components/skeletons";
+import { ProjectPageData as data, JourneyData, Project } from "@/constants";
 import { SFC } from "@/types";
 import { cn, RenderIcon } from "@/utils";
-import { JourneyData, Project, ProjectPageData as data } from "@/constants";
-import { ProjectCardSkeleton } from "@/components/skeletons";
-import { PageHeaderPanel } from "@/components/panels/page-header-panel";
-import { Modal, ImageCarousel } from "@/components";
-import toRomanNumerals from "roman-numerals-converter-lib";
 import * as motion from "motion/react-client";
+import { Fragment, lazy, memo, Suspense, useState } from "react";
+import toRomanNumerals from "roman-numerals-converter-lib";
 
 const ProjectCard = lazy(() => import("@/components/Cards/project-card"));
 
 const ProjectPage: SFC = memo(({ ClassName }) => {
   const [project, setProject] = useState<Project | null>(null);
-  const Icon = RenderIcon(
-    project?.projectType || "Responsive Web Application"
-  );
+  const Icon = RenderIcon(project?.projectType || "Responsive Web Application");
 
   return (
     <>
@@ -29,7 +27,7 @@ const ProjectPage: SFC = memo(({ ClassName }) => {
         id="project-list"
         className={cn(
           "relative flex justify-center overflow-visible items-center md:py-16 py-8 md:px-0 px-4 overflow-hidden",
-          ClassName
+          ClassName,
         )}
       >
         {/* Background Decorative Text */}

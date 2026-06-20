@@ -140,9 +140,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                 Passionate about building{" "}
                 <strong className="text-white/80">Web</strong>,{" "}
                 <strong className="text-white/80">Mobile</strong>, and{" "}
-                <strong className="text-white/80">Desktop Applications</strong>
-                , contributing to open source, and continuously learning new
-                trends and technologies.
+                <strong className="text-white/80">Desktop Applications</strong>, contributing to open source, and continuously learning new trends and technologies.
               </p>
             </motion.div>
 

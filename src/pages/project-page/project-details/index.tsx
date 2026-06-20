@@ -1,15 +1,11 @@
-import { lazy, memo, Suspense, useEffect } from "react";
+import { memo, useEffect } from "react";
 import { PROJECT, RouteChannel, SFC } from "@/types";
 import { cn, RenderIcon } from "@/utils";
-
-import toRomanNumerals from "roman-numerals-converter-lib";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { useNavigate, useParams } from "react-router-dom";
 import { JourneyData } from "@/constants";
-import { BentoGrid } from "@/components/bento-grid-layout";
-import { Spinner } from "@/components";
+import { motion } from "motion/react";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-export const BentoCard = lazy(() => import("@/components/Cards/bento-card"));
 export const ProjectDetailsPage: SFC = ({ ClassName }) => {
   const navigate = useNavigate();
   const { Id } = useParams<{ Id: string }>();
@@ -18,19 +14,19 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
   useEffect(() => {
     const validateProjectTitle = () => {
       try {
-        // Check if the project with the given Id exists in PROJECT
         const projectExists = Object.values(PROJECT).some(
           (project) => project === Id
         );
 
-        if (!projectExists) navigate(RouteChannel.NOT_FOUND);
+        if (!projectExists) {
+          navigate(RouteChannel.NOT_FOUND);
+          return;
+        }
 
-        const projectDone = () => {
-          const project = JourneyData.filter((data) => data.alias === Id)[0];
-          if (project.status === "Underconstruction")
-            navigate(RouteChannel.UNDERCONSTRUCTION);
-        };
-        projectDone();
+        const project = JourneyData.find((data) => data.alias === Id);
+        if (project && project.status === "Underconstruction") {
+          navigate(RouteChannel.UNDERCONSTRUCTION);
+        }
       } catch (error: unknown) {
         console.log(error);
       }
@@ -39,110 +35,218 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
     validateProjectTitle();
   }, [Id, navigate]);
 
-  const project = JourneyData.filter((data) => data.alias === Id)[0];
+  const project = JourneyData.find((data) => data.alias === Id);
+  
+  if (!project) return null;
+
   const Icon = RenderIcon(project.projectType);
+
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+  
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   return (
-    <>
-      <div
-        className={cn(
-          "w-full h-full flex flex-col items-center justify-start px-[1rem] relative",
-          ClassName
-        )}
-      >
-        <div className="w-full md:w-10/12 flex flex-col items-center justify-center h-fit mt-[7rem] overflow-visible">
-          <h1 className="text-primary text-[45px]  font-black uppercase  text-center">
-            {project.title.split("").join(" ")}
-          </h1>
-          <div className="flex flex-col items-center justify-center">
-            <span className="text-xl text-center">{project.description}</span>
-          </div>
-        </div>
-        <div className="w-full md:w-10/12 flex flex-col h-fit gap-4 mt-[1rem]  mb-[1rem] items-start  rounded-md p-4">
-          <div className="w-full flex flex-col gap-2 items-center justify-center">
-            <div className="mb-2 text-slate-100/70 text-2xl flex capitalize gap-2 text-center">
-              <span className="">
-                Chapter {toRomanNumerals(project.id, "Vinculum")} :{" "}
-                {project.alias}
-              </span>
-            </div>
-            <div className="flex flex-row gap-2 items-center text-sm ">
-              <CalendarMonthIcon className="w-[10px] h-[10px] p-[2px]" />
-              <span>{project.timeframe}</span>
-            </div>
-            <span className="text-sm  gap-2 flex items-center overflow-visible">
-              <Icon />
-              {project.projectType}
-            </span>
-            <span className="text-sm  gap-2 flex flex-wrap items-center overflow-visible justify-center">
-              {project.techStack.map((tech, index) => {
-                return <span key={index}>{tech}</span>;
-              })}
-            </span>
-          </div>
-          <div className="w-full flex flex-col gap-[10rem] mt-[10rem] mb-[10rem]">
-            {project.stages.map((stage, index) => (
-              <div
-                key={index}
-                className="flex md:flex-row flex-col justify-center items-center gap-[10rem]"
+    <div className={cn("w-full bg-[#0a0a0a] text-white min-h-screen font-sans overflow-x-hidden", ClassName)}>
+        {/* HERO SECTION */}
+        <div className="relative w-full h-[80vh] flex flex-col justify-end pb-20 px-8 md:px-20 lg:px-40">
+           <motion.div 
+             initial={{ opacity: 0 }} 
+             animate={{ opacity: 0.4 }} 
+             transition={{ duration: 1.5 }}
+             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+             style={{ backgroundImage: `url(${project.thumbnail})` }}
+           />
+           <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/60 to-transparent" />
+           
+           <motion.div 
+             variants={staggerContainer}
+             initial="hidden"
+             animate="visible"
+             className="relative z-20 flex flex-col gap-4 max-w-5xl"
+           >
+              <motion.button 
+                onClick={() => navigate(-1)}
+                className="w-fit flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-4 uppercase tracking-widest"
               >
-                {stage.image && index % 2 == 0 ? (
-                  <div className="w-[20rem] h-[25rem] rounded-xl filter-">
-                    <img
-                      src={stage.image}
-                      className="w-full h-full grayscale"
-                    />
-                  </div>
-                ) : null}
-                <div className="w-full md:w-[35rem]">
-                  <span className="text-3xl font-medium capitalize text-slate-100/70">
-                    {stage.title}
-                  </span>
-                  <div className="w-full text-md flex flex-wrap gap-2">
-                    {stage.details.map((detail, index) => (
-                      <p key={index} className="text-prealign">
-                        {detail}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-                {stage.image && index % 2 == 1 ? (
-                  <div className="w-[20rem] h-[25rem] rounded-xl filter-">
-                    <img
-                      src={stage.image}
-                      className="w-full h-full grayscale"
-                    />
-                  </div>
-                ) : null}
-              </div>
-            ))}
-            <div className="flex flex-col items-center  justify-center w-full">
-              <span className="text-3xl font-medium capitalize text-slate-100/70 h-[3rem]"></span>
-              <div className="flex w-full">
-                <BentoGrid className="max-w-5xl mx-auto md:auto-rows-[20rem] ">
-                  {Array.isArray(project?.demo) ? (
-                    project.demo.map((item, index) => (
-                      <Suspense fallback={<Spinner />}>
-                        <BentoCard
-                          key={index}
-                          title={item.title}
-                          description={item.description}
-                          header={
-                            <img src={item.image} className="grayscale" />
-                          }
-                          className={item.className}
-                        />
-                      </Suspense>
-                    ))
-                  ) : (
-                    <span>test</span>
-                  )}
-                </BentoGrid>
-              </div>
-            </div>
-          </div>
+                <ArrowBackIcon fontSize="small" /> Back to Projects
+              </motion.button>
+              
+              <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none">
+                {project.title}
+              </motion.h1>
+              
+              <motion.p variants={fadeIn} className="text-xl md:text-2xl text-gray-300 max-w-2xl font-light">
+                {project.description}
+              </motion.p>
+           </motion.div>
         </div>
-      </div>
-    </>
+
+        {/* BLUEPRINT LEGEND (Metadata) */}
+        <div className="w-full px-8 md:px-20 lg:px-40 py-16 border-t border-b border-white/10">
+           <motion.div 
+             initial="hidden"
+             whileInView="visible"
+             viewport={{ once: true, margin: "-100px" }}
+             variants={staggerContainer}
+             className="grid grid-cols-1 md:grid-cols-4 gap-12"
+           >
+              <motion.div variants={fadeIn} className="flex flex-col gap-2">
+                 <span className="text-xs text-gray-500 uppercase tracking-widest font-bold">Role</span>
+                 <span className="text-lg">{project.role || "Developer"}</span>
+              </motion.div>
+              <motion.div variants={fadeIn} className="flex flex-col gap-2">
+                 <span className="text-xs text-gray-500 uppercase tracking-widest font-bold">Timeframe</span>
+                 <span className="text-lg">{project.timeframe}</span>
+              </motion.div>
+              <motion.div variants={fadeIn} className="flex flex-col gap-2">
+                 <span className="text-xs text-gray-500 uppercase tracking-widest font-bold">Category</span>
+                 <span className="text-lg flex items-center gap-2">
+                   <Icon className="w-5 h-5 text-gray-400" />
+                   {project.projectType}
+                 </span>
+              </motion.div>
+              <motion.div variants={fadeIn} className="flex flex-col gap-2">
+                 <span className="text-xs text-gray-500 uppercase tracking-widest font-bold">Tech Stack</span>
+                 <div className="flex flex-wrap gap-2">
+                   {project.techStack.map((tech, idx) => (
+                     <span key={idx} className="text-sm px-3 py-1 bg-white/5 border border-white/10 rounded-full">{tech}</span>
+                   ))}
+                 </div>
+              </motion.div>
+           </motion.div>
+        </div>
+
+        {/* NARRATIVE BLOCKS */}
+        <div className="w-full px-8 md:px-20 lg:px-40 py-24 flex flex-col gap-32">
+            
+            {project.context && (
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={fadeIn}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16"
+                >
+                    <div className="md:col-span-4">
+                        <h2 className="text-2xl md:text-3xl font-light uppercase tracking-widest text-gray-400">01 / Context</h2>
+                    </div>
+                    <div className="md:col-span-8">
+                        <p className="text-xl md:text-3xl leading-relaxed font-light text-gray-200">
+                            {project.context}
+                        </p>
+                    </div>
+                </motion.div>
+            )}
+
+            {project.challenge && (
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={fadeIn}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16"
+                >
+                    <div className="md:col-span-4">
+                        <h2 className="text-2xl md:text-3xl font-light uppercase tracking-widest text-gray-400">02 / Challenge</h2>
+                    </div>
+                    <div className="md:col-span-8">
+                        <p className="text-xl md:text-3xl leading-relaxed font-light text-gray-200">
+                            {project.challenge}
+                        </p>
+                    </div>
+                </motion.div>
+            )}
+
+            {project.solution && (
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={fadeIn}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16"
+                >
+                    <div className="md:col-span-4">
+                        <h2 className="text-2xl md:text-3xl font-light uppercase tracking-widest text-gray-400">03 / Solution</h2>
+                    </div>
+                    <div className="md:col-span-8 flex flex-col gap-8">
+                        <p className="text-xl md:text-3xl leading-relaxed font-light text-gray-200">
+                            {project.solution}
+                        </p>
+                        {project.outcome && (
+                            <div className="p-8 bg-white/5 border border-white/10 rounded-lg mt-8">
+                                <h3 className="text-sm text-gray-500 uppercase tracking-widest font-bold mb-4">Outcome</h3>
+                                <p className="text-lg text-gray-300">{project.outcome}</p>
+                            </div>
+                        )}
+                    </div>
+                </motion.div>
+            )}
+            
+        </div>
+
+        {/* GALLERY (EXHIBITION) */}
+        {project.images && project.images.length > 0 && (
+            <div className="w-full px-8 md:px-20 lg:px-40 pb-32">
+                 <motion.h2 
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeIn}
+                    className="text-2xl md:text-3xl font-light uppercase tracking-widest text-gray-400 mb-16"
+                 >
+                    04 / Exhibition
+                 </motion.h2>
+                 
+                 <div className="flex flex-col gap-16 md:gap-32 w-full">
+                    {project.images.map((img, idx) => {
+                       // if it's an image string (e.g. from JourneyData)
+                       const imgSrc = typeof img === 'string' ? img : (img as { image?: string }).image;
+                       if (!imgSrc) return null;
+                       return (
+                          <motion.div
+                             key={idx}
+                             initial={{ opacity: 0, y: 50 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.8, ease: "easeOut" }}
+                             viewport={{ once: true, margin: "-100px" }}
+                             className="w-full overflow-hidden rounded-xl border border-white/5 bg-white/5"
+                          >
+                              <img 
+                                 src={imgSrc} 
+                                 alt={`Project showcase ${idx + 1}`} 
+                                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000"
+                              />
+                          </motion.div>
+                       );
+                    })}
+                 </div>
+            </div>
+        )}
+        
+        {/* FOOTER NAV */}
+        <div className="w-full flex justify-center pb-20 pt-10">
+             <button 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-sm text-gray-500 hover:text-white uppercase tracking-widest transition-colors flex flex-col items-center gap-2"
+             >
+                <span className="block w-[1px] h-12 bg-gray-500 mb-2 hover:h-16 transition-all duration-300"></span>
+                Back to Top
+             </button>
+        </div>
+
+    </div>
   );
 };
 export default memo(ProjectDetailsPage);
