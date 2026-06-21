@@ -80,7 +80,7 @@ export const JourneyData: Project[] = [
           "/image/himsog/landing-page.png",
           "/image/himsog/how-it-works.png",
           "/image/himsog/why-choose-himsog.png",
-        ]
+        ],
       },
       {
         title: "Advocate (User) Experience",
@@ -97,7 +97,7 @@ export const JourneyData: Project[] = [
           "/image/himsog/meals.png",
           "/image/himsog/messenger.png",
           "/image/himsog/notifications.png",
-        ]
+        ],
       },
       {
         title: "Nutritionist Portal",
@@ -114,7 +114,7 @@ export const JourneyData: Project[] = [
           "/image/himsog/nutritionist-settings-personal.png",
           "/image/himsog/nutritionist-settings-professional-credentials.png",
           "/image/himsog/nutritionist-settings-security.png",
-        ]
+        ],
       },
       {
         title: "Admin Command Center",
@@ -128,8 +128,8 @@ export const JourneyData: Project[] = [
           "/image/himsog/create-subscription.png",
           "/image/himsog/report-subscriptions.png",
           "/image/himsog/report-users.png",
-        ]
-      }
+        ],
+      },
     ],
     role: "Full Stack Developer",
     context:
@@ -212,7 +212,7 @@ export const JourneyData: Project[] = [
         images: [
           "/image/landtrax/landing-page.png",
           "/image/landtrax/client-login-page.png",
-        ]
+        ],
       },
       {
         title: "Client Portal",
@@ -225,7 +225,7 @@ export const JourneyData: Project[] = [
           "/image/landtrax/client-export-widget.png",
           "/image/landtrax/client-widget-customization.png",
           "/image/landtrax/client-widget-preview.png",
-        ]
+        ],
       },
       {
         title: "Transaction & Document Workflows",
@@ -239,7 +239,7 @@ export const JourneyData: Project[] = [
           "/image/landtrax/client-document-library-details.png",
           "/image/landtrax/admin-creating-of-payment.png",
           "/image/landtrax/client-payments-and-collection-page.png",
-        ]
+        ],
       },
       {
         title: "Admin Dashboard & Configuration",
@@ -252,8 +252,8 @@ export const JourneyData: Project[] = [
           "/image/landtrax/admin-email-template-preview-and-edit-page.png",
           "/image/landtrax/admin-system-settings-page.png",
           "/image/landtrax/admin-system-settings-manage-notifications.png",
-        ]
-      }
+        ],
+      },
     ],
   },
   {
@@ -338,7 +338,7 @@ export const JourneyData: Project[] = [
           "/image/ipos/onboarding-3.png",
           "/image/ipos/onboarding-4.png",
           "/image/ipos/login-page.png",
-        ]
+        ],
       },
       {
         title: "Dashboard & Administration",
@@ -346,8 +346,8 @@ export const JourneyData: Project[] = [
           "/image/ipos/dashboard.png",
           "/image/ipos/admin-dashboard.png",
           "/image/ipos/admin-profile-verification.png",
-        ]
-      }
+        ],
+      },
     ],
   },
   {
@@ -408,6 +408,14 @@ export const JourneyData: Project[] = [
       "React JS",
       "TailwindCSS",
       "MSSQL",
+    ],
+    images: [
+      "/image/isia/licensing.png",
+      "/image/isia/main-display.png",
+      "/image/isia/database-selection.png",
+      "/image/isia/tenant-selection.png",
+      "/image/isia/e-journal-report-generation.png",
+      "/image/isia/sm-report-generation.png",
     ],
     role: "Desktop Application Developer",
     context:
