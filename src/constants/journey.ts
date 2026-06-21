@@ -13,6 +13,10 @@ export interface Project {
   description: string;
   techStack: string[];
   images?: string[];
+  imageCategories?: {
+    title: string;
+    images: string[];
+  }[];
   role?: string;
   context?: string;
   challenge?: string;
@@ -28,17 +32,15 @@ export const JourneyData: Project[] = [
     title: "SIMS",
     alias: PROJECT.STUDENT_INFORMATION_MANAGEMENT_SYSTEM,
     link: `/projects/d/${PROJECT.STUDENT_INFORMATION_MANAGEMENT_SYSTEM}`,
-    techStack: [
-      "PHP",
-      "Javascript",
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "MySQL",
-      "JQuery",
-    ],
+    techStack: ["PHP", "Apache", "MySQL", "Bootstrap", "Axios"],
     thumbnail: "/image/default-image.jpg",
     timeframe: "January 2023 - February 2023",
+    images: [
+      "/image/sims-demo.gif",
+      "/image/sims/330944402_566575652157772_1248992777909342005_n.jpg",
+      "/image/sims/329845709_1305378640035266_6087332649173389488_n.jpg",
+      "/image/sims/329627148_5982429585157404_8139163752903028699_n-ezgif.com-video-to-gif-converter.gif",
+    ],
     description:
       "A streamlined Student Information Management System designed to efficiently store, manage, and retrieve student records, including personal details, academic performance, and enrollment history.",
     role: "Full Stack Developer",
@@ -53,7 +55,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 12,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "Himsog",
     alias: PROJECT.HIMSOG,
@@ -70,10 +72,78 @@ export const JourneyData: Project[] = [
       "Node JS",
       "Figma",
     ],
+    images: [],
+    imageCategories: [
+      {
+        title: "Landing & Public Experience",
+        images: [
+          "/image/himsog/landing-page.png",
+          "/image/himsog/how-it-works.png",
+          "/image/himsog/why-choose-himsog.png",
+        ]
+      },
+      {
+        title: "Advocate (User) Experience",
+        images: [
+          "/image/himsog/advocate-onboarding-1.png",
+          "/image/himsog/advocate-onboarding-2.png",
+          "/image/himsog/advocate-onboarding-3.png",
+          "/image/himsog/advocate-onboarding-4.png",
+          "/image/himsog/advocate-onboarding-5.png",
+          "/image/himsog/advocate-dashboard.png",
+          "/image/himsog/advocate-meal-plans.png",
+          "/image/himsog/advocate-available-meal-plans.png",
+          "/image/himsog/advocate-avaiable-nutritionists.png",
+          "/image/himsog/meals.png",
+          "/image/himsog/messenger.png",
+          "/image/himsog/notifications.png",
+        ]
+      },
+      {
+        title: "Nutritionist Portal",
+        images: [
+          "/image/himsog/nutritionist-dashboard.png",
+          "/image/himsog/nutritionist-meal-plans.png",
+          "/image/himsog/nutritionist-meal-plan-details.png",
+          "/image/himsog/nutritionist-meal-details.png",
+          "/image/himsog/nutritionist-personalize-plans.png",
+          "/image/himsog/nutritionist-request-details.png",
+          "/image/himsog/nutritionist-transactions.png",
+          "/image/himsog/nutritionist-payments.png",
+          "/image/himsog/nutritionists-subscription.png",
+          "/image/himsog/nutritionist-settings-personal.png",
+          "/image/himsog/nutritionist-settings-professional-credentials.png",
+          "/image/himsog/nutritionist-settings-security.png",
+        ]
+      },
+      {
+        title: "Admin Command Center",
+        images: [
+          "/image/himsog/admin-dashboard.png",
+          "/image/himsog/admin-meal-plans.png",
+          "/image/himsog/admin-meal-plan-details.png",
+          "/image/himsog/user-managment.png",
+          "/image/himsog/user-details.png",
+          "/image/himsog/subcription-managmeent.png",
+          "/image/himsog/create-subscription.png",
+          "/image/himsog/report-subscriptions.png",
+          "/image/himsog/report-users.png",
+        ]
+      }
+    ],
+    role: "Full Stack Developer",
+    context:
+      "Meal planning can be incredibly time-consuming and difficult for families or individuals trying to maintain a balanced, healthy diet while managing busy schedules.",
+    challenge:
+      "We needed to create an intelligent system capable of suggesting culturally relevant (Filipino) meals, tracking nutritional information, and generating dynamic grocery lists based on diverse user preferences and dietary restrictions.",
+    solution:
+      "I developed a web application utilizing React JS for an engaging frontend and Express/Node JS for a robust backend. The platform integrates a Scrapper API to constantly source new recipes and nutritional data, which is then stored efficiently in a MySQL database. Figma was used to prototype a user-friendly, appetizing interface.",
+    outcome:
+      "Delivered a comprehensive platform that significantly reduces the friction of daily meal preparation and encourages healthier eating habits.",
   },
   {
     id: 4,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "Iskalar",
     alias: PROJECT.ISKALAR,
@@ -91,6 +161,15 @@ export const JourneyData: Project[] = [
       "MySQL",
       "JQuery",
     ],
+    role: "Full Stack Developer",
+    context:
+      "Government scholarship programs often rely on disparate databases and paper trails, making it incredibly difficult to monitor scholar progress, disburse funds, and track program efficacy.",
+    challenge:
+      "The challenge was building a centralized, highly secure portal that could handle sensitive government data, allow scholars to submit their grades, and enable administrators to efficiently audit and approve disbursements.",
+    solution:
+      "I engineered a custom web portal utilizing a traditional LAMP stack (PHP, MySQL). We leaned on Bootstrap and jQuery to build a highly responsive, accessible dashboard interface that works reliably on legacy government hardware as well as modern scholar devices. The database was optimized to generate complex demographic and academic reports instantly.",
+    outcome:
+      "Standardized the scholarship tracking process, leading to faster stipend disbursements and vastly improved administrative oversight.",
   },
   {
     id: 13,
@@ -159,7 +238,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 3,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "LMS",
     alias: PROJECT.LIBRARY_MANAGEMENT_SYSTEM,
@@ -167,19 +246,20 @@ export const JourneyData: Project[] = [
     thumbnail: "/image/default-image.jpg",
     description: "A simple Library Management System, for University usage",
     timeframe: "February 2023 - February 2023",
-    techStack: [
-      "PHP",
-      "Javascript",
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "MySQL",
-      "JQuery",
-    ],
+    techStack: ["PHP", "Apache", "MySQL", "Bootstrap", "Axios"],
+    role: "Full Stack Developer",
+    context:
+      "University libraries manage tens of thousands of assets, from textbooks to digital media. Relying on outdated desktop software leads to long queues, lost inventory, and frustrated students.",
+    challenge:
+      "The goal was to build a modern, web-based catalog system that could handle high-concurrency searches, seamless borrowing/returning workflows, and automated penalty tracking for overdue items.",
+    solution:
+      "I built the system using PHP and MySQL, served via Apache. To ensure the interface felt snappy and modern without full page reloads, I integrated Axios for asynchronous API calls. Bootstrap was utilized to ensure the application was fully responsive, allowing students to check book availability from their mobile phones.",
+    outcome:
+      "Dramatically reduced the time required for book checkout and modernized the university's asset tracking capabilities.",
   },
   {
     id: 6,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "GMS",
     alias: PROJECT.GRADE_MANAGEMENT_SYSTEM,
@@ -187,19 +267,20 @@ export const JourneyData: Project[] = [
     thumbnail: "/image/default-image.jpg",
     description: "An online Grade Management System.",
     timeframe: "July 2023 - October 2023",
-    techStack: [
-      "PHP",
-      "Javascript",
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "MySQL",
-      "JQuery",
-    ],
+    techStack: ["PHP", "Apache", "MySQL", "Bootstrap", "Axios"],
+    role: "Full Stack Developer",
+    context:
+      "Managing academic grading at scale is a critical, error-sensitive operation. Faculty needed a reliable, accessible way to input, calculate, and distribute grades securely.",
+    challenge:
+      "We had to design an architecture that prevented unauthorized grade modifications, supported complex weighted grading formulas, and provided students with real-time access to their academic standing.",
+    solution:
+      "The Grade Management System was engineered with a PHP backend and MySQL database, utilizing Apache. By adopting Axios on the frontend alongside Bootstrap, we created a seamless spreadsheet-like data entry experience for professors that autosaves securely. Strict role-based access control was implemented at the API level.",
+    outcome:
+      "Eliminated grade calculation errors and provided faculty with a secure, efficient toolset that streamlined the end-of-semester administrative rush.",
   },
   {
     id: 7,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "iPOS",
     alias: PROJECT.INNOSOFT_POINT_OF_SALES_SYSTEM,
@@ -215,6 +296,38 @@ export const JourneyData: Project[] = [
       "Express JS",
       "Aiven Cloud",
       "MySQL",
+    ],
+    role: "Lead Full Stack Developer",
+    context:
+      "Modern retail environments demand fast, reliable, and cloud-synchronized point-of-sale systems. Traditional legacy POS systems are often siloed, making multi-store management a nightmare.",
+    challenge:
+      "The system needed to process transactions instantly, handle complex inventory syncing across multiple branches, and operate flawlessly even during brief network interruptions.",
+    solution:
+      "I architected a cloud-first POS using React JS for a highly responsive, app-like frontend and Node/Express JS for the API. We utilized MySQL hosted on Aiven Cloud for robust, scalable data management, and integrated Cloudinary for seamless product image handling. The use of TypeScript across the entire stack ensured extreme type safety and reduced runtime errors.",
+    outcome:
+      "Delivered an innovative, cloud-based POS that empowers business owners with real-time multi-branch visibility and lightning-fast checkout experiences.",
+    imageCategories: [
+      {
+        title: "Landing & Onboarding",
+        images: [
+          "/image/ipos/landing-page.png",
+          "/image/ipos/pos-solutions.png",
+          "/image/ipos/data-privacy.png",
+          "/image/ipos/onboarding-1.png",
+          "/image/ipos/onboarding-2.png",
+          "/image/ipos/onboarding-3.png",
+          "/image/ipos/onboarding-4.png",
+          "/image/ipos/login-page.png",
+        ]
+      },
+      {
+        title: "Dashboard & Administration",
+        images: [
+          "/image/ipos/dashboard.png",
+          "/image/ipos/admin-dashboard.png",
+          "/image/ipos/admin-profile-verification.png",
+        ]
+      }
     ],
   },
   {
@@ -261,7 +374,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 9,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Desktop Application",
     title: "iSIA",
     alias: PROJECT.INNOSOFT_SALES_INSIGHT_AND_ANALYTICS,
@@ -274,12 +387,21 @@ export const JourneyData: Project[] = [
       "TypeScript",
       "React JS",
       "TailwindCSS",
-      "MySQL",
+      "MSSQL",
     ],
+    role: "Desktop Application Developer",
+    context:
+      "While a cloud POS handles transactions, business owners need deep, offline-capable analytical tools to extract meaningful insights from massive amounts of historical sales data.",
+    challenge:
+      "Processing and visualizing millions of transaction rows in a web browser can cause performance bottlenecks. The client required a powerful desktop utility to integrate with their POS and run heavy analytical computations locally.",
+    solution:
+      "I engineered a cross-platform desktop application using Electron JS. By combining the power of local machine resources with a modern React JS and TailwindCSS interface, the application can securely pull data from MSSQL and generate complex graphical reports, heatmaps, and sales forecasts without stuttering.",
+    outcome:
+      "Provided enterprise clients with a powerful desktop command center that turns raw sales data into actionable business intelligence.",
   },
   {
     id: 8,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Desktop Application",
     title: "iTMS",
     alias: PROJECT.INNOSOFT_TICKET_MANAGEMENT_SYSTEM,
@@ -293,8 +415,17 @@ export const JourneyData: Project[] = [
       "TypeScript",
       "React JS",
       "TailwindCSS",
-      "MySQL",
+      "MSSQL",
     ],
+    role: "Desktop Application Developer",
+    context:
+      "IT departments and customer support teams require highly responsive issue-tracking systems that integrate deeply with their desktop environments for notifications and quick access.",
+    challenge:
+      "Web-based ticketing systems often get lost in browser tabs. We needed a dedicated desktop client that could handle real-time ticket updates, robust search capabilities, and complex workflow states.",
+    solution:
+      "I built the Ticketing Management System as a standalone Electron JS application. Leveraging React JS and TypeScript, I created a highly organized, drag-and-drop enabled interface styled with TailwindCSS. The system connects to a central MSSQL database to ensure all team members stay synced on issue resolutions.",
+    outcome:
+      "Streamlined the support pipeline, significantly reducing average ticket response times and improving team accountability.",
   },
   {
     id: 5,
@@ -330,7 +461,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 11,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "Connex",
     alias: PROJECT.CONNEX,
@@ -348,6 +479,15 @@ export const JourneyData: Project[] = [
       "Node JS",
       "Figma",
     ],
+    role: "Full Stack Developer",
+    context:
+      "Educational institutions struggle to maintain meaningful, active connections with their alumni after graduation, often missing out on networking, mentoring, and fundraising opportunities.",
+    challenge:
+      "We needed to build a modern, engaging social platform that encouraged alumni to register, update their professional profiles, and interact with the university and each other securely.",
+    solution:
+      "I developed Connex using a modern stack consisting of React JS and TailwindCSS for a beautiful, intuitive user interface. The robust backend was built with Node/Express JS and connected to an enterprise-grade MSSQL database to ensure the secure handling of sensitive professional data and communication logs.",
+    outcome:
+      "Fostered a thriving digital community that successfully bridged the gap between past graduates and the institution's current initiatives.",
   },
   {
     id: 1,
@@ -359,22 +499,17 @@ export const JourneyData: Project[] = [
     thumbnail: "/image/default-image.jpg",
     description: "Attendance Monitoring System with Face detection",
     timeframe: "November 2022 - January 2023",
-    techStack: [
-      "PHP",
-      "Javascript",
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "MySQL",
-      "JQuery",
-      "FaceIO API",
-    ],
-    images: [
-      "/image/sims-demo.gif",
-      "/image/330944402_566575652157772_1248992777909342005_n.jpg",
-      "/image/329845709_1305378640035266_6087332649173389488_n.jpg",
-      "/image/329627148_5982429585157404_8139163752903028699_n-ezgif.com-video-to-gif-converter.gif",
-    ],
+    techStack: ["PHP", "Apache", "MySQL", "Bootstrap", "Axios", "FaceIO API"],
+    role: "Full Stack Developer",
+    context:
+      "Traditional attendance systems using RFID or manual sign-ins are prone to 'buddy punching' and human error, leading to inaccurate time tracking and payroll discrepancies.",
+    challenge:
+      "The objective was to implement a highly secure, frictionless attendance system that utilized biometric verification without requiring the purchase of expensive proprietary hardware.",
+    solution:
+      "I built a web-based attendance terminal using PHP, Apache, and MySQL. I integrated the FaceIO API to provide instant, highly accurate facial recognition directly through standard webcams. The frontend was constructed with Bootstrap for a clean UI and Axios to handle the asynchronous API payloads required for rapid face verification.",
+    outcome:
+      "Completely eliminated attendance fraud and modernized the time-tracking workflow with cutting-edge biometric integration.",
+    images: [],
   },
   {
     id: 14,

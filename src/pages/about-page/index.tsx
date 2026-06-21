@@ -2,6 +2,11 @@ import { Fragment, memo, Suspense } from "react";
 import { SFC } from "../../types";
 import { cn } from "../../utils";
 
+import { GlareCard } from "@/components/Cards/glare-card";
+import Counter from "@/components/counter";
+import { PageHeaderPanel } from "@/components/panels/page-header-panel";
+import { SkillData } from "@/constants";
+import * as motion from "motion/react-client";
 import Innosoft from "../../assets/images/innosoft-logo2.png";
 import Questnova from "../../assets/images/questnova.png";
 import Rococo from "../../assets/images/rococo.png";
@@ -9,13 +14,6 @@ import Skill, { SkillSkeleton } from "../../components/skill-chip";
 import WorkExperience, {
   WorkExperienceProps,
 } from "../../components/work-expericence";
-import ProfileImage from "/image/mark-dinglasa.png";
-
-import { GlareCard } from "@/components/Cards/glare-card";
-import Counter from "@/components/counter";
-import { PageHeaderPanel } from "@/components/panels/page-header-panel";
-import { SkillData } from "@/constants";
-import * as motion from "motion/react-client";
 
 const WORK_EXPERIENCE_DATA: WorkExperienceProps[] = [
   {
@@ -159,7 +157,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                 <div className="w-full h-full z-10 relative">
                   <img
                     alt="Mark Dinglasa - Portfolio"
-                    src={ProfileImage}
+                    src={"/image/mark-dinglasa.png"}
                     className="w-full h-full duration-300 ease-in-out"
                   />
                 </div>

@@ -227,7 +227,7 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
       </div>
 
       {/* GALLERY (EXHIBITION) */}
-      {project.images && project.images.length > 0 && (
+      {(project.images?.length || project.imageCategories?.length) ? (
         <div className="w-full px-8 md:px-20 lg:px-40 pb-32">
           <motion.h2
             initial="hidden"
@@ -240,82 +240,121 @@ export const ProjectDetailsPage: SFC = ({ ClassName }) => {
           </motion.h2>
 
           <div className="flex flex-col gap-16 md:gap-32 w-full">
-            {/* BENTO GRID for top 5 images */}
-            {project.images.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-8 w-full md:h-[80vh]">
-                {project.images.slice(0, 5).map((img, idx) => {
-                  const imgSrc =
-                    typeof img === "string"
-                      ? img
-                      : (img as { image?: string }).image;
-                  if (!imgSrc) return null;
+            {/* CATEGORIZED GALLERY */}
+            {project.imageCategories && project.imageCategories.map((category, catIdx) => (
+              <div key={"cat-" + catIdx} className="flex flex-col gap-8">
+                <motion.h3 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className="text-xl md:text-2xl font-light tracking-wide text-[#e9c6a9]"
+                >
+                  04.{catIdx + 1} / {category.title}
+                </motion.h3>
 
-                  let bentoClass =
-                    "w-full h-full min-h-[300px] overflow-hidden rounded-xl border border-white/5 bg-white/5 relative cursor-pointer";
-
-                  if (idx === 0) {
-                    bentoClass += " md:col-span-2 md:row-span-2";
-                  } else {
-                    bentoClass += " md:col-span-1 md:row-span-1";
-                  }
-
-                  return (
-                    <motion.div
-                      key={"bento-" + idx}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{
-                        duration: 0.6,
-                        delay: idx * 0.1,
-                        ease: "easeOut",
-                      }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      className={bentoClass}
-                      onClick={() => setSelectedImage(imgSrc)}
-                    >
-                      <img
-                        src={imgSrc}
-                        alt={`Project showcase ${idx + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 absolute inset-0"
-                      />
-                    </motion.div>
-                  );
-                })}
+                <div className="columns-1 md:columns-2 gap-4 md:gap-8 space-y-4 md:space-y-8">
+                  {category.images.map((imgSrc, idx) => {
+                    return (
+                      <motion.div
+                        key={"masonry-cat-" + catIdx + "-" + idx}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="w-full overflow-hidden rounded-xl border border-white/5 bg-white/5 break-inside-avoid cursor-pointer"
+                        onClick={() => setSelectedImage(imgSrc)}
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={`${category.title} screenshot ${idx + 1}`}
+                          className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000"
+                        />
+                      </motion.div>
+                    );
+                  })}
+                </div>
               </div>
-            )}
+            ))}
 
-            {/* MASONRY / FULL WIDTH for remaining images */}
-            {project.images.length > 5 && (
-              <div className="columns-1 md:columns-2 gap-4 md:gap-8 space-y-4 md:space-y-8 mt-8">
-                {project.images.slice(5).map((img, idx) => {
-                  const imgSrc =
-                    typeof img === "string"
-                      ? img
-                      : (img as { image?: string }).image;
-                  if (!imgSrc) return null;
-                  return (
-                    <motion.div
-                      key={"masonry-" + idx}
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      className="w-full overflow-hidden rounded-xl border border-white/5 bg-white/5 break-inside-avoid cursor-pointer"
-                      onClick={() => setSelectedImage(imgSrc)}
-                    >
-                      <img
-                        src={imgSrc}
-                        alt={`Project showcase remaining ${idx + 1}`}
-                        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000"
-                      />
-                    </motion.div>
-                  );
-                })}
-              </div>
+            {/* FLAT GALLERY (Legacy) */}
+            {!project.imageCategories && project.images && project.images.length > 0 && (
+              <>
+                {/* BENTO GRID for top 5 images */}
+                <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-8 w-full md:h-[80vh]">
+                  {project.images.slice(0, 5).map((img, idx) => {
+                    const imgSrc =
+                      typeof img === "string"
+                        ? img
+                        : (img as { image?: string }).image;
+                    if (!imgSrc) return null;
+
+                    let bentoClass =
+                      "w-full h-full min-h-[300px] overflow-hidden rounded-xl border border-white/5 bg-white/5 relative cursor-pointer";
+
+                    if (idx === 0) {
+                      bentoClass += " md:col-span-2 md:row-span-2";
+                    } else {
+                      bentoClass += " md:col-span-1 md:row-span-1";
+                    }
+
+                    return (
+                      <motion.div
+                        key={"bento-" + idx}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.6,
+                          delay: idx * 0.1,
+                          ease: "easeOut",
+                        }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className={bentoClass}
+                        onClick={() => setSelectedImage(imgSrc)}
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={`Project showcase ${idx + 1}`}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 absolute inset-0"
+                        />
+                      </motion.div>
+                    );
+                  })}
+                </div>
+
+                {/* MASONRY / FULL WIDTH for remaining images */}
+                {project.images.length > 5 && (
+                  <div className="columns-1 md:columns-2 gap-4 md:gap-8 space-y-4 md:space-y-8 mt-8">
+                    {project.images.slice(5).map((img, idx) => {
+                      const imgSrc =
+                        typeof img === "string"
+                          ? img
+                          : (img as { image?: string }).image;
+                      if (!imgSrc) return null;
+                      return (
+                        <motion.div
+                          key={"masonry-" + idx}
+                          initial={{ opacity: 0, y: 50 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.8, ease: "easeOut" }}
+                          viewport={{ once: true, margin: "-100px" }}
+                          className="w-full overflow-hidden rounded-xl border border-white/5 bg-white/5 break-inside-avoid cursor-pointer"
+                          onClick={() => setSelectedImage(imgSrc)}
+                        >
+                          <img
+                            src={imgSrc}
+                            alt={`Project showcase remaining ${idx + 1}`}
+                            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000"
+                          />
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>
-      )}
+      ) : null}
 
       {/* FOOTER NAV */}
       <div className="w-full flex justify-center pb-20 pt-10">
