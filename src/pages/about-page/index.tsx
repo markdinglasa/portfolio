@@ -2,19 +2,19 @@ import { Fragment, memo, Suspense } from "react";
 import { SFC } from "../../types";
 import { cn } from "../../utils";
 
-import ProfileImage from "/image/mark-dinglasa.png";
 import Innosoft from "../../assets/images/innosoft-logo2.png";
-import Rococo from "../../assets/images/rococo.png";
 import Questnova from "../../assets/images/questnova.png";
+import Rococo from "../../assets/images/rococo.png";
+import Skill, { SkillSkeleton } from "../../components/skill-chip";
 import WorkExperience, {
   WorkExperienceProps,
 } from "../../components/work-expericence";
-import Skill, { SkillSkeleton } from "../../components/skill-chip";
+import ProfileImage from "/image/mark-dinglasa.png";
 
-import { SkillData } from "@/constants";
 import { GlareCard } from "@/components/Cards/glare-card";
 import Counter from "@/components/counter";
 import { PageHeaderPanel } from "@/components/panels/page-header-panel";
+import { SkillData } from "@/constants";
 import * as motion from "motion/react-client";
 
 const WORK_EXPERIENCE_DATA: WorkExperienceProps[] = [
@@ -24,11 +24,11 @@ const WORK_EXPERIENCE_DATA: WorkExperienceProps[] = [
     ExclusiveDates: "February 2026 - Present",
     JobTitle: "Full Stack Developer (Team Lead) - Project Based",
     Skills: [
-     "Led a team of 5 developers in a fast-paced Agile environment, driving end-to-end development of scalable web responsive applications that improved delivery efficiency and ensured on-time release of high-quality features.",
+      "Led a team of 5 developers in a fast-paced Agile environment, driving end-to-end development of scalable web responsive applications that improved delivery efficiency and ensured on-time release of high-quality features.",
       "Collaborated with cross-functional teams to transform business requirements into responsive, user-focused frontend solutions, enhancing application performance, maintainability, and overall user experience across multiple platforms.",
       "Architected and implemented scalable frontend and fullstack solutions using modern technologies, while enforcing code quality, security, and best practices that reduced development bottlenecks and accelerated feature delivery.",
       "Mentored and guided jr. developers through code reviews, technical problem-solving, and workflow optimization, resulting in improved team productivity, faster onboarding, and more consistent development standards.",
-      "Streamlined development workflows and Agile processes by improving collaboration, task prioritization, and deployment practices, enabling the team to adapt quickly to evolving project requirements and tight delivery timelines."
+      "Streamlined development workflows and Agile processes by improving collaboration, task prioritization, and deployment practices, enabling the team to adapt quickly to evolving project requirements and tight delivery timelines.",
     ],
   },
   {
@@ -54,7 +54,7 @@ const WORK_EXPERIENCE_DATA: WorkExperienceProps[] = [
       "Supported and maintained legacy applications by troubleshooting issues, implementing fixes, and optimizing existing functionalities to ensure system stability and continuous business operations.",
       "Configured and managed automated database backup solutions for clients, improving data security, recovery readiness, and overall system reliability.",
       "Handled data migration, transformation, and system integration processes, ensuring accurate and seamless transfer of business data between legacy and modern platforms.",
-     ],
+    ],
   },
   {
     CompanyLogo: Rococo,
@@ -91,7 +91,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
         id="about-intro"
         className={cn(
           "relative flex justify-center items-center md:py-24 py-12 md:px-0 px-4 overflow-hidden",
-          ClassName
+          ClassName,
         )}
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex justify-center items-center pointer-events-none opacity-[0.03] select-none z-0">
@@ -132,15 +132,18 @@ export const AboutPage: SFC = ({ ClassName }) => {
                 life.
               </p>
               <p className="text-[15px] text-[#9C9C9C]/80 leading-relaxed">
-                A <strong className="text-white/80">Full Stack Developer</strong> with{" "}
-                {new Date().getFullYear() - 2022}+ years of experience
+                A{" "}
+                <strong className="text-white/80">Full Stack Developer</strong>{" "}
+                with {new Date().getFullYear() - 2022}+ years of experience
                 specializing in frontend and backend development.
               </p>
               <p className="text-[15px] text-[#9C9C9C]/80 leading-relaxed">
                 Passionate about building{" "}
                 <strong className="text-white/80">Web</strong>,{" "}
                 <strong className="text-white/80">Mobile</strong>, and{" "}
-                <strong className="text-white/80">Desktop Applications</strong>, contributing to open source, and continuously learning new trends and technologies.
+                <strong className="text-white/80">Desktop Applications</strong>,
+                contributing to open source, and continuously learning new
+                trends and technologies.
               </p>
             </motion.div>
 
@@ -172,9 +175,9 @@ export const AboutPage: SFC = ({ ClassName }) => {
               className="flex flex-col w-full md:w-1/3 gap-5"
             >
               <p className="text-[15px] text-[#9C9C9C]/80 leading-relaxed">
-                My career started with a basic interest in how technology affects
-                people's lives, which developed into a profession focused on
-                creating meaningful things.
+                My career started with a basic interest in how technology
+                affects people's lives, which developed into a profession
+                focused on creating meaningful things.
               </p>
               <p className="text-[15px] text-[#9C9C9C]/80 leading-relaxed">
                 I have worked on a variety of projects over the years, ranging
@@ -200,9 +203,9 @@ export const AboutPage: SFC = ({ ClassName }) => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col md:flex-row gap-6 items-center justify-evenly w-full py-20 md:py-28"
           >
-            <Counter label="Years of Software Development" initialTarget={3} />
+            <Counter label="Years of Software Development" initialTarget={4} />
             <Counter initialTarget={60} />
-            <Counter initialTarget={12} label="Systems Built" />
+            <Counter initialTarget={14} label="Systems Built" />
           </motion.div>
         </div>
       </section>
@@ -285,9 +288,9 @@ export const AboutPage: SFC = ({ ClassName }) => {
             </h1>
             <p className="text-lg md:text-xl text-[#9C9C9C] max-w-2xl leading-relaxed">
               My career path is a story of continuous evolution—from writing my
-              first lines of code to architecting full-stack solutions. Each role
-              has been a chapter in developing not just my technical skills, but
-              my ability to solve real business problems.
+              first lines of code to architecting full-stack solutions. Each
+              role has been a chapter in developing not just my technical
+              skills, but my ability to solve real business problems.
             </p>
           </motion.div>
 
@@ -321,7 +324,9 @@ export const AboutPage: SFC = ({ ClassName }) => {
                     <div
                       className={cn(
                         "hidden md:flex w-1/2 pr-12",
-                        isEven ? "justify-end" : "justify-end opacity-0 pointer-events-none"
+                        isEven
+                          ? "justify-end"
+                          : "justify-end opacity-0 pointer-events-none",
                       )}
                     >
                       {isEven && (
@@ -340,7 +345,9 @@ export const AboutPage: SFC = ({ ClassName }) => {
                     <div
                       className={cn(
                         "hidden md:flex w-1/2 pl-12",
-                        isEven ? "justify-start opacity-0 pointer-events-none" : "justify-start"
+                        isEven
+                          ? "justify-start opacity-0 pointer-events-none"
+                          : "justify-start",
                       )}
                     >
                       {!isEven && (

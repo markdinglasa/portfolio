@@ -94,7 +94,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 13,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "LandTrax",
     alias: PROJECT.LANDTRAX,
@@ -119,10 +119,14 @@ export const JourneyData: Project[] = [
       "TailwindCSS",
     ],
     role: "Full Stack Engineer",
-    context: "Property documentation and registration in the Philippines involve navigating complex bureaucratic processes. LandTrax aims to be a one-stop-shop to streamline these real estate transactions for clients nationwide.",
-    challenge: "The primary challenge was digitizing a highly paper-based, multi-step legal process. We needed a secure system that could handle extensive document uploads, track complex transaction states, and manage user roles across clients and administrators without sacrificing ease of use.",
-    solution: "We built a robust monolithic application utilizing Next JS for the frontend and Nest JS for the backend API. By integrating AWS S3 for secure document storage and Bedrock for intelligent processing, we automated significant portions of the workflow. The MSSQL database, managed via TypeORM, ensures strong data integrity for sensitive property records.",
-    outcome: "Created a scalable digital platform that reduces manual intervention and provides clients with transparent, real-time tracking of their property transactions.",
+    context:
+      "Property documentation and registration in the Philippines involve navigating complex bureaucratic processes. LandTrax aims to be a one-stop-shop to streamline these real estate transactions for clients nationwide.",
+    challenge:
+      "The primary challenge was digitizing a highly paper-based, multi-step legal process. We needed a secure system that could handle extensive document uploads, track complex transaction states, and manage user roles across clients and administrators without sacrificing ease of use.",
+    solution:
+      "We built a robust monolithic application utilizing Next JS for the frontend and Nest JS for the backend API. By integrating AWS S3 for secure document storage and Bedrock for intelligent processing, we automated significant portions of the workflow. The MSSQL database, managed via TypeORM, ensures strong data integrity for sensitive property records.",
+    outcome:
+      "Created a scalable digital platform that reduces manual intervention and provides clients with transparent, real-time tracking of their property transactions.",
     images: [
       "/image/landtrax/landing-page.png",
       "/image/landtrax/client-login-page.png",
@@ -150,7 +154,7 @@ export const JourneyData: Project[] = [
       "/image/landtrax/system-settings-manage-notifications.png",
       "/image/landtrax/system-settings-page.png",
       "/image/landtrax/widget-preview.png",
-      "/image/landtrax/wiget-customization.png"
+      "/image/landtrax/wiget-customization.png",
     ],
   },
   {
@@ -215,7 +219,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 10,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Mobile Application",
     title: "Roots & Morphology",
     alias: PROJECT.ROOTS_AND_MORPHOLOGY,
@@ -236,10 +240,14 @@ export const JourneyData: Project[] = [
       "Figma",
     ],
     role: "Full Stack App Developer",
-    context: "Medical and scientific students often struggle with memorizing complex terminology. Understanding the Latin and Greek roots of these words provides a foundational way to decode unfamiliar terms.",
-    challenge: "We needed to create an engaging, mobile-first educational tool that felt modern and fast, while securely syncing a large dictionary of morphological terms across devices.",
-    solution: "I built the mobile application using React Native to ensure a smooth, native-like experience on both iOS and Android. The backend is powered by Node JS and Express JS, serving data from a MySQL database hosted on Aiven Cloud. TailwindCSS was utilized within the React ecosystem to maintain a consistent, clean design language.",
-    outcome: "Delivered a comprehensive educational app featuring term lists, volume breakdowns, and bookmarking capabilities to assist students in their studies.",
+    context:
+      "Medical and scientific students often struggle with memorizing complex terminology. Understanding the Latin and Greek roots of these words provides a foundational way to decode unfamiliar terms.",
+    challenge:
+      "We needed to create an engaging, mobile-first educational tool that felt modern and fast, while securely syncing a large dictionary of morphological terms across devices.",
+    solution:
+      "I built the mobile application using React Native to ensure a smooth, native-like experience on both iOS and Android. The backend is powered by Node JS and Express JS, serving data from a MySQL database hosted on Aiven Cloud. TailwindCSS was utilized within the React ecosystem to maintain a consistent, clean design language.",
+    outcome:
+      "Delivered a comprehensive educational app featuring term lists, volume breakdowns, and bookmarking capabilities to assist students in their studies.",
     images: [
       "/image/rtm/onboarding-step-1.jpeg",
       "/image/rtm/onboarding-step-2.jpeg",
@@ -248,7 +256,7 @@ export const JourneyData: Project[] = [
       "/image/rtm/list-of-terms-in-cardiovascular-system.webp",
       "/image/rtm/list-of-volumes.webp",
       "/image/rtm/sample-terminology-1.webp",
-      "/image/rtm/sample-terminalogy-2.jpeg"
+      "/image/rtm/sample-terminalogy-2.jpeg",
     ],
   },
   {
@@ -290,7 +298,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 5,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Mobile Application",
     title: "Lingua",
     alias: PROJECT.LINGUA,
@@ -300,10 +308,14 @@ export const JourneyData: Project[] = [
     timeframe: "January 2023 - April 2023",
     techStack: ["JavaScript", "Xamarin", "C#", "Azure Cloud", "Figma"],
     role: "Mobile Developer",
-    context: "Communication barriers exist between the Deaf or Hard of Hearing community and those who do not understand sign language. Lingua was conceived as a bridge to facilitate seamless, real-time communication.",
-    challenge: "Processing video input for sign language recognition on a mobile device requires intensive computation. The challenge was to achieve accurate, real-time AI interpretation without draining the device battery or suffering from severe latency.",
-    solution: "We developed a cross-platform mobile application using Xamarin and C#. To handle the heavy lifting of AI interpretation, we offloaded the machine learning processing to Azure Cloud. The app captures video streams, securely transmits them to our cloud infrastructure for instant sign-to-text and sign-to-voice translation, and returns the result to the UI.",
-    outcome: "Successfully prototyped a functional Android interpreter capable of two-way communication (sign-to-voice and voice-to-sign) with an intuitive dark-themed interface.",
+    context:
+      "Communication barriers exist between the Deaf or Hard of Hearing community and those who do not understand sign language. Lingua was conceived as a bridge to facilitate seamless, real-time communication.",
+    challenge:
+      "Processing video input for sign language recognition on a mobile device requires intensive computation. The challenge was to achieve accurate, real-time AI interpretation without draining the device battery or suffering from severe latency.",
+    solution:
+      "We developed a cross-platform mobile application using Xamarin and C#. To handle the heavy lifting of AI interpretation, we offloaded the machine learning processing to Azure Cloud. The app captures video streams, securely transmits them to our cloud infrastructure for instant sign-to-text and sign-to-voice translation, and returns the result to the UI.",
+    outcome:
+      "Successfully prototyped a functional Android interpreter capable of two-way communication (sign-to-voice and voice-to-sign) with an intuitive dark-themed interface.",
     images: [
       "/image/lingua/landing-page.png",
       "/image/lingua/primary-dark-loading-state.png",
@@ -313,7 +325,7 @@ export const JourneyData: Project[] = [
       "/image/lingua/sign-language-to-voice-interface.png",
       "/image/lingua/turtorial-page.jpg",
       "/image/lingua/tutorials-interface.png",
-      "/image/lingua/voice-to-sign-language-interface.png"
+      "/image/lingua/voice-to-sign-language-interface.png",
     ],
   },
   {
@@ -339,7 +351,7 @@ export const JourneyData: Project[] = [
   },
   {
     id: 1,
-    status: "Underconstruction",
+    status: "Done",
     projectType: "Responsive Web Application",
     title: "AMS",
     alias: PROJECT.ATTENDANCE_MONITORING_SYSTEM,
@@ -368,7 +380,7 @@ export const JourneyData: Project[] = [
     id: 14,
     status: "Done",
     projectType: "Responsive Web Application",
-    title: "KaraokeForge",
+    title: "Karaoke Forge",
     alias: PROJECT.KARAOKE_FORGE,
     link: `/projects/d/${PROJECT.KARAOKE_FORGE}`,
     thumbnail: "/image/karaoke-forge.jpeg",
@@ -384,10 +396,14 @@ export const JourneyData: Project[] = [
       "Ffmpeg-static",
     ],
     role: "AI & Full Stack Developer",
-    context: "Creating high-quality karaoke videos with perfectly synced lyrics has historically been a tedious, manual process requiring specialized video editing software.",
-    challenge: "The goal was to automate the extraction of vocals, detection of lyrics, and synchronization of text to audio down to the millisecond, all within a browser-accessible web application.",
-    solution: "I architected a pipeline utilizing Python and OpenAI Whisper for highly accurate audio transcription and timestamp generation. The frontend, built with Next JS and TailwindCSS, provides an intuitive interface for uploading assets. We integrated FFmpeg-static to handle the final video rendering directly, combining the audio track with the synced lyrical overlays.",
-    outcome: "Reduced the time required to produce a professional karaoke video from hours to approximately one minute.",
+    context:
+      "Creating high-quality karaoke videos with perfectly synced lyrics has historically been a tedious, manual process requiring specialized video editing software.",
+    challenge:
+      "The goal was to automate the extraction of vocals, detection of lyrics, and synchronization of text to audio down to the millisecond, all within a browser-accessible web application.",
+    solution:
+      "I architected a pipeline utilizing Python and OpenAI Whisper for highly accurate audio transcription and timestamp generation. The frontend, built with Next JS and TailwindCSS, provides an intuitive interface for uploading assets. We integrated FFmpeg-static to handle the final video rendering directly, combining the audio track with the synced lyrical overlays.",
+    outcome:
+      "Reduced the time required to produce a professional karaoke video from hours to approximately one minute.",
     images: [
       "/image/karaoke-forge/landing-page.png",
       "/image/karaoke-forge/how-it-works.png",
@@ -396,7 +412,7 @@ export const JourneyData: Project[] = [
       "/image/karaoke-forge/step-2-auto-detection-lyrics-sample.png",
       "/image/karaoke-forge/step-3-video-settings.png",
       "/image/karaoke-forge/step-4-preview-of-karaoke-video.png",
-      "/image/karaoke-forge/step-4-generate-and-download.png"
+      "/image/karaoke-forge/step-4-generate-and-download.png",
     ],
   },
 ];

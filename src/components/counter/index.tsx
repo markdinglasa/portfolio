@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef, useCallback } from "react";
-import "./styles.css";
 import { SFC } from "@/types";
+import { useCallback, useEffect, useRef, useState } from "react";
+import "./styles.css";
 
 interface ClientCounterProps {
   initialTarget?: number;
@@ -23,8 +23,6 @@ const ClientCounter: SFC<ClientCounterProps> = ({
   const animateCounter = useCallback(
     (targetValue: number, animationDuration: number = duration) => {
       if (isAnimating) return;
-
-      //setIsAnimating(true);
       const start = 0;
       const startTime = performance.now();
 
@@ -36,7 +34,7 @@ const ClientCounter: SFC<ClientCounterProps> = ({
         const easeOutQuart = 1 - Math.pow(1 - progress, 4);
 
         const currentValue = Math.floor(
-          easeOutQuart * (targetValue - start) + start
+          easeOutQuart * (targetValue - start) + start,
         );
         setCount(currentValue);
 
@@ -50,7 +48,7 @@ const ClientCounter: SFC<ClientCounterProps> = ({
 
       animationRef.current = requestAnimationFrame(updateCounter);
     },
-    [isAnimating, duration]
+    [isAnimating, duration],
   );
 
   const renderAnimatedNumber = (num: number) => {
@@ -58,7 +56,7 @@ const ClientCounter: SFC<ClientCounterProps> = ({
     return (
       <div className="animated-number overflow-visible">
         {digits.map((digit, index) => (
-          <span key={index} className="digit-roll overflow-visible">
+          <span key={"digit-" + index} className="digit-roll overflow-visible">
             <span className="text-primary digit overflow-visible">{digit}</span>
           </span>
         ))}
@@ -83,7 +81,6 @@ const ClientCounter: SFC<ClientCounterProps> = ({
           >
             {renderAnimatedNumber(count)}
           </div>
-          <div className="counter-plus text-primary">+</div>
         </div>
         <div className="counter-label">{label}</div>
       </div>
