@@ -1,11 +1,12 @@
-import React, { memo } from "react";
 import {
   motion,
-  useScroll,
-  useTransform,
-  useSpring,
   MotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
 } from "motion/react";
+import React, { memo } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const HeroParallax = memo(
   ({
@@ -30,27 +31,27 @@ export const HeroParallax = memo(
 
     const translateX = useSpring(
       useTransform(scrollYProgress, [0, 1], [0, 1000]),
-      springConfig
+      springConfig,
     );
     const translateXReverse = useSpring(
       useTransform(scrollYProgress, [0, 1], [0, -1000]),
-      springConfig
+      springConfig,
     );
     const rotateX = useSpring(
       useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-      springConfig
+      springConfig,
     );
     const opacity = useSpring(
       useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-      springConfig
+      springConfig,
     );
     const rotateZ = useSpring(
       useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-      springConfig
+      springConfig,
     );
     const translateY = useSpring(
       useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-      springConfig
+      springConfig,
     );
     return (
       <div
@@ -99,7 +100,7 @@ export const HeroParallax = memo(
         </motion.div>
       </div>
     );
-  }
+  },
 );
 
 export const Header = () => {
@@ -139,6 +140,7 @@ export const ProductCard = ({
   };
   translate: MotionValue<number>;
 }) => {
+  const navigate = useNavigate();
   return (
     <motion.div
       style={{
@@ -150,7 +152,10 @@ export const ProductCard = ({
       key={product.title}
       className="group/product h-96 w-[30rem] relative shrink-0 rounded-2xl overflow-hidden"
     >
-      <a href={product.link} className="block group-hover/product:shadow-2xl ">
+      <button
+        onClick={() => navigate(product.link)}
+        className="block group-hover/product:shadow-2xl "
+      >
         <img
           src={product.thumbnail}
           height="10rem"
@@ -158,7 +163,7 @@ export const ProductCard = ({
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
         />
-      </a>
+      </button>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-slate-900/60 pointer-events-none transition-opacity duration-300"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white transition-opacity duration-300">
         {product.title}
