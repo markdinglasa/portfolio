@@ -206,34 +206,54 @@ export const JourneyData: Project[] = [
       "We built a robust monolithic application utilizing Next JS for the frontend and Nest JS for the backend API. By integrating AWS S3 for secure document storage and Bedrock for intelligent processing, we automated significant portions of the workflow. The MSSQL database, managed via TypeORM, ensures strong data integrity for sensitive property records.",
     outcome:
       "Created a scalable digital platform that reduces manual intervention and provides clients with transparent, real-time tracking of their property transactions.",
-    images: [
-      "/image/landtrax/landing-page.png",
-      "/image/landtrax/client-login-page.png",
-      "/image/landtrax/client-dashboard.png",
-      "/image/landtrax/client-transactions-page.png",
-      "/image/landtrax/client-transaction-reports.png",
-      "/image/landtrax/client-reports-hub.png",
-      "/image/landtrax/client-user-management.png",
-      "/image/landtrax/creating-of-payment.png",
-      "/image/landtrax/document-library.png",
-      "/image/landtrax/document-library-details.png",
-      "/image/landtrax/lodgement-uploading-of-requirements.png",
-      "/image/landtrax/logement-service-selection.png",
-      "/image/landtrax/logement-summary.png",
-      "/image/landtrax/payments-and-collection-page.png",
-      "/image/landtrax/transaction-details.png",
-      "/image/landtrax/transaction-management-page.png",
-      "/image/landtrax/admin-dashboards.png",
-      "/image/landtrax/admin-reports-hub.png",
-      "/image/landtrax/admin-user-managmeent.png",
-      "/image/landtrax/audit-trails-page.png",
-      "/image/landtrax/email-template-preview-and-edit-page.png",
-      "/image/landtrax/entity-code-management-page.png",
-      "/image/landtrax/export-widget.png",
-      "/image/landtrax/system-settings-manage-notifications.png",
-      "/image/landtrax/system-settings-page.png",
-      "/image/landtrax/widget-preview.png",
-      "/image/landtrax/wiget-customization.png",
+    imageCategories: [
+      {
+        title: "Public & Access",
+        images: [
+          "/image/landtrax/landing-page.png",
+          "/image/landtrax/client-login-page.png",
+        ]
+      },
+      {
+        title: "Client Portal",
+        images: [
+          "/image/landtrax/client-dashboard.png",
+          "/image/landtrax/client-transactions-page.png",
+          "/image/landtrax/client-transaction-reports.png",
+          "/image/landtrax/client-reports-hub.png",
+          "/image/landtrax/client-user-management.png",
+          "/image/landtrax/client-export-widget.png",
+          "/image/landtrax/client-widget-customization.png",
+          "/image/landtrax/client-widget-preview.png",
+        ]
+      },
+      {
+        title: "Transaction & Document Workflows",
+        images: [
+          "/image/landtrax/client-lodgement-uploading-of-requirements.png",
+          "/image/landtrax/client-logement-service-selection.png",
+          "/image/landtrax/client-logement-summary.png",
+          "/image/landtrax/admin-transaction-management-page.png",
+          "/image/landtrax/client-transaction-details.png",
+          "/image/landtrax/client-document-library.png",
+          "/image/landtrax/client-document-library-details.png",
+          "/image/landtrax/admin-creating-of-payment.png",
+          "/image/landtrax/client-payments-and-collection-page.png",
+        ]
+      },
+      {
+        title: "Admin Dashboard & Configuration",
+        images: [
+          "/image/landtrax/admin-dashboards.png",
+          "/image/landtrax/admin-reports-hub.png",
+          "/image/landtrax/admin-user-managmeent.png",
+          "/image/landtrax/admin-audit-trails-page.png",
+          "/image/landtrax/admin-entity-code-management-page.png",
+          "/image/landtrax/admin-email-template-preview-and-edit-page.png",
+          "/image/landtrax/admin-system-settings-page.png",
+          "/image/landtrax/admin-system-settings-manage-notifications.png",
+        ]
+      }
     ],
   },
   {
