@@ -57,7 +57,7 @@ const WORK_EXPERIENCE_DATA: WorkExperienceProps[] = [
   {
     CompanyLogo: Rococo,
     CompanyName: "Rococo Global Technologies Corporation",
-    ExclusiveDates: "February 2022 - June 2023",
+    ExclusiveDates: "February 2022 - April 2023",
     JobTitle: "Software Developer - Internship",
     Skills: [
       "Designed and developed custom applications, workflows, and modules on the ServiceNow platform, improving process automation and enhancing operational efficiency for internal business functions.",
