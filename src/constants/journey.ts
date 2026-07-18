@@ -171,7 +171,7 @@ export const JourneyData: Project[] = [
     outcome:
       "Standardized the scholarship tracking process, leading to faster stipend disbursements and vastly improved administrative oversight.",
   },
-  {
+  /*{
     id: 13,
     status: "Done",
     projectType: "Responsive Web Application",
@@ -255,7 +255,7 @@ export const JourneyData: Project[] = [
         ],
       },
     ],
-  },
+  },*/
   {
     id: 3,
     status: "Done",
