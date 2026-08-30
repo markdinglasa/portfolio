@@ -16,54 +16,73 @@ import WorkExperience, {
 } from "../../components/work-expericence";
 
 const WORK_EXPERIENCE_DATA: WorkExperienceProps[] = [
+    {
+    CompanyLogo: Questnova,
+    CompanyName: "Questnova Systems Corporation",
+    ExclusiveDates: "August 2026 - Present",
+    JobTitle: "Senior Full Stack Developer",
+    Responsibilities: [
+      "Participated in Vulnerability Assessment and Penetration Testing (VAPT) activities, analyzing identified security vulnerabilities and implementing remediation measures to improve application security and compliance.",
+      "Authored and maintained Technical Design Documents (TDDs) and other technical documentation, translating business and technical requirements into clear implementation plans, architectural decisions, and development guidelines.",
+      "Designed and executed end-to-end and functional testing using Playwright, improving application reliability and identifying regressions across critical user workflows.",
+      "Participated in architectural planning for the migration of a monolithic application toward a microservices architecture, contributing to migration strategies, service boundaries, technical documentation, and phased implementation planning.",
+      "Contributed to Domain-Driven Design (DDD) discussions and sprint planning for new product capabilities, including the planning and technical decomposition of an OCR-based feature into manageable domains, workflows, and implementation tasks."
+    ],  
+    Skills:['Vulnerability Assessment and Penetration Testing (VAPT)', 'Load Testing & Optimazation', 'Automation Testing (Playwright and Artillery)', 'Microservice Migration', 'Peer Mentoring', 'System Architecture', 'Technical Design Documentation']
+  },
   {
     CompanyLogo: Questnova,
     CompanyName: "Questnova Systems Corporation",
-    ExclusiveDates: "February 2026 - Present",
-    JobTitle: "Full Stack Developer (Team Lead) - Project Based",
-    Skills: [
+    ExclusiveDates: "February 2026 - August 2026",
+    JobTitle: "Full Stack Developer (Team Lead)",
+    Responsibilities: [
       "Led a team of 5 developers in a fast-paced Agile environment, driving end-to-end development of scalable web responsive applications that improved delivery efficiency and ensured on-time release of high-quality features.",
       "Collaborated with cross-functional teams to transform business requirements into responsive, user-focused frontend solutions, enhancing application performance, maintainability, and overall user experience across multiple platforms.",
       "Architected and implemented scalable frontend and fullstack solutions using modern technologies, while enforcing code quality, security, and best practices that reduced development bottlenecks and accelerated feature delivery.",
       "Mentored and guided jr. developers through code reviews, technical problem-solving, and workflow optimization, resulting in improved team productivity, faster onboarding, and more consistent development standards.",
       "Streamlined development workflows and Agile processes by improving collaboration, task prioritization, and deployment practices, enabling the team to adapt quickly to evolving project requirements and tight delivery timelines.",
     ],
+    Skills:['AWS S3', 'AWS RDS', 'Redis', 'Next JS', 'Nest JS', 'Docker', 'TypeORM', 'Microsoft SQL Server', 'Tanstack Query', 'Unit Testing', 'Data Migration & Seeding', 'Database Normalization', 'TailwindCSS', 'Version Control', 'Postman', 'Swagger', 'CI/CD Workflows', 'Jira', 'Kanban', 'Sprint Planning', 'Business Analyst', 'Load Balancing (Nginx)', 'Reverse Proxy (Traefik)', 'Antigravity (Agent)']
   },
   {
     CompanyLogo: Innosoft,
     CompanyName: "Innosoft Solutions Inc.",
     ExclusiveDates: "July 2023 - February 2026",
-    JobTitle: "Full Stack Developer (Team Lead) - Full Time",
-    Skills: [
+    JobTitle: "Full Stack Developer (Team Lead)",
+    Responsibilities: [
       "Developed and maintained responsive, cross-platform applications using React.js, Tailwind CSS, and component-based architecture, delivering improved user experience, faster interface responsiveness, and efficient real-time data visualization.",
       "Spearheaded frontend development for a desktop analytics application used in mall accreditation workflows, creating dynamic dashboards, validation processes, and multi-format file handling (CSV, XML, XLS) that streamlined operational reporting and data processing.",
       "Collaborated closely with cross-functional teams in an Agile environment to deliver maintainable, production-ready applications with comprehensive unit and integration testing using Jest, improving application reliability and reducing regression issues.",
       "Built and maintained reusable component libraries and responsive design systems, ensuring UI consistency, faster feature development, and optimized experiences across desktop, web, and mobile platforms.",
       "Optimized frontend performance and usability by implementing clean architecture patterns, reusable logic, and scalable state management practices, contributing to faster development cycles and long-term maintainability.",
     ],
+    Skills:['Aiven', 'Render', 'Replit', 'React Native', 'React JS', 'MySQL', 'Microsoft SQL Server', 'Visual Basic', 'Microsoft Access', 'Electron JS', 'Data Archiving & Migration', 'Optimazation', 'TailwindCSS', 'Intern Mentoring', 'Project Management', 'Figma', 'Photoshop', 'POS Support & Customization', 'HRIS Support', 'FMIS Support']
   },
   {
     CompanyLogo: Innosoft,
     CompanyName: "Innosoft Solutions Inc.",
     ExclusiveDates: "February 2023 - May 2023",
-    JobTitle: "Software Developer - Internship",
-    Skills: [
+    JobTitle: "Intern Software Developer",
+    Responsibilities: [
       "Assisted in ERP module implementation and customization, helping streamline business operations and improve workflow efficiency for client organizations.",
       "Supported and maintained legacy applications by troubleshooting issues, implementing fixes, and optimizing existing functionalities to ensure system stability and continuous business operations.",
       "Configured and managed automated database backup solutions for clients, improving data security, recovery readiness, and overall system reliability.",
       "Handled data migration, transformation, and system integration processes, ensuring accurate and seamless transfer of business data between legacy and modern platforms.",
     ],
+    
+    Skills:['MySQL', 'Microsoft SQL Server', 'Visual Basic', 'Microsoft Access', 'Data Archiving & Migration', 'Optimazation', 'POS Support & Customization', 'HRIS Support', 'FMIS Support', 'Accounting']
   },
   {
     CompanyLogo: Rococo,
     CompanyName: "Rococo Global Technologies Corporation",
     ExclusiveDates: "February 2022 - June 2023",
-    JobTitle: "Software Developer - Internship",
-    Skills: [
+    JobTitle: "Intern Software Developer (Remote)",
+    Responsibilities: [
       "Designed and developed custom applications, workflows, and modules on the ServiceNow platform, improving process automation and enhancing operational efficiency for internal business functions.",
       "Configured and maintained Service Catalog solutions, including catalog items, request forms, and automated workflows, streamlining service request management and improving user experience.",
       "Managed data import, transformation, and migration processes using Import Sets, Transform Maps, and Data Sources, ensuring accurate and reliable integration of business data into the ServiceNow platform.",
     ],
+    Skills:['ServiceNow Designing', 'Data Transformation & Migration', 'ServiceNow Customization']
   },
 ];
 
@@ -334,8 +353,8 @@ export const AboutPage: SFC = ({ ClassName }) => {
                           ExclusiveDates={experience.ExclusiveDates}
                           JobTitle={experience.JobTitle}
                           Skills={experience.Skills}
-                          ClassName="max-w-lg"
-                        />
+                          ClassName="max-w-lg" 
+                          Responsibilities={experience.Responsibilities}                        />
                       )}
                     </div>
 
@@ -356,6 +375,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                           JobTitle={experience.JobTitle}
                           Skills={experience.Skills}
                           ClassName="max-w-lg"
+                          Responsibilities={experience.Responsibilities}   
                         />
                       )}
                     </div>
@@ -368,6 +388,7 @@ export const AboutPage: SFC = ({ ClassName }) => {
                         ExclusiveDates={experience.ExclusiveDates}
                         JobTitle={experience.JobTitle}
                         Skills={experience.Skills}
+                        Responsibilities={experience.Responsibilities}   
                       />
                     </div>
                   </motion.div>

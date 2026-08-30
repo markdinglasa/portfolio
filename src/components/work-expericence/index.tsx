@@ -8,6 +8,7 @@ export interface WorkExperienceProps {
   ExclusiveDates: string;
   JobTitle: string;
   Skills: string[];
+  Responsibilities: string[]
 }
 
 const WorkExperience: SFC<WorkExperienceProps> = memo(
@@ -18,17 +19,18 @@ const WorkExperience: SFC<WorkExperienceProps> = memo(
     ExclusiveDates,
     JobTitle,
     Skills,
+    Responsibilities
   }) => {
     return (
       <div
         className={cn(
           "rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm p-5 md:p-6 w-full",
-          "hover:border-[#e9c6a9]/20 transition-all duration-300",
+          "hover:border-[#e9c6a9]/20 transition-all duration-300 flex gap-4 flex-col",
           ClassName
         )}
       >
         {/* Header: Logo + Role */}
-        <div className="flex items-start gap-4 mb-4">
+        <div className="flex items-start gap-4">
           <div className="w-10 h-10 rounded-xl bg-white/[0.04] flex items-center justify-center flex-shrink-0 overflow-hidden">
             <img
               src={CompanyLogo}
@@ -51,9 +53,9 @@ const WorkExperience: SFC<WorkExperienceProps> = memo(
 
         {/* Responsibilities — simple bullet list */}
         <div className="flex flex-col gap-2 pl-1">
-          {Skills.map((record, index) => (
+          {Responsibilities.map((record, index) => (
             <div
-              key={index}
+              key={'responsibility-'+index}
               className="flex gap-3 items-start group/item"
             >
               <span className="text-[#e9c6a9]/30 mt-[7px] flex-shrink-0 group-hover/item:text-[#e9c6a9]/70 transition-colors duration-200">
@@ -66,6 +68,9 @@ const WorkExperience: SFC<WorkExperienceProps> = memo(
               </span>
             </div>
           ))}
+        </div>
+        <div className="flex flex-wrap">
+          <span className="text-[15px] text-[#9C9C9C]">{Skills.join(', ')}</span>
         </div>
       </div>
     );

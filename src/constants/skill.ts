@@ -18,11 +18,21 @@ import ReactJS from "@/assets/svg/react_js.svg";
 import Tailwind from "@/assets/svg/tailwind-svgrepo-com.svg";
 import TS from "@/assets/svg/typescript-16-svgrepo-com.svg";
 import Figma from "@/assets/svg/figma.svg";
+import NestJS from '@/assets/svg/nestjs-svgrepo-com.svg'
+import NextJS from '@/assets/svg/next-js-svgrepo-com.svg'
 
 export const SkillData = [
   {
     logo: ReactJS,
     name: "React JS",
+  },
+  {
+    logo: NextJS,
+    name: "Next JS",
+  },
+  {
+    logo: NestJS,
+    name: "Nest JS",
   },
   {
     logo: Angular,
